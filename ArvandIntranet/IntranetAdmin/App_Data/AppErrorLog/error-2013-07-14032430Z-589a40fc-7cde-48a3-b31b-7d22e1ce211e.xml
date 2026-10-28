@@ -1,0 +1,171 @@
+﻿<error errorId="589a40fc-7cde-48a3-b31b-7d22e1ce211e" application="/LM/W3SVC/3/ROOT" host="BEHROOZ-PC" type="System.Data.SqlClient.SqlException" message="Invalid object name 'dbo.MAX_VOLUME'." source=".Net SqlClient Data Provider" detail="System.Data.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---&gt; System.Data.SqlClient.SqlException: Invalid object name 'dbo.MAX_VOLUME'.&#xD;&#xA;   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)&#xD;&#xA;   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)&#xD;&#xA;   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)&#xD;&#xA;   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)&#xD;&#xA;   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()&#xD;&#xA;   at System.Data.SqlClient.SqlDataReader.get_MetaData()&#xD;&#xA;   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)&#xD;&#xA;   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite)&#xD;&#xA;   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean asyncWrite)&#xD;&#xA;   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)&#xD;&#xA;   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)&#xD;&#xA;   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)&#xD;&#xA;   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)&#xD;&#xA;   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)&#xD;&#xA;   at System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)&#xD;&#xA;   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)&#xD;&#xA;   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator()&#xD;&#xA;   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)&#xD;&#xA;   at System.Data.Objects.ELinq.ObjectQueryProvider.&lt;GetElementFunction&gt;b__1[TResult](IEnumerable`1 sequence)&#xD;&#xA;   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)&#xD;&#xA;   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)&#xD;&#xA;   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)&#xD;&#xA;   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)&#xD;&#xA;   at Danesh.ArvandIntranet.ServiceLayer.EFServices.MaxVolumeService.GetMaxVolumeByDivisionId(Int32 Divisionid) in C:\Users\Behrooz\Desktop\ArvandIntranet\ArvandIntranetServiceLayer\EFServices\MaxVolumeService.vb:line 30&#xD;&#xA;   at AdminBasePage..ctor() in C:\Users\Behrooz\Desktop\ArvandIntranet\Intranet\App_Code\AdminBasePage.vb:line 26&#xD;&#xA;   at SystemMng_SecuritySystem_ChangePassword..ctor()&#xD;&#xA;   at ASP.systemmng_securitysystem_changepassword_aspx..ctor() in C:\Users\Behrooz\Desktop\ArvandIntranet\Intranet\SystemMng\SecuritySystem\ChangePassword.aspx.vb:line 912304&#xD;&#xA;   at __ASP.FastObjectFactory_app_web_qk4zop1r.Create_ASP_systemmng_securitysystem_changepassword_aspx()&#xD;&#xA;   at System.Web.Compilation.BuildResultCompiledType.CreateInstance()&#xD;&#xA;   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)&#xD;&#xA;   at System.Web.Routing.PageRouteHandler.GetHttpHandler(RequestContext requestContext)&#xD;&#xA;   at System.Web.Routing.UrlRoutingModule.PostResolveRequestCache(HttpContextBase context)&#xD;&#xA;   at System.Web.Routing.UrlRoutingModule.OnApplicationPostResolveRequestCache(Object sender, EventArgs e)&#xD;&#xA;   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2013-07-14T03:24:30.4757049Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:Keep-Alive&#xD;&#xA;HTTP_ACCEPT:text/html, application/xhtml+xml, */*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.7,fa;q=0.3&#xD;&#xA;HTTP_COOKIE:SavedUserName=arvand; ASP.NET_SessionId=54jfexzlnwnny1vua44jatzv; LoginCook=3A1AAF7B9B2747E5D53F2F972F1D2CBB1BEB52BC116CABA4D6FED7720087847EC45E453F0A1BD3A7637F2C0D5BE62AECE25B59572A2B3D5A6EA6B615D90251659906709414D3381362C5475533F9A5F391BDE1C976DF7E1351758697036D5B8AB0F21CB45C21A05AB6771CFDD3D67035B39969C79322BF0E369DA53922BC0CE17090EF2A&#xD;&#xA;HTTP_HOST:localhost:4140&#xD;&#xA;HTTP_REFERER:http://localhost:4140/SystemMng/Welcome&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)&#xD;&#xA;HTTP_DNT:1&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: Keep-Alive&#xD;&#xA;Accept: text/html, application/xhtml+xml, */*&#xD;&#xA;Accept-Encoding: gzip, deflate&#xD;&#xA;Accept-Language: en-US,en;q=0.7,fa;q=0.3&#xD;&#xA;Cookie: SavedUserName=arvand; ASP.NET_SessionId=54jfexzlnwnny1vua44jatzv; LoginCook=3A1AAF7B9B2747E5D53F2F972F1D2CBB1BEB52BC116CABA4D6FED7720087847EC45E453F0A1BD3A7637F2C0D5BE62AECE25B59572A2B3D5A6EA6B615D90251659906709414D3381362C5475533F9A5F391BDE1C976DF7E1351758697036D5B8AB0F21CB45C21A05AB6771CFDD3D67035B39969C79322BF0E369DA53922BC0CE17090EF2A&#xD;&#xA;Host: localhost:4140&#xD;&#xA;Referer: http://localhost:4140/SystemMng/Welcome&#xD;&#xA;User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)&#xD;&#xA;DNT: 1&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/3/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\Behrooz\Desktop\ArvandIntranet\Intranet\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="3" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/3" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/SystemMng/SecuritySystem/ChangePassword" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\Behrooz\Desktop\ArvandIntranet\Intranet\SystemMng\SecuritySystem\ChangePassword" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="8381" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/SystemMng/SecuritySystem/ChangePassword" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="4140" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/8.0" />
+    </item>
+    <item name="URL">
+      <value string="/SystemMng/SecuritySystem/ChangePassword" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="Keep-Alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html, application/xhtml+xml, */*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.7,fa;q=0.3" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="SavedUserName=arvand; ASP.NET_SessionId=54jfexzlnwnny1vua44jatzv; LoginCook=3A1AAF7B9B2747E5D53F2F972F1D2CBB1BEB52BC116CABA4D6FED7720087847EC45E453F0A1BD3A7637F2C0D5BE62AECE25B59572A2B3D5A6EA6B615D90251659906709414D3381362C5475533F9A5F391BDE1C976DF7E1351758697036D5B8AB0F21CB45C21A05AB6771CFDD3D67035B39969C79322BF0E369DA53922BC0CE17090EF2A" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:4140" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:4140/SystemMng/Welcome" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)" />
+    </item>
+    <item name="HTTP_DNT">
+      <value string="1" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="SavedUserName">
+      <value string="arvand" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="54jfexzlnwnny1vua44jatzv" />
+    </item>
+    <item name="LoginCook">
+      <value string="3A1AAF7B9B2747E5D53F2F972F1D2CBB1BEB52BC116CABA4D6FED7720087847EC45E453F0A1BD3A7637F2C0D5BE62AECE25B59572A2B3D5A6EA6B615D90251659906709414D3381362C5475533F9A5F391BDE1C976DF7E1351758697036D5B8AB0F21CB45C21A05AB6771CFDD3D67035B39969C79322BF0E369DA53922BC0CE17090EF2A" />
+    </item>
+  </cookies>
+</error>

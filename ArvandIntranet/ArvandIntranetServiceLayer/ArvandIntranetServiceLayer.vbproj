@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.2\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D825B90-8FC2-490D-A05F-ACFA26B560FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>ArvandIntranetServiceLayer</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ArvandIntranetServiceLayer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ArvandIntranetServiceLayer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Argotic.Common">
+      <HintPath>..\packages\Argotic.Common.2008.0.2.0\lib\Net35\Argotic.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Argotic.Core">
+      <HintPath>..\packages\Argotic.Core.2008.0.2.0\lib\Net35\Argotic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Argotic.Extensions">
+      <HintPath>..\packages\Argotic.Extensions.2008.0.2.0\lib\Net35\Argotic.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EFServices\AlbumImagesService.vb" />
+    <Compile Include="EFServices\AlbumService.vb" />
+    <Compile Include="EFServices\AnnouncementService.vb" />
+    <Compile Include="EFServices\HouseCooperativeService.vb" />
+    <Compile Include="EFServices\CompanyService.vb" />
+    <Compile Include="EFServices\CompanyTypeService.vb" />
+    <Compile Include="EFServices\ContactService.vb" />
+    <Compile Include="EFServices\DocGrantService.vb" />
+    <Compile Include="EFServices\DocManagementService.vb" />
+    <Compile Include="EFServices\ExecutiveManagerService.vb" />
+    <Compile Include="Interfaces\IHouseCooperativeService.vb" />
+    <Compile Include="Interfaces\ISystemHistoryService.vb" />
+    <Compile Include="EFServices\SystemHistoryService.vb" />
+    <Compile Include="Interfaces\IPollsAnswersService.vb" />
+    <Compile Include="Interfaces\IPollsFillerService.vb" />
+    <Compile Include="EFServices\PollsAnswersService.vb" />
+    <Compile Include="EFServices\PollsFillerService.vb" />
+    <Compile Include="Interfaces\IPollQuestionsOptionsService.vb" />
+    <Compile Include="EFServices\PollQuestionsOptionsService.vb" />
+    <Compile Include="Interfaces\IPollQuestionsService.vb" />
+    <Compile Include="EFServices\PollQuestionsService.vb" />
+    <Compile Include="Interfaces\IMaxVolumeService.vb" />
+    <Compile Include="EFServices\MaxVolumeService.vb" />
+    <Compile Include="Interfaces\ISecurityFormsGrantedService.vb" />
+    <Compile Include="Interfaces\ISecurityFormsService.vb" />
+    <Compile Include="EFServices\SecurityFormGrantedService.vb" />
+    <Compile Include="EFServices\SecurityFormService.vb" />
+    <Compile Include="Interfaces\IDocGrantService.vb" />
+    <Compile Include="Interfaces\IDocManagementService.vb" />
+    <Compile Include="Interfaces\IThemeService.vb" />
+    <Compile Include="EFServices\PollService.vb" />
+    <Compile Include="EFServices\ThemeService.vb" />
+    <Compile Include="Interfaces\IContactService.vb" />
+    <Compile Include="Interfaces\IExecutiveManagerService.vb" />
+    <Compile Include="Interfaces\IPollService.vb" />
+    <Compile Include="Interfaces\ISoftwareService.vb" />
+    <Compile Include="EFServices\MenuService.vb" />
+    <Compile Include="EFServices\NewsService.vb" />
+    <Compile Include="EFServices\PagesService.vb" />
+    <Compile Include="EFServices\PageWebPartService.vb" />
+    <Compile Include="EFServices\PersuasiveService.vb" />
+    <Compile Include="EFServices\PhonebookService.vb" />
+    <Compile Include="EFServices\PlantDivisionsService.vb" />
+    <Compile Include="EFServices\PrayerTimeService.vb" />
+    <Compile Include="EFServices\ProductService.vb" />
+    <Compile Include="EFServices\SecurityUserService.vb" />
+    <Compile Include="EFServices\SitesLinkService.vb" />
+    <Compile Include="EFServices\SoftwareService.vb" />
+    <Compile Include="EFServices\VisitorService.vb" />
+    <Compile Include="EFServices\WebPartService.vb" />
+    <Compile Include="Interfaces\IAlbumImagesService.vb" />
+    <Compile Include="Interfaces\IAlbumService.vb" />
+    <Compile Include="Interfaces\IAnnouncementService.vb" />
+    <Compile Include="Interfaces\ICompanyService.vb" />
+    <Compile Include="Interfaces\ICompanyTypeService.vb" />
+    <Compile Include="Interfaces\IMenuService.vb" />
+    <Compile Include="Interfaces\INewsService.vb" />
+    <Compile Include="Interfaces\IPagesService.vb" />
+    <Compile Include="Interfaces\IPageWebPartService.vb" />
+    <Compile Include="Interfaces\IPersuasiveService.vb" />
+    <Compile Include="Interfaces\IPhonebookService.vb" />
+    <Compile Include="Interfaces\IPlantDivisionsService.vb" />
+    <Compile Include="Interfaces\IPrayerTimeService.vb" />
+    <Compile Include="Interfaces\IProductService.vb" />
+    <Compile Include="Interfaces\ISecurityUserService.vb" />
+    <Compile Include="Interfaces\ISitesLinkService.vb" />
+    <Compile Include="Interfaces\IVisitorService.vb" />
+    <Compile Include="Interfaces\IWebPartService.vb" />
+    <Compile Include="Interfaces\IRSSService.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="EFServices\RSSService.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArvandIntranetCommonLibrary\ArvandIntranetCommonLibrary.vbproj">
+      <Project>{b5f40c37-8c3a-409d-beec-f1f72c3e3976}</Project>
+      <Name>ArvandIntranetCommonLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArvandIntranetDataLayer\ArvandIntranetDataLayer.vbproj">
+      <Project>{a5f5d42c-91b2-4ccc-9901-a8044a7a0dbc}</Project>
+      <Name>ArvandIntranetDataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DaneshArvandIntranetDomainClasses\ArvandIntranetDomainClasses.csproj">
+      <Project>{7e7b959c-eca4-4516-a3b7-fcf73acf07b3}</Project>
+      <Name>ArvandIntranetDomainClasses</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.2\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.2\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.2\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

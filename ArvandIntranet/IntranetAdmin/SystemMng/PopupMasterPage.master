@@ -1,0 +1,23 @@
+﻿<%@ Master Language="VB" CodeFile="PopupMasterPage.master.vb" Inherits="SystemMng_PopupMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="<%# ResolveUrl("~/SystemMng/css/StyleSheet.css")%>" rel="stylesheet" />
+    <script src="<%# ResolveClientUrl("~/SystemMng/Scripts/jquery-1.7.1.min.js")%>" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+        </telerik:RadScriptManager>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

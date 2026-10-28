@@ -1,0 +1,12 @@
+D:\Mahan Projects\ArvandIntranet\DaneshArvandIntranetDomainClasses\obj\Debug\ArvandIntranetDomainClasses.csproj.AssemblyReference.cache
+D:\Mahan Projects\ArvandIntranet\DaneshArvandIntranetDomainClasses\obj\Debug\ArvandIntranetDomainClasses.csproj.CoreCompileInputs.cache
+D:\Mahan Projects\ArvandIntranet\DaneshArvandIntranetDomainClasses\bin\Debug\ArvandIntranetDomainClasses.dll.config
+D:\Mahan Projects\ArvandIntranet\DaneshArvandIntranetDomainClasses\bin\Debug\ArvandIntranetDomainClasses.dll
+D:\Mahan Projects\ArvandIntranet\DaneshArvandIntranetDomainClasses\bin\Debug\ArvandIntranetDomainClasses.pdb
+D:\Mahan Projects\ArvandIntranet\DaneshArvandIntranetDomainClasses\bin\Debug\EntityFramework.dll
+D:\Mahan Projects\ArvandIntranet\DaneshArvandIntranetDomainClasses\bin\Debug\EntityFramework.SqlServer.dll
+D:\Mahan Projects\ArvandIntranet\DaneshArvandIntranetDomainClasses\bin\Debug\EntityFramework.xml
+D:\Mahan Projects\ArvandIntranet\DaneshArvandIntranetDomainClasses\bin\Debug\EntityFramework.SqlServer.xml
+D:\Mahan Projects\ArvandIntranet\DaneshArvandIntranetDomainClasses\obj\Debug\ArvandIn.F387C543.Up2Date
+D:\Mahan Projects\ArvandIntranet\DaneshArvandIntranetDomainClasses\obj\Debug\ArvandIntranetDomainClasses.dll
+D:\Mahan Projects\ArvandIntranet\DaneshArvandIntranetDomainClasses\obj\Debug\ArvandIntranetDomainClasses.pdb

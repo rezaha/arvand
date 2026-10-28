@@ -1,0 +1,21 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="AboutWUC.ascx.vb" Inherits="UserControls_AboutWUC" %>
+<div class="webpart">
+    <table cellpadding="0" cellspacing="0" class="part_header">
+        <tr>
+            <td class="webpart_text">
+                <a href="#">
+                    <img src="~/images/webpart_ico/about_header_icon.png" runat="server" id="imgAboutHeader" />
+                    <span style="vertical-align: top;">درباره ما
+                    </span>
+                </a>
+            </td>
+            <td class="webpart_border"></td>
+        </tr>
+    </table>
+    <div class="content-div">
+        <p class="about_text">
+            لورم ایپسوم متنی است که ساختگی برای طراحی و چاپ آن مورد است. صنعت چاپ زمانی لازم بود شرایطی شما باید فکر ثبت نام و طراحی، لازمه خروج می باشد. در ضمن قاعده همفکری ها جوابگوی سئوالات زیاد شاید باشد، آنچنان که لازم بود طراحی گرافیکی خوب بود. کتابهای زیادی شرایط سخت ، دشوار و کمی در سالهای دور لازم است. هدف از این نسخه فرهنگ پس از آن و دستاوردهای خوب شاید باشد. حروفچینی لازم در شرایط فعلی لازمه تکنولوژی بود
+                                <a href="#" class="about_readmore">ادامه مطلب...   </a>
+        </p>
+    </div>
+</div>

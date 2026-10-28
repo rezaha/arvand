@@ -1,0 +1,6 @@
+D:\Mahan Projects\ArvandIntranet\SecurityConfig\bin\Debug\SecurityConfig.dll
+D:\Mahan Projects\ArvandIntranet\SecurityConfig\bin\Debug\SecurityConfig.pdb
+D:\Mahan Projects\ArvandIntranet\SecurityConfig\obj\Debug\SecurityConfig.csproj.AssemblyReference.cache
+D:\Mahan Projects\ArvandIntranet\SecurityConfig\obj\Debug\SecurityConfig.csproj.CoreCompileInputs.cache
+D:\Mahan Projects\ArvandIntranet\SecurityConfig\obj\Debug\SecurityConfig.dll
+D:\Mahan Projects\ArvandIntranet\SecurityConfig\obj\Debug\SecurityConfig.pdb

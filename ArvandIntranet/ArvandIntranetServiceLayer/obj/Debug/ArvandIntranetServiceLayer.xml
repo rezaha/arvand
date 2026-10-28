@@ -1,0 +1,615 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ArvandIntranetServiceLayer
+</name>
+</assembly>
+<members>
+<member name="T:My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsAnswersService.AddPollsAnswers(ArvandIntranetDomainClasses.Models.PollsAnswers,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ اضافه کردن عنصر جدید
+ </summary>
+ <param name="pollsAnswers">عنصر جدید</param>
+ <param name="err">مجموعه خطا</param>
+ <returns>تعداد سطرهای مورد تغییر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsAnswersService.EditPollsAnswers(ArvandIntranetDomainClasses.Models.PollsAnswers,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ ویرایش عنصر
+ </summary>
+ <param name="pollsAnswers">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsAnswersService.RemovePollsAnswers(ArvandIntranetDomainClasses.Models.PollsAnswers,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ حذف عنصر
+ </summary>
+ <param name="pollsAnswers">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsAnswersService.PollsAnswersCount">
+ <summary>
+ تعداد عناصر
+ </summary>
+ <returns>تعداد</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsAnswersService.GetOnePollsAnswers(System.Int32,System.Int32)">
+ <summary>
+ انتخاب یک سطر جدول
+ </summary>
+ <param name="fillerId">کد تکمیل کننده</param>
+ <param name="questionId">سوال</param>
+ <returns>پاسخ مورد نظر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsAnswersService.AllPollsAnswers">
+ <summary>
+ همه پاسخ ها
+ </summary>
+ <returns>لیستی از پاسخ ها</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsAnswersService.AllPollsAnswersByPollFiller(System.Int32)">
+ <summary>
+ همه پاسخ ها بر اساس تکمیل کننده 
+ </summary>
+ <param name="fillerId">کد تکمیل کننده</param>
+ <returns>لیستی از تکمیل کننده ها</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsAnswersService.AllPollsAnswersByPollQuestion(System.Int32)">
+ <summary>
+ همه پاسخ ها بر اساس سوال خاص
+ </summary>
+ <param name="questionId">کد سوال</param>
+ <returns>لیستی از پاسخ ها</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsAnswersService.GetPollsAnswers(System.Int32,System.Int32,System.String)">
+ <summary>
+ نمایش اطلاعات در گرید تلریک
+ </summary>
+ <param name="startIndex">اندیس شروع</param>
+ <param name="pageSize">تعداد سطر ها</param>
+ <param name="sortexpression">معیار مرتب سازی</param>
+ <returns>لیستی از عناصر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsFillerService.AddPollsFiller(ArvandIntranetDomainClasses.Models.PollsFiller,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ اضافه کردن عنصر جدید
+ </summary>
+ <param name="pollsFiller">عنصر جدید</param>
+ <param name="err">مجموعه خطا</param>
+ <returns>تعداد سطرهای مورد تغییر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsFillerService.EditPollsFiller(ArvandIntranetDomainClasses.Models.PollsFiller,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ ویرایش عنصر
+ </summary>
+ <param name="pollsFiller">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsFillerService.RemovePollsFiller(ArvandIntranetDomainClasses.Models.PollsFiller,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ حذف عنصر
+ </summary>
+ <param name="pollsFiller">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsFillerService.PollsFillerCount">
+ <summary>
+ تعداد عناصر
+ </summary>
+ <returns>تعداد</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsFillerService.GetOnePollsFiller(System.Int32)">
+ <summary>
+ انتخاب یک تکمیل کننده نظر سنجی
+ </summary>
+ <param name="fillerId">کد تکمیل کننده</param>
+ <returns>تکمیل کننده مورد نظر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsFillerService.AllPollsFiller">
+ <summary>
+ همه تکمیل کننده ها
+ </summary>
+ <returns>لیستی از تکمیل کننده ها</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsFillerService.AllPollsFillerByPollId(System.Int32)">
+ <summary>
+ همه بر اساس یک نظر سنجی خاص
+ </summary>
+ <param name="pollId">کد نظر سنجی</param>
+ <returns>لیستس از تکمیل کننده ها</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollsFillerService.GetPollsFiller(System.Int32,System.Int32,System.String)">
+ <summary>
+ نمایش اطلاعات در گرید تلریک
+ </summary>
+ <param name="startIndex">اندیس شروع</param>
+ <param name="pageSize">تعداد سطر ها</param>
+ <param name="sortexpression">معیار مرتب سازی</param>
+ <returns>لیستی از عناصر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsOptionsService.AddPollsQuestionsOptions(ArvandIntranetDomainClasses.Models.PollsQuestionsOptions,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ اضافه کردن عنصر جدید
+ </summary>
+ <param name="pollsQuestionsOptions">عنصر جدید</param>
+ <param name="err">مجموعه خطا</param>
+ <returns>تعداد سطرهای مورد تغییر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsOptionsService.EditPollsQuestionsOptions(ArvandIntranetDomainClasses.Models.PollsQuestionsOptions,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ ویرایش عنصر
+ </summary>
+ <param name="pollsQuestionsOptions">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsOptionsService.RemovePollsQuestionsOptions(ArvandIntranetDomainClasses.Models.PollsQuestionsOptions,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ حذف عنصر
+ </summary>
+ <param name="pollsQuestionsOptions">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsOptionsService.PollsQuestionsOptionsCount">
+ <summary>
+ تعداد عناصر
+ </summary>
+ <returns>تعداد</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsOptionsService.GetOnePollsQuestionsOptions(System.Int32)">
+ <summary>
+ انتخاب یک گزینه سوال
+ </summary>
+ <param name="optionId">شناسه یکتا گزینه</param>
+ <returns>گزینه مورد نظر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsOptionsService.GetOneByQuestionIdOptionNo(System.Int32,System.Int32)">
+ <summary>
+ انتخاب یک گزینه بر اساس شماره سوال و کد گزینه
+ </summary>
+ <param name="questionId">کد سوال</param>
+ <param name="optionNo">کد گزینه</param>
+ <returns>گزینه مورد نظر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsOptionsService.AllPollsQuestionsOptions">
+ <summary>
+ همه گزینه ها
+ </summary>
+ <returns>لیستی از گزینه ها</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsOptionsService.AllPollsQuestionsOptionsByQuestion(System.Int32)">
+ <summary>
+ همه بر اساس سوال خاص
+ </summary>
+ <param name="questionId">کد سوال</param>
+ <returns>لیستی از گزینه های سوال</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsOptionsService.GetPollsQuestionsOptions(System.Int32,System.Int32,System.String)">
+ <summary>
+ نمایش اطلاعات در گرید تلریک
+ </summary>
+ <param name="startIndex">اندیس شروع</param>
+ <param name="pageSize">تعداد سطر ها</param>
+ <param name="sortexpression">معیار مرتب سازی</param>
+ <returns>لیستی از عناصر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsService.SearchByUnique(System.Int32)">
+ <summary>
+ جستجو بر اساس کلید
+ </summary>
+ <param name="questionId"></param>
+ <returns>سوال نظر سنجی</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsService.AddPollsQuestions(ArvandIntranetDomainClasses.Models.PollsQuestions,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ اضافه کردن عنصر جدید
+ </summary>
+ <param name="pollsQuestions">عنصر جدید</param>
+ <param name="err">مجموعه خطا</param>
+ <returns>تعداد سطرهای مورد تغییر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsService.EditPollsQuestions(ArvandIntranetDomainClasses.Models.PollsQuestions,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ ویرایش عنصر
+ </summary>
+ <param name="pollsQuestions">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsService.RemovePollsQuestions(ArvandIntranetDomainClasses.Models.PollsQuestions,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ حذف عنصر
+ </summary>
+ <param name="pollsQuestions">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsService.PollsQuestionsCount">
+ <summary>
+ تعداد سطر ها
+ </summary>
+ <returns>تعداد</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsService.GetOnePollsQuestions(System.Int32)">
+ <summary>
+ انتخاب یک سوال نظر سنجی
+ </summary>
+ <param name="questionId">کد یکتای سوال</param>
+ <returns>سوال نظر سنجی مورد نظر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsService.AllPollsQuestions">
+ <summary>
+ همه سوالات
+ </summary>
+ <returns>لیستی از سوالات</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsService.GetByPollId(System.Int32)">
+ <summary>
+ انتخاب بر اساس کد نظر سنجی
+ </summary>
+ <param name="pollId">کد نظر سنجی</param>
+ <returns>لیستی از سوالات</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsService.GetByPollIdQuestionType(System.Int32,System.Int32)">
+ <summary>
+ انتخاب سوال بر اساس نوع پاسخ نظر سنجی
+ </summary>
+ <param name="pollId">نظر سنجی مورد نظر</param>
+ <param name="answerType">نوع پاسخ</param>
+ <returns>لیستی از سوالات</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollQuestionsService.GetPollsQuestions(System.Int32,System.Int32,System.String)">
+ <summary>
+ نمایش اطلاعات در گرید تلریک
+ </summary>
+ <param name="startIndex">اندیس شروع</param>
+ <param name="pageSize">تعداد سطر ها</param>
+ <param name="sortexpression">معیار مرتب سازی</param>
+ <returns>لیستی از عناصر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollService.RemovePolls(ArvandIntranetDomainClasses.Models.Poll,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ حذف عنصر
+ </summary>
+ <param name="polls">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollService.PollsCount">
+ <summary>
+ تعداد عناصر
+ </summary>
+ <returns>تعداد</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollService.GetOnePolls(System.Int32)">
+ <summary>
+ انتخاب یک عنصر
+ </summary>
+ <param name="pollId">کد عنصر</param>
+ <returns>عنصر مورد نظر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollService.AllPolls">
+ <summary>
+ همه عناصر
+ </summary>
+ <returns>لیستی از عناصر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.EFServices.PollService.GetPolls(System.Int32,System.Int32,System.String)">
+ <summary>
+ نمایش اطلاعات در گرید تلریک
+ </summary>
+ <param name="startIndex">اندیس شروع</param>
+ <param name="pageSize">تعداد سطر ها</param>
+ <param name="sortexpression">معیار مرتب سازی</param>
+ <returns>لیستی از عناصر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsAnswersService.AddPollsAnswers(ArvandIntranetDomainClasses.Models.PollsAnswers,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ اضافه کردن عنصر جدید
+ </summary>
+ <param name="pollsAnswers">عنصر جدید</param>
+ <param name="err">مجموعه خطا</param>
+ <returns>تعداد سطرهای مورد تغییر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsAnswersService.EditPollsAnswers(ArvandIntranetDomainClasses.Models.PollsAnswers,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ ویرایش عنصر
+ </summary>
+ <param name="pollsAnswers">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+ <returns>تعداد عناصر مورد تاثیر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsAnswersService.RemovePollsAnswers(ArvandIntranetDomainClasses.Models.PollsAnswers,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ حذف عنصر
+ </summary>
+ <param name="pollsAnswers">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsAnswersService.PollsAnswersCount">
+ <summary>
+ تعداد عناصر
+ </summary>
+ <returns>تعداد</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsAnswersService.GetOnePollsAnswers(System.Int32,System.Int32)">
+ <summary>
+ انتخاب یک سطر جدول
+ </summary>
+ <param name="fillerId">کد تکمیل کننده</param>
+ <param name="questionId">سوال</param>
+ <returns>پاسخ مورد نظر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsAnswersService.AllPollsAnswers">
+ <summary>
+ همه پاسخ ها
+ </summary>
+ <returns>لیستی از پاسخ ها</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsAnswersService.AllPollsAnswersByPollFiller(System.Int32)">
+ <summary>
+ همه پاسخ ها بر اساس تکمیل کننده 
+ </summary>
+ <param name="fillerId">کد تکمیل کننده</param>
+ <returns>لیستی از تکمیل کننده ها</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsAnswersService.AllPollsAnswersByPollQuestion(System.Int32)">
+ <summary>
+ همه پاسخ ها بر اساس سوال خاص
+ </summary>
+ <param name="questionId">کد سوال</param>
+ <returns>لیستی از پاسخ ها</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsAnswersService.GetPollsAnswers(System.Int32,System.Int32,System.String)">
+ <summary>
+ نمایش اطلاعات در گرید تلریک
+ </summary>
+ <param name="startIndex">اندیس شروع</param>
+ <param name="pageSize">تعداد سطر ها</param>
+ <param name="sortexpression">معیار مرتب سازی</param>
+ <returns>لیستی از عناصر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsFillerService.AddPollsFiller(ArvandIntranetDomainClasses.Models.PollsFiller,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ اضافه کردن عنصر جدید
+ </summary>
+ <param name="pollsFiller">عنصر جدید</param>
+ <param name="err">مجموعه خطا</param>
+ <returns>تعداد سطرهای مورد تغییر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsFillerService.EditPollsFiller(ArvandIntranetDomainClasses.Models.PollsFiller,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ ویرایش عنصر
+ </summary>
+ <param name="pollsFiller">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsFillerService.RemovePollsFiller(ArvandIntranetDomainClasses.Models.PollsFiller,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ حذف عنصر
+ </summary>
+ <param name="pollsFiller">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsFillerService.PollsFillerCount">
+ <summary>
+ تعداد عناصر
+ </summary>
+ <returns>تعداد</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsFillerService.GetOnePollsFiller(System.Int32)">
+ <summary>
+ انتخاب یک تکمیل کننده نظر سنجی
+ </summary>
+ <param name="fillerId">کد تکمیل کننده</param>
+ <returns>تکمیل کننده مورد نظر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsFillerService.AllPollsFiller">
+ <summary>
+ همه تکمیل کننده ها
+ </summary>
+ <returns>لیستی از تکمیل کننده ها</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsFillerService.AllPollsFillerByPollId(System.Int32)">
+ <summary>
+ همه بر اساس یک نظر سنجی خاص
+ </summary>
+ <param name="pollId">کد نظر سنجی</param>
+ <returns>لیستس از تکمیل کننده ها</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollsFillerService.GetPollsFiller(System.Int32,System.Int32,System.String)">
+ <summary>
+ نمایش اطلاعات در گرید تلریک
+ </summary>
+ <param name="startIndex">اندیس شروع</param>
+ <param name="pageSize">تعداد سطر ها</param>
+ <param name="sortexpression">معیار مرتب سازی</param>
+ <returns>لیستی از عناصر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsOptionsService.AddPollsQuestionsOptions(ArvandIntranetDomainClasses.Models.PollsQuestionsOptions,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ اضافه کردن عنصر جدید
+ </summary>
+ <param name="pollsQuestionsOptions">عنصر جدید</param>
+ <param name="err">مجموعه خطا</param>
+ <returns>تعداد سطرهای مورد تغییر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsOptionsService.EditPollsQuestionsOptions(ArvandIntranetDomainClasses.Models.PollsQuestionsOptions,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ ویرایش عنصر
+ </summary>
+ <param name="pollsQuestionsOptions">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsOptionsService.RemovePollsQuestionsOptions(ArvandIntranetDomainClasses.Models.PollsQuestionsOptions,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ حذف عنصر
+ </summary>
+ <param name="pollsQuestionsOptions">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsOptionsService.PollsQuestionsOptionsCount">
+ <summary>
+ تعداد عناصر
+ </summary>
+ <returns>تعداد</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsOptionsService.GetOnePollsQuestionsOptions(System.Int32)">
+ <summary>
+ انتخاب یک گزینه سوال
+ </summary>
+ <param name="optionId">شناسه یکتا گزینه</param>
+ <returns>گزینه مورد نظر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsOptionsService.GetOneByQuestionIdOptionNo(System.Int32,System.Int32)">
+ <summary>
+ انتخاب یک گزینه بر اساس شماره سوال و کد گزینه
+ </summary>
+ <param name="questionId">کد سوال</param>
+ <param name="optionNo">کد گزینه</param>
+ <returns>گزینه مورد نظر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsOptionsService.AllPollsQuestionsOptions">
+ <summary>
+ همه گزینه ها
+ </summary>
+ <returns>لیستی از گزینه ها</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsOptionsService.AllPollsQuestionsOptionsByQuestion(System.Int32)">
+ <summary>
+ همه بر اساس سوال خاص
+ </summary>
+ <param name="questionId">کد سوال</param>
+ <returns>لیستی از گزینه های سوال</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsOptionsService.GetPollsQuestionsOptions(System.Int32,System.Int32,System.String)">
+ <summary>
+ نمایش اطلاعات در گرید تلریک
+ </summary>
+ <param name="startIndex">اندیس شروع</param>
+ <param name="pageSize">تعداد سطر ها</param>
+ <param name="sortexpression">معیار مرتب سازی</param>
+ <returns>لیستی از عناصر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsService.SearchByUnique(System.Int32)">
+ <summary>
+ جستجو بر اساس کلید
+ </summary>
+ <param name="questionId"></param>
+ <returns>سوال نظر سنجی</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsService.AddPollsQuestions(ArvandIntranetDomainClasses.Models.PollsQuestions,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ اضافه کردن عنصر جدید
+ </summary>
+ <param name="pollsQuestions">عنصر جدید</param>
+ <param name="err">مجموعه خطا</param>
+ <returns>تعداد سطرهای مورد تغییر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsService.EditPollsQuestions(ArvandIntranetDomainClasses.Models.PollsQuestions,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ ویرایش عنصر
+ </summary>
+ <param name="pollsQuestions">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsService.RemovePollsQuestions(ArvandIntranetDomainClasses.Models.PollsQuestions,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ حذف عنصر
+ </summary>
+ <param name="pollsQuestions">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsService.PollsQuestionsCount">
+ <summary>
+ تعداد سطر ها
+ </summary>
+ <returns>تعداد</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsService.GetOnePollsQuestions(System.Int32)">
+ <summary>
+ انتخاب یک سوال نظر سنجی
+ </summary>
+ <param name="questionId">کد یکتای سوال</param>
+ <returns>سوال نظر سنجی مورد نظر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsService.AllPollsQuestions">
+ <summary>
+ همه سوالات
+ </summary>
+ <returns>لیستی از سوالات</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsService.GetByPollId(System.Int32)">
+ <summary>
+ انتخاب بر اساس کد نظر سنجی
+ </summary>
+ <param name="pollId">کد نظر سنجی</param>
+ <returns>لیستی از سوالات</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsService.GetByPollIdQuestionType(System.Int32,System.Int32)">
+ <summary>
+ انتخاب سوال بر اساس نوع پاسخ نظر سنجی
+ </summary>
+ <param name="pollId">نظر سنجی مورد نظر</param>
+ <param name="answerType">نوع پاسخ</param>
+ <returns>لیستی از سوالات</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollQuestionsService.GetPollsQuestions(System.Int32,System.Int32,System.String)">
+ <summary>
+ نمایش اطلاعات در گرید تلریک
+ </summary>
+ <param name="startIndex">اندیس شروع</param>
+ <param name="pageSize">تعداد سطر ها</param>
+ <param name="sortexpression">معیار مرتب سازی</param>
+ <returns>لیستی از عناصر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollService.RemovePolls(ArvandIntranetDomainClasses.Models.Poll,System.Collections.Generic.Dictionary{System.String,System.String})">
+ <summary>
+ حذف عنصر
+ </summary>
+ <param name="polls">عنصر مورد نظر</param>
+ <param name="err">مجموعه خطا</param>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollService.PollsCount">
+ <summary>
+ تعداد عناصر
+ </summary>
+ <returns>تعداد</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollService.GetOnePolls(System.Int32)">
+ <summary>
+ انتخاب یک عنصر
+ </summary>
+ <param name="pollId">کد عنصر</param>
+ <returns>عنصر مورد نظر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollService.AllPolls">
+ <summary>
+ همه عناصر
+ </summary>
+ <returns>لیستی از عناصر</returns>
+</member>
+<member name="M:Danesh.ArvandIntranet.ServiceLayer.Interfaces.IPollService.GetPolls(System.Int32,System.Int32,System.String)">
+ <summary>
+ نمایش اطلاعات در گرید تلریک
+ </summary>
+ <param name="startIndex">اندیس شروع</param>
+ <param name="pageSize">تعداد سطر ها</param>
+ <param name="sortexpression">معیار مرتب سازی</param>
+ <returns>لیستی از عناصر</returns>
+</member>
+</members>
+</doc>

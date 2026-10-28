@@ -1,0 +1,44 @@
+﻿
+body
+{
+    direction: rtl;
+}
+
+.fieldTitle
+{
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px dashed black;
+    border-top: 1px dashed black;
+}
+td
+{
+    width: 50%;
+}
+
+.form_table
+{
+    border: 3px solid black;
+    width: 17cm;
+    font: 18px arial;
+    margin: auto;
+}
+
+.form_table2
+{
+    border: 1px solid black;
+    width: 17cm;
+    font: 13px tahoma;
+    margin: auto;
+}
+
+
+.testStyle
+{
+    border: 1px solid gray;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+

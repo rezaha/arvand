@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.2\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E7B959C-ECA4-4516-A3B7-FCF73ACF07B3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArvandIntranetDomainClasses</RootNamespace>
+    <AssemblyName>ArvandIntranetDomainClasses</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\AlbumsImages.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\CompanyTypes.cs" />
+    <Compile Include="Models\Complaint.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\ContactUs.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\DocGrant.cs" />
+    <Compile Include="Models\DocManagement.cs" />
+    <Compile Include="Models\ExecutiveManagers.cs" />
+    <Compile Include="Models\HouseCooperative.cs" />
+    <Compile Include="Models\Mapping\AlbumMap.cs" />
+    <Compile Include="Models\Mapping\AlbumsImagesMap.cs" />
+    <Compile Include="Models\Mapping\CityMap.cs" />
+    <Compile Include="Models\Mapping\CompanyMap.cs" />
+    <Compile Include="Models\Mapping\COMPANY_TYPESMap.cs" />
+    <Compile Include="Models\Mapping\COMPLAINTMap.cs" />
+    <Compile Include="Models\Mapping\CONTACTMap.cs" />
+    <Compile Include="Models\Mapping\CONTACT_USMap.cs" />
+    <Compile Include="Models\Mapping\COUNTRyMap.cs" />
+    <Compile Include="Models\Mapping\DocGrantMap.cs" />
+    <Compile Include="Models\Mapping\DocManagementMap.cs" />
+    <Compile Include="Models\Mapping\EXECUTIVE_MANAGERSMap.cs" />
+    <Compile Include="Models\Mapping\HouseCooperativeMap.cs" />
+    <Compile Include="Models\Mapping\MASTERPAGEMap.cs" />
+    <Compile Include="Models\Mapping\MASTERPAGE_WEBPARTSMap.cs" />
+    <Compile Include="Models\Mapping\MaxVolumeMap.cs" />
+    <Compile Include="Models\Mapping\MenuMap.cs" />
+    <Compile Include="Models\Mapping\NewsGroupsMap.cs" />
+    <Compile Include="Models\Mapping\NewsKindsMap.cs" />
+    <Compile Include="Models\Mapping\NewsMap.cs" />
+    <Compile Include="Models\Mapping\NewsTypesMap.cs" />
+    <Compile Include="Models\Mapping\OPINIONMap.cs" />
+    <Compile Include="Models\Mapping\PageMap.cs" />
+    <Compile Include="Models\Mapping\PAGES_DESIGNMap.cs" />
+    <Compile Include="Models\Mapping\PAGES_METATAGSMap.cs" />
+    <Compile Include="Models\Mapping\PAGES_WEBPARTSMap.cs" />
+    <Compile Include="Models\Mapping\PERSONNELMap.cs" />
+    <Compile Include="Models\Mapping\PhonebookMap.cs" />
+    <Compile Include="Models\Mapping\PlantDivisionsMap.cs" />
+    <Compile Include="Models\Mapping\PollMap.cs" />
+    <Compile Include="Models\Mapping\PollsAnswersMap.cs" />
+    <Compile Include="Models\Mapping\PollsFillerMap.cs" />
+    <Compile Include="Models\Mapping\PollsQuestionsMap.cs" />
+    <Compile Include="Models\Mapping\PollsQuestionsOptionsMap.cs" />
+    <Compile Include="Models\Mapping\PrayerTimeMap.cs" />
+    <Compile Include="Models\Mapping\ProductMap.cs" />
+    <Compile Include="Models\Mapping\PROVINCEMap.cs" />
+    <Compile Include="Models\Mapping\RESUMEMap.cs" />
+    <Compile Include="Models\Mapping\SecurityFormMap.cs" />
+    <Compile Include="Models\Mapping\SecurityFormGrantedMap.cs" />
+    <Compile Include="Models\Mapping\SECURITY_SUBSYSTEMSMap.cs" />
+    <Compile Include="Models\Mapping\SecurityUserMap.cs" />
+    <Compile Include="Models\Mapping\SitesLinkMap.cs" />
+    <Compile Include="Models\Mapping\SoftwareMap.cs" />
+    <Compile Include="Models\Mapping\STATISTICMap.cs" />
+    <Compile Include="Models\Mapping\SystemHistoryMap.cs" />
+    <Compile Include="Models\Mapping\TENDERMap.cs" />
+    <Compile Include="Models\Mapping\TENDERS_GROUPSMap.cs" />
+    <Compile Include="Models\Mapping\TENDERS_TYPESMap.cs" />
+    <Compile Include="Models\Mapping\ThemeMap.cs" />
+    <Compile Include="Models\Mapping\VisitorMap.cs" />
+    <Compile Include="Models\Mapping\WEATHERMap.cs" />
+    <Compile Include="Models\Mapping\WEBPARTMap.cs" />
+    <Compile Include="Models\Masterpage.cs" />
+    <Compile Include="Models\MasterpageWebparts.cs" />
+    <Compile Include="Models\MaxVolume.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\NewsGroups.cs" />
+    <Compile Include="Models\NewsKinds.cs" />
+    <Compile Include="Models\NewsTypes.cs" />
+    <Compile Include="Models\Opinion.cs" />
+    <Compile Include="Models\Page.cs" />
+    <Compile Include="Models\PagesMetatags.cs" />
+    <Compile Include="Models\PageDesign.cs" />
+    <Compile Include="Models\PageWebPart.cs" />
+    <Compile Include="Models\Personnel.cs" />
+    <Compile Include="Models\Phonebook.cs" />
+    <Compile Include="Models\PlantDivisions.cs" />
+    <Compile Include="Models\Poll.cs" />
+    <Compile Include="Models\PollsAnswers.cs" />
+    <Compile Include="Models\PollsFiller.cs" />
+    <Compile Include="Models\PollsQuestions.cs" />
+    <Compile Include="Models\PollsQuestionsOptions.cs" />
+    <Compile Include="Models\PrayerTime.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Province.cs" />
+    <Compile Include="Models\Resume.cs" />
+    <Compile Include="Models\SecurityForms.cs" />
+    <Compile Include="Models\SecurityFormsGranted.cs" />
+    <Compile Include="Models\SecuritySubsystems.cs" />
+    <Compile Include="Models\SecurityUsers.cs" />
+    <Compile Include="Models\SitesLink.cs" />
+    <Compile Include="Models\Software.cs" />
+    <Compile Include="Models\Statistic.cs" />
+    <Compile Include="Models\SystemHistory.cs" />
+    <Compile Include="Models\Tender.cs" />
+    <Compile Include="Models\TendersGroups.cs" />
+    <Compile Include="Models\TendersTypes.cs" />
+    <Compile Include="Models\Theme.cs" />
+    <Compile Include="Models\Visitor.cs" />
+    <Compile Include="Models\Weather.cs" />
+    <Compile Include="Models\Webpart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\QuestionAnswerChartModel.cs" />
+    <Compile Include="ViewModel\UserCountByWebpart.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.2\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.2\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.2\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

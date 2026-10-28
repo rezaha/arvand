@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{d486f827-511c-4e73-974f-2f5a46286fef}</ProjectGuid>
+    <SourceWebPhysicalPath>$(MSBuildThisFileDirectory)</SourceWebPhysicalPath>
+    <SourceWebVirtualPath>/Intranet</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SourceWebProject>http://localhost:4140</SourceWebProject>
+    <SourceWebMetabasePath>/IISExpress/7.5/LM/W3SVC/11/ROOT</SourceWebMetabasePath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- for VS2010 we need to use 10.5 but for VS2012+ we should use VisualStudioVersion -->
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)' =='' and '$(VisualStudioVersion)' == 10.0 ">10.5</WebPublishTargetsVersion>
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)'=='' ">$(VisualStudioVersion)</WebPublishTargetsVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(WebPublishTargetsVersion)</VSToolsPath>
+    <_WebPublishTargetsPath Condition=" '$(_WebPublishTargetsPath)'=='' ">$(VSToolsPath)</_WebPublishTargetsPath>
+    <AssemblyFileVersion Condition="'$(AssemblyFileVersion)' == ''">1.0.0.0</AssemblyFileVersion>
+    <AssemblyVersion Condition="'$(AssemblyVersion)' == ''">1.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Arvand.Common\Arvand.Common.csproj">
+      <Project>{F36B5652-FB23-4599-A650-B4B70CDB17DF}</Project>
+      <Name>Arvand.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArvandIntranetCommonLibrary\ArvandIntranetCommonLibrary.vbproj">
+      <Project>{B5F40C37-8C3A-409D-BEEC-F1F72C3E3976}</Project>
+      <Name>ArvandIntranetCommonLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArvandIntranetDataLayer\ArvandIntranetDataLayer.vbproj">
+      <Project>{A5F5D42C-91B2-4CCC-9901-A8044A7A0DBC}</Project>
+      <Name>ArvandIntranetDataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArvandIntranetServiceLayer\ArvandIntranetServiceLayer.vbproj">
+      <Project>{3D825B90-8FC2-490D-A05F-ACFA26B560FD}</Project>
+      <Name>ArvandIntranetServiceLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DaneshArvandIntranetDomainClasses\ArvandIntranetDomainClasses.csproj">
+      <Project>{7E7B959C-ECA4-4516-A3B7-FCF73ACF07B3}</Project>
+      <Name>ArvandIntranetDomainClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SecurityConfig\SecurityConfig.csproj">
+      <Project>{481F3C35-0AF8-4937-9C58-1943907E93B2}</Project>
+      <Name>SecurityConfig</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(_WebPublishTargetsPath)\Web\Microsoft.WebSite.Publishing.targets" />
+</Project>

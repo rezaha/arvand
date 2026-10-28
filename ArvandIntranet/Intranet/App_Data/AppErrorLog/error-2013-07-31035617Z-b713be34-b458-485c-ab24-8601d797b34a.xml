@@ -1,0 +1,215 @@
+﻿<error errorId="b713be34-b458-485c-ab24-8601d797b34a" application="/LM/W3SVC/8/ROOT" host="BEHROOZ-PC" type="System.InvalidOperationException" message="The connection was not closed. The connection's current state is open." source="System.Data" detail="System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---&gt; System.InvalidOperationException: The connection was not closed. The connection's current state is open.&#xD;&#xA;   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)&#xD;&#xA;   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)&#xD;&#xA;   at System.Data.SqlClient.SqlConnection.Open()&#xD;&#xA;   at CLSWebparts.UpdateWEBPARTS(CLSWebpartsItem item) in C:\Users\Behrooz\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\App_Code\CLSWebparts.vb:line 266&#xD;&#xA;   at SystemMng_Define_SiteDefine_UserWebPart.btnSave_Click(Object sender, EventArgs e) in C:\Users\Behrooz\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\SystemMng\Define\SiteDefine\UserWebPart.aspx.vb:line 129&#xD;&#xA;   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)&#xD;&#xA;   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)&#xD;&#xA;   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)&#xD;&#xA;   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)&#xD;&#xA;   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.HandleError(Exception e)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(HttpContext context)&#xD;&#xA;   at ASP.systemmng_define_sitedefine_userwebpart_aspx.ProcessRequest(HttpContext context)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2013-07-31T03:56:17.0667904Z" statusCode="500" webHostHtmlMessage="&lt;!DOCTYPE html&gt;&#xD;&#xA;&lt;html&gt;&#xD;&#xA;    &lt;head&gt;&#xD;&#xA;        &lt;title&gt;The connection was not closed. The connection's current state is open.&lt;/title&gt;&#xD;&#xA;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;&#xD;&#xA;        &lt;style&gt;&#xD;&#xA;         body {font-family:&quot;Verdana&quot;;font-weight:normal;font-size: .7em;color:black;} &#xD;&#xA;         p {font-family:&quot;Verdana&quot;;font-weight:normal;color:black;margin-top: -5px}&#xD;&#xA;         b {font-family:&quot;Verdana&quot;;font-weight:bold;color:black;margin-top: -5px}&#xD;&#xA;         H1 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:18pt;color:red }&#xD;&#xA;         H2 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:14pt;color:maroon }&#xD;&#xA;         pre {font-family:&quot;Consolas&quot;,&quot;Lucida Console&quot;,Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}&#xD;&#xA;         .marker {font-weight: bold; color: black;text-decoration: none;}&#xD;&#xA;         .version {color: gray;}&#xD;&#xA;         .error {margin-bottom: 10px;}&#xD;&#xA;         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }&#xD;&#xA;         @media screen and (max-width: 639px) {&#xD;&#xA;          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }&#xD;&#xA;         }&#xD;&#xA;         @media screen and (max-width: 479px) {&#xD;&#xA;          pre { width: 280px; }&#xD;&#xA;         }&#xD;&#xA;        &lt;/style&gt;&#xD;&#xA;    &lt;/head&gt;&#xD;&#xA;&#xD;&#xA;    &lt;body bgcolor=&quot;white&quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;span&gt;&lt;H1&gt;Server Error in '/' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h2&gt; &lt;i&gt;The connection was not closed. The connection's current state is open.&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;&#xD;&#xA;&#xD;&#xA;            &lt;font face=&quot;Arial, Helvetica, Geneva, SunSans-Regular, sans-serif &quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Description: &lt;/b&gt;An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Exception Details: &lt;/b&gt;System.InvalidOperationException: The connection was not closed. The connection's current state is open.&lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Source Error:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;Line 264:            Throw&#xD;&#xA;Line 265:        Catch e2 As Exception&#xD;&#xA;&lt;font color=red&gt;Line 266:            Throw&#xD;&#xA;&lt;/font&gt;Line 267:        Finally&#xD;&#xA;Line 268:            If cn.State &amp;lt;&amp;gt; ConnectionState.Closed Then&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Source File: &lt;/b&gt; C:\Users\Behrooz\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\App_Code\CLSWebparts.vb&lt;b&gt; &amp;nbsp;&amp;nbsp; Line: &lt;/b&gt; 266&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Stack Trace:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;[InvalidOperationException: The connection was not closed. The connection&amp;#39;s current state is open.]&#xD;&#xA;   System.Data.ProviderBase.DbConnectionInternal.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions) +14&#xD;&#xA;   System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry) +83&#xD;&#xA;   System.Data.SqlClient.SqlConnection.Open() +96&#xD;&#xA;   CLSWebparts.UpdateWEBPARTS(CLSWebpartsItem item) in C:\Users\Behrooz\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\App_Code\CLSWebparts.vb:266&#xD;&#xA;   SystemMng_Define_SiteDefine_UserWebPart.btnSave_Click(Object sender, EventArgs e) in C:\Users\Behrooz\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\SystemMng\Define\SiteDefine\UserWebPart.aspx.vb:129&#xD;&#xA;   System.Web.UI.WebControls.Button.OnClick(EventArgs e) +9553594&#xD;&#xA;   System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument) +103&#xD;&#xA;   System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument) +10&#xD;&#xA;   System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument) +13&#xD;&#xA;   System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData) +35&#xD;&#xA;   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +1724&#xD;&#xA;&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;    &lt;/body&gt;&#xD;&#xA;&lt;/html&gt;&#xD;&#xA;">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_CONTENT_LENGTH:11858&#xD;&#xA;HTTP_CONTENT_TYPE:application/x-www-form-urlencoded&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:fa-ir,en-us;q=0.7,en;q=0.3&#xD;&#xA;HTTP_COOKIE:SavedUserName=arvand; ASP.NET_SessionId=o2tefb3xhhxbosjkr1n2r0nn; LoginCook=988088D70F46C60A58B9DA9C5E63A23D56A96D4F94E265A3E98F29CBD72193798DEDDE84D164B0AA5CE3A599AD9302BFC2FFCDE81BE2D0A6166798218A6E50D4C4C2B30BA598ED2C47E824DCEF6F08C9731B3CB0E1A941E003C85E26621ADEF3914A5E5707900579880902E05AF3F1DA132036887E00CBCA02F529BE8B44C1750F556C7B&#xD;&#xA;HTTP_HOST:localhost:4140&#xD;&#xA;HTTP_REFERER:http://localhost:4140/SystemMng/Define/SiteDefine/UserWebPart&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Content-Length: 11858&#xD;&#xA;Content-Type: application/x-www-form-urlencoded&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate&#xD;&#xA;Accept-Language: fa-ir,en-us;q=0.7,en;q=0.3&#xD;&#xA;Cookie: SavedUserName=arvand; ASP.NET_SessionId=o2tefb3xhhxbosjkr1n2r0nn; LoginCook=988088D70F46C60A58B9DA9C5E63A23D56A96D4F94E265A3E98F29CBD72193798DEDDE84D164B0AA5CE3A599AD9302BFC2FFCDE81BE2D0A6166798218A6E50D4C4C2B30BA598ED2C47E824DCEF6F08C9731B3CB0E1A941E003C85E26621ADEF3914A5E5707900579880902E05AF3F1DA132036887E00CBCA02F529BE8B44C1750F556C7B&#xD;&#xA;Host: localhost:4140&#xD;&#xA;Referer: http://localhost:4140/SystemMng/Define/SiteDefine/UserWebPart&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/8/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\Behrooz\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="11858" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="8" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/8" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/SystemMng/Define/SiteDefine/UserWebPart" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\Behrooz\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\SystemMng\Define\SiteDefine\UserWebPart" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="1149" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/SystemMng/Define/SiteDefine/UserWebPart" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="4140" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/8.0" />
+    </item>
+    <item name="URL">
+      <value string="/SystemMng/Define/SiteDefine/UserWebPart" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="11858" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="fa-ir,en-us;q=0.7,en;q=0.3" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="SavedUserName=arvand; ASP.NET_SessionId=o2tefb3xhhxbosjkr1n2r0nn; LoginCook=988088D70F46C60A58B9DA9C5E63A23D56A96D4F94E265A3E98F29CBD72193798DEDDE84D164B0AA5CE3A599AD9302BFC2FFCDE81BE2D0A6166798218A6E50D4C4C2B30BA598ED2C47E824DCEF6F08C9731B3CB0E1A941E003C85E26621ADEF3914A5E5707900579880902E05AF3F1DA132036887E00CBCA02F529BE8B44C1750F556C7B" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:4140" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:4140/SystemMng/Define/SiteDefine/UserWebPart" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0" />
+    </item>
+  </serverVariables>
+  <form>
+    <item name="RadScriptManager1_TSM">
+      <value string=";;System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35:en-US:c9cbdec3-c810-4e87-846c-fb25a7c08002:ea597d4b:b25378d2;Telerik.Web.UI, Version=2012.2.607.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4:en-US:08ccafd1-fc13-48c0-b85b-a439ce2f6884:16e4e7cd:874f8ea2:f7645509:24ee1bba:dc7e0bd:63b115ed:1569bb5f:1c565fc:8547b8b2:30f1f089:f46195d3:19620875:490a9d4e" />
+    </item>
+    <item name="__EVENTTARGET">
+      <value string="" />
+    </item>
+    <item name="__EVENTARGUMENT">
+      <value string="" />
+    </item>
+    <item name="__VIEWSTATE">
+      <value string="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ZXJpay5XZWIuVUkuRWRpdG9yTGluaywgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4yLjYwNy40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0DxYBZhYBBXJUZWxlcmlrLldlYi5VSS5FZGl0b3JMaW5rLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDEyLjIuNjA3LjQwLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTEyMWZhZTc4MTY1YmEzZDQUKwACZGQUKwACZGQUKwACZGQUKwACZGQUKwACZGQPFgZmZmZmZmYWAQVyVGVsZXJpay5XZWIuVUkuRWRpdG9yTGluaywgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4yLjYwNy40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0FCsAAmQQFgNmAgECAhYDFCsAAmRkFCsAAmRkFCsAAmRkDxYDZmZmFgEFclRlbGVyaWsuV2ViLlVJLkVkaXRvckxpbmssIFRlbGVyaWsuV2ViLlVJLCBWZXJzaW9uPTIwMTIuMi42MDcuNDAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MTIxZmFlNzgxNjViYTNkNBQrAAJkEBYDZgIBAgIWAxQrAAJkZBQrAAJkZBQrAAJkZA8WA2ZmZhYBBXJUZWxlcmlrLldlYi5VSS5FZGl0b3JMaW5rLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDEyLjIuNjA3LjQwLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTEyMWZhZTc4MTY1YmEzZDQPFgNmZmYWAQVyVGVsZXJpay5XZWIuVUkuRWRpdG9yTGluaywgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4yLjYwNy40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0ZGQQFgRmAgECAgIDFgQPZGQPZGQPZGQPZGQPFgRmZmZmFgEFdFRlbGVyaWsuV2ViLlVJLkVkaXRvck1vZHVsZSwgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4yLjYwNy40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0ZGQQFgAWABYAZGQQFgVmAgECAgIDAgQWBRQrAANkDxQrAAwPFgQeBFR5cGULKXZUZWxlcmlrLldlYi5VSS5FZGl0b3JUb29sVHlwZSwgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4yLjYwNy40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0AR4ETmFtZQUMU3R5bGVCdWlsZGVyZA8WAh8HCysECGQPFgQfBwsrBAEfCAUKSW5zZXJ0TGlua2QPFgQfBwsrBAEfCAUQSW5zZXJ0VGFibGVMaWdodGQPFgIfBwsrBAhkFCsAAg8WAh8IBRFJbnNlcnRGb3JtRWxlbWVudBYCHglzaXpldG9maXQFBHRydWUPFCsACw8WAh8IBQ5JbnNlcnRGb3JtRm9ybWQPFgIfCAUQSW5zZXJ0Rm9ybUJ1dHRvbmQPFgIfCAUSSW5zZXJ0Rm9ybUNoZWNrYm94ZA8WAh8IBRBJbnNlcnRGb3JtSGlkZGVuZA8WAh8IBRJJbnNlcnRGb3JtUGFzc3dvcmRkDxYCHwgFD0luc2VydEZvcm1SYWRpb2QPFgIfCAUPSW5zZXJ0Rm9ybVJlc2V0ZA8WAh8IBRBJbnNlcnRGb3JtU2VsZWN0ZA8WAh8IBRBJbnNlcnRGb3JtU3VibWl0ZA8WAh8IBRJJbnNlcnRGb3JtVGV4dGFyZWFkDxYCHwgFDkluc2VydEZvcm1UZXh0ZBQrAQtmZmZmZmZmZmZmZg8WBB8HCysEAR8IBQ5JbnNlcnRGb3JtRm9ybWQPFgIfBwsrBAhkDxYGHwcLKwQBHwgFDEltYWdlTWFuYWdlch4IU2hvcnRDdXQFBkNUUkwrTWQPFgQfBwsrBAEfCAUPRG9jdW1lbnRNYW5hZ2VyZA8WBB8HCysEAR8IBRJTZXRJbWFnZVByb3BlcnRpZXNkDxYEHwcLKwQBHwgFDkltYWdlTWFwRGlhbG9nZBQrAQxmZmZmZgICZmZmZmZmZBQrAANkDxQrABIUKwACDxYCHwgFC0luc2VydFRhYmxlFgYeDnBvcHVwY2xhc3NuYW1lBQ1yZUluc2VydFRhYmxlHgtpdGVtc3BlcnJvdwUBOB8JBQR0cnVlDxQrAA0PFgIfCAULVGFibGVXaXphcmRkDxYCHwgFDkluc2VydFJvd0Fib3ZlZA8WAh8IBQ5JbnNlcnRSb3dCZWxvd2QPFgIfCAUJRGVsZXRlUm93ZA8WAh8IBRBJbnNlcnRDb2x1bW5MZWZ0ZA8WAh8IBRFJbnNlcnRDb2x1bW5SaWdodGQPFgIfCAUMRGVsZXRlQ29sdW1uZA8WAh8IBQxNZXJnZUNvbHVtbnNkDxYCHwgFCU1lcmdlUm93c2QPFgIfCAUTU3BsaXRDZWxsSG9yaXpvbnRhbGQPFgIfCAUJU3BsaXRDZWxsZA8WAh8IBQpEZWxldGVDZWxsZA8WAh8IBRJTZXRUYWJsZVByb3BlcnRpZXNkFCsBDWZmZmZmZmZmZmZmZmYPFgQfBwsrBAEfCAUOSW5zZXJ0Um93QWJvdmVkDxYEHwcLKwQBHwgFDkluc2VydFJvd0JlbG93ZA8WBB8HCysEAR8IBQlEZWxldGVSb3dkDxYEHwcLKwQBHwgFEEluc2VydENvbHVtbkxlZnRkDxYEHwcLKwQBHwgFEUluc2VydENvbHVtblJpZ2h0ZA8WBB8HCysEAR8IBQxEZWxldGVDb2x1bW5kDxYCHwcLKwQIZA8WBB8HCysEAR8IBQxNZXJnZUNvbHVtbnNkDxYEHwcLKwQBHwgFCU1lcmdlUm93c2QPFgIfBwsrBAhkDxYEHwcLKwQBHwgFCVNwbGl0Q2VsbGQPFgQfBwsrBAEfCAUTU3BsaXRDZWxsSG9yaXpvbnRhbGQPFgQfBwsrBAEfCAUKRGVsZXRlQ2VsbGQPFgQfBwsrBAEfCAURU2V0Q2VsbFByb3BlcnRpZXNkDxYEHwcLKwQBHwgFElNldFRhYmxlUHJvcGVydGllc2QPFgIfBwsrBAhkDxYEHwcLKwQEHwgFDEluc2VydFN5bWJvbBYGHwwFATgfCQUEdHJ1ZR8LBQ5yZUluc2VydFN5bWJvbBQrARICAmZmZmZmZmZmZmZmZmZmZmZmZBQrAANkEBYLZgIBAgICAwIEAgUCBgIHAggCCQIKFgsPFgIfBwsrBAQWAh8LBQpyZVVuZG9SZWRvDxYCHwcLKwQEFgIfCwUKcmVVbmRvUmVkbw9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZBYLZmZmZmZmZmZmZmZkFCsAA2QQFhNmAgECAgIDAgQCBQIGAgcCCAIJAgoCCwIMAg0CDgIPAhACEQISFhMPZGQPZGQPZGQPZGQPFgIfBwsrBAQWBh8LBQ1yZUNvbG9yUGlja2VyHwwFAjEwHwkFBHRydWUPFgIfBwsrBAQWBh8LBQ1yZUNvbG9yUGlja2VyHwwFAjEwHwkFBHRydWUPZGQPZGQPZGQPZGQPZGQPZGQPZGQPZGQPZGQPZGQPZGQPZGQPZGQWE2ZmZmZmZmZmZmZmZmZmZmZmZmZkFCsAA2QQFgZmAgECAgIDAgQCBRYGDxYCHwcLKwQCZA8WAh8HCysEAhYEHgpwb3B1cHdpZHRoBQQ2MHB4HwkFBHRydWUPFgIfBwsrBAIWAh8NBQQ2MHB4DxYCHwcLKwQCZA8WAh8HCysEAmQPFgIfBwsrBAIWAh8NBQQ2MHB4FgZmZmZmZmZkDxYFZmZmZmYWAQV3VGVsZXJpay5XZWIuVUkuRWRpdG9yVG9vbEdyb3VwLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDEyLjIuNjA3LjQwLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTEyMWZhZTc4MTY1YmEzZDRkFgZmDw8WAh8BZ2RkAgEPDxYCHwFnZBYCZg8UKwADDxYGHwFoHhVTaG93Q29udGVudER1cmluZ0xvYWRoHg5EZXN0cm95T25DbG9zZWhkZGRkAgIPZBYCZg8UKwACZGRkAhcPPCsAEQMADxYEHgtfIURhdGFCb3VuZGceC18hSXRlbUNvdW50AgNkARAWABYAFgAMFCsAABYCZg9kFggCAQ9kFghmD2QWAgIBDw8WAh4PQ29tbWFuZEFyZ3VtZW50BQxPREFMSnpraGFscz1kZAIBD2QWAgIBDxYCHgRUZXh0BQNkZmJkAgIPZBYCAgEPEA8WAh4HQ2hlY2tlZGdkZGRkAgMPZBYCAgEPDxYCHxIFDE9EQUxKemtoYWxzPWRkAgIPZBYIZg9kFgICAQ8PFgIfEgUMRUpRdm9ma2JkSlE9ZGQCAQ9kFgICAQ8WAh8TBQbYqtiz2KpkAgIPZBYCAgEPEA8WAh8UZ2RkZGQCAw9kFgICAQ8PFgIfEgUMRUpRdm9ma2JkSlE9ZGQCAw9kFghmD2QWAgIBDw8WAh8SBQx6dnpDeHZaaUlpbz1kZAIBD2QWAgIBDxYCHxMFBtiq2LPYqmQCAg9kFgICAQ8QDxYCHxRnZGRkZAIDD2QWAgIBDw8WAh8SBQx6dnpDeHZaaUlpbz1kZAIEDw8WAh4HVmlzaWJsZWhkZBgCBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WCQUxY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSR0eHRIdG1sX2NvbnRlbnRfcGVyc2lhbgU+Y3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSR0eHRIdG1sX2NvbnRlbnRfcGVyc2lhbiRkaWFsb2dPcGVuZXIFRWN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkdHh0SHRtbF9jb250ZW50X3BlcnNpYW4kZGlhbG9nT3BlbmVyJFdpbmRvdwU0Y3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRncmlkdmlldzEkY3RsMDIkaW1nYnRuRWRpdAU2Y3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRncmlkdmlldzEkY3RsMDIkaW1nYnRuRGVsZXRlBTRjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGdyaWR2aWV3MSRjdGwwMyRpbWdidG5FZGl0BTZjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGdyaWR2aWV3MSRjdGwwMyRpbWdidG5EZWxldGUFNGN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkZ3JpZHZpZXcxJGN0bDA0JGltZ2J0bkVkaXQFNmN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkZ3JpZHZpZXcxJGN0bDA0JGltZ2J0bkRlbGV0ZQUjY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRncmlkdmlldzEPPCsADAIDAgIIAgFkJ+2cMvybhgogw6t9j9NEYFi4ueo=" />
+    </item>
+    <item name="__SCROLLPOSITIONX">
+      <value string="0" />
+    </item>
+    <item name="__SCROLLPOSITIONY">
+      <value string="102" />
+    </item>
+    <item name="ctl00$ContentPlaceHolder1$txtHeader_persian">
+      <value string="تست" />
+    </item>
+    <item name="ctl00_ContentPlaceHolder1_txtHtml_content_persian_dialogOpener_Window_ClientState">
+      <value string="" />
+    </item>
+    <item name="ctl00_ContentPlaceHolder1_txtHtml_content_persian_dialogOpener_ClientState">
+      <value string="" />
+    </item>
+    <item name="ctl00$ContentPlaceHolder1$txtHtml_content_persian">
+      <value string="%3cspan style%3d%22font-size%3a 18px%3b color%3a %23c00000%3b%22%3eمکيسبت شمنسيب مشسينبمکينبلمسکنيب مکسينبسکمينبسيمکبل سيکمبن شمکسنيتبشمسکين شسمکيبت شکمسيبن شسي%3cbr /%3e&#xD;&#xA;ب شسيتنشسيمبنت شسيکمبت شسيمبنت شسکيمبت شسي%3cbr /%3e&#xD;&#xA;ب شسيگبمن تشسيمبگنتش سيکمبنتش سکميبنت شسکميبنت شسميکبنت شسکميبت شسميبن تشس%3cbr /%3e&#xD;&#xA;يب شسگيبنت شسمکينت مبتن شکسميبت شگمسيبت گينبتش گمسيب شکمسيبت شکسميبت سبنمسگبنمت شسکيمبن تشسيب%3cbr /%3e&#xD;&#xA;%26nbsp%3bشسيبکم نشتيبکم نشسيبمکشنستبيم شسنکتبشسبتنشسميبنت شسکميبنت شسيگمنتش سيگمنت شسيبگن تشسگيبنت ش%3cbr /%3e&#xD;&#xA;سيب شسگيبت نشکسمين شمسينب شمکسيب%3c/span%3e" />
+    </item>
+    <item name="ctl00_ContentPlaceHolder1_txtHtml_content_persian_ClientState">
+      <value string="" />
+    </item>
+    <item name="ctl00$ContentPlaceHolder1$btnSave">
+      <value string="ذخیره تغییرات" />
+    </item>
+    <item name="ctl00$ContentPlaceHolder1$WebPartId">
+      <value string="zvzCxvZiIio=" />
+    </item>
+  </form>
+  <cookies>
+    <item name="SavedUserName">
+      <value string="arvand" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="o2tefb3xhhxbosjkr1n2r0nn" />
+    </item>
+    <item name="LoginCook">
+      <value string="988088D70F46C60A58B9DA9C5E63A23D56A96D4F94E265A3E98F29CBD72193798DEDDE84D164B0AA5CE3A599AD9302BFC2FFCDE81BE2D0A6166798218A6E50D4C4C2B30BA598ED2C47E824DCEF6F08C9731B3CB0E1A941E003C85E26621ADEF3914A5E5707900579880902E05AF3F1DA132036887E00CBCA02F529BE8B44C1750F556C7B" />
+    </item>
+  </cookies>
+</error>

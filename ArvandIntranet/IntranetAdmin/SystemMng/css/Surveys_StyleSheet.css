@@ -1,0 +1,76 @@
+﻿input[type="text"],textarea
+{
+    width: 90%;
+    font: 11px tahoma;
+    color: #000000;
+    border: 1px solid #d0d0d0;
+    height: 20px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -border-radius: 3px;
+}
+input[type="text"]:hover,textarea:hover
+{
+    border: 1px solid #4498ff;
+     color: #2c71ff;
+}
+input[type="text"]:focus,textarea:focus
+{
+    border: 1px solid #4498ff;
+    background: #e1eeff;
+    -moz-box-shadow: 0px 0px 6px #a0caff;
+    -webkit-box-shadow: 0px 0px 6px #a0caff;
+    -box-shadow: 0px 0px 6px #a0caff;
+     color: #2c71ff;
+}
+.sur-tbl-h
+{
+background-color: #4F81BD;
+    color: white;
+    cursor: pointer;
+    font-family: Tahoma;
+    font-size: 11px;
+    font-weight: normal;
+    height: 22px;
+    line-height: 22px;
+    padding-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    
+}
+.lbl-top
+{
+    border-bottom: 1px dotted #CDCDCD;
+    border-top: 1px dotted #CDCDCD;
+    color: #676767;
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.btn-act
+{
+    color: #003366;
+    font-family: Tahoma;
+    font-size: 12px;
+    background-color: #F4F3F2;
+    border: 1px solid #000000;
+    padding: 6px;
+    text-align: right;
+    background-position: 2% 40%;
+    padding-left: 70px;
+    background-repeat: no-repeat;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -border-radius: 4px;
+}
+.act-add
+{
+    background-image: url('../../Images/icon/edit_add.png');
+}
+.act-clear
+{
+    background-image: url('../../Images/icon/refresh.png');
+}

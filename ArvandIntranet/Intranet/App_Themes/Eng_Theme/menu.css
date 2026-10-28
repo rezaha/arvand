@@ -1,0 +1,110 @@
+﻿html,  div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label,
+table, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	list-style:none;
+}
+.top-menu {
+	margin:0 auto 10px auto;
+    width:100%;
+}
+
+.top-menu .right {
+	width:8px;
+}
+.top-menu .left {
+	width:8px;
+}
+.top-menu ul{
+    direction:ltr;
+}
+.top-menu ul li{
+	float:left;
+	font-family: BYekan, Tahoma;
+	font-size:11px;
+}
+.top-menu ul li:hover{
+	background:url(../../images/top-menu-hover.png) repeat-x;
+}
+.top-menu ul li a{
+	padding:7px 10px 9px 10px;
+	display:block;
+	color:#fff;
+    text-decoration:none;
+}
+.top-menu ul li:hover > a{
+	color:#fff;
+
+}
+.top-menu ul ul{
+    visibility:hidden;
+	opacity:0.0;
+	position:absolute;
+	z-index:999;
+	height:auto;
+    width:180px;
+	padding-top:-5px;
+	background:#3b3b3b;
+    transition:all 0.6s ease-out;
+    -moz-transition:all 0.6s ease-out;
+    -webkit-transition:all 0.6s ease-out;
+    -o-transition:all 0.6s ease-out;
+    margin-right:-16px;
+}
+.top-menu ul li:hover > ul{
+    margin-right:0;
+	visibility:visible;
+    opacity:1.0;
+    transition:all 0.4s ease-in;
+    -moz-transition:all 0.4s ease-in;
+    -webkit-transition:all 0.4s ease-in;
+    -o-transition:all 0.4s ease-in;
+    box-shadow:0px 0px 4px #868686;
+    -moz-box-shadow:0px 0px 4px #868686;
+    -webkit-box-shadow:0px 0px 4px #868686;
+    border-bottom-right-radius:6px;
+    border-bottom-left-radius:6px;
+    -moz-border-radius-bottomleft:6px;
+    -moz-border-radius-bottomright:6px;
+    -webkit-border-bottom-left-radius:6px;
+    -webkit-border-bottom-right-radius:6px;
+}
+.top-menu ul ul li{
+	float:none;
+	height:auto;
+	font-family:tahoma;
+	font-size:11px;
+	border:none;
+	margin:6px 4px 4px 0px;
+	background:#4e4e4e;
+}
+.top-menu ul ul li:hover{
+	background:#626262;
+}
+.top-menu ul ul li a{
+	padding:5px 5px 5px 10px;
+	border:none;
+	display:block;
+	color:#fff;
+}
+.top-menu ul ul li:hover > a{
+	padding:5px 5px 5px 10px;
+	border:none;
+	color:#fff;
+}
+.top-menu ul ul ul{
+	width:100%;
+	right:100%;
+	margin-top:-30px;
+    border-radius:6px;
+}

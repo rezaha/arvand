@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item
+		source="ImageUpload/Division/80e2513e-7874-47d4-bc05-e3c27eee6de4.jpg"
+		thumbnail="ImageUpload/Division/80e2513e-7874-47d4-bc05-e3c27eee6de4.jpg"
+		category="Ocean">
+    <title>Caption 1</title>
+    <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae nulla neque. </description>
+  </item>
+  <item
+		source="ImageUpload/Gallery/gallery1/DSC_1413.jpg"
+		thumbnail="ImageUpload/Gallery/gallery1/DSC_1413.jpg"
+		category="Ocean">
+    <title>Caption 1</title>
+    <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae nulla neque. </description>
+  </item>
+</items>

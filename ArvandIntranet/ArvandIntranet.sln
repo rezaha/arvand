@@ -1,0 +1,114 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37710.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArvandIntranetDomainClasses", "DaneshArvandIntranetDomainClasses\ArvandIntranetDomainClasses.csproj", "{7E7B959C-ECA4-4516-A3B7-FCF73ACF07B3}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Intranet", "http://localhost:4140", "{C8B411C4-1700-498D-91C4-67B20BA8CA67}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		ProjectReferences = "{b5f40c37-8c3a-409d-beec-f1f72c3e3976}|ArvandIntranetCommonLibrary.dll;{7e7b959c-eca4-4516-a3b7-fcf73acf07b3}|ArvandIntranetDomainClasses.dll;{a5f5d42c-91b2-4ccc-9901-a8044a7a0dbc}|ArvandIntranetDataLayer.dll;{3d825b90-8fc2-490d-a05f-acfa26b560fd}|ArvandIntranetServiceLayer.dll;{481f3c35-0af8-4937-9c58-1943907e93b2}|SecurityConfig.dll;{f36b5652-fb23-4599-a650-b4b70cdb17df}|Arvand.Common.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_4140"
+		Debug.AspNetCompiler.PhysicalPath = "Intranet\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4140\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_4140"
+		Release.AspNetCompiler.PhysicalPath = "Intranet\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4140\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Intranet\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ArvandIntranetDataLayer", "ArvandIntranetDataLayer\ArvandIntranetDataLayer.vbproj", "{A5F5D42C-91B2-4CCC-9901-A8044A7A0DBC}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ArvandIntranetServiceLayer", "ArvandIntranetServiceLayer\ArvandIntranetServiceLayer.vbproj", "{3D825B90-8FC2-490D-A05F-ACFA26B560FD}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ArvandIntranetCommonLibrary", "ArvandIntranetCommonLibrary\ArvandIntranetCommonLibrary.vbproj", "{B5F40C37-8C3A-409D-BEEC-F1F72C3E3976}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityConfig", "SecurityConfig\SecurityConfig.csproj", "{481F3C35-0AF8-4937-9C58-1943907E93B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arvand.Common", "Arvand.Common\Arvand.Common.csproj", "{F36B5652-FB23-4599-A650-B4B70CDB17DF}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "IntranetAdmin", "http://localhost:8135", "{977FA707-957C-4957-B4B7-E689471546C0}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		ProjectReferences = "{3d825b90-8fc2-490d-a05f-acfa26b560fd}|ArvandIntranetServiceLayer.dll;{B5F40C37-8C3A-409D-BEEC-F1F72C3E3976}|ArvandIntranetCommonLibrary.dll;{A5F5D42C-91B2-4CCC-9901-A8044A7A0DBC}|ArvandIntranetDataLayer.dll;{7E7B959C-ECA4-4516-A3B7-FCF73ACF07B3}|ArvandIntranetDomainClasses.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_8135"
+		Debug.AspNetCompiler.PhysicalPath = "IntranetAdmin\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8135\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_8135"
+		Release.AspNetCompiler.PhysicalPath = "IntranetAdmin\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8135\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "IntranetAdmin\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E7B959C-ECA4-4516-A3B7-FCF73ACF07B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E7B959C-ECA4-4516-A3B7-FCF73ACF07B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E7B959C-ECA4-4516-A3B7-FCF73ACF07B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E7B959C-ECA4-4516-A3B7-FCF73ACF07B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8B411C4-1700-498D-91C4-67B20BA8CA67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8B411C4-1700-498D-91C4-67B20BA8CA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8B411C4-1700-498D-91C4-67B20BA8CA67}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8B411C4-1700-498D-91C4-67B20BA8CA67}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{A5F5D42C-91B2-4CCC-9901-A8044A7A0DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5F5D42C-91B2-4CCC-9901-A8044A7A0DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5F5D42C-91B2-4CCC-9901-A8044A7A0DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5F5D42C-91B2-4CCC-9901-A8044A7A0DBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D825B90-8FC2-490D-A05F-ACFA26B560FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D825B90-8FC2-490D-A05F-ACFA26B560FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D825B90-8FC2-490D-A05F-ACFA26B560FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D825B90-8FC2-490D-A05F-ACFA26B560FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5F40C37-8C3A-409D-BEEC-F1F72C3E3976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5F40C37-8C3A-409D-BEEC-F1F72C3E3976}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5F40C37-8C3A-409D-BEEC-F1F72C3E3976}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5F40C37-8C3A-409D-BEEC-F1F72C3E3976}.Release|Any CPU.Build.0 = Release|Any CPU
+		{481F3C35-0AF8-4937-9C58-1943907E93B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{481F3C35-0AF8-4937-9C58-1943907E93B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{481F3C35-0AF8-4937-9C58-1943907E93B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{481F3C35-0AF8-4937-9C58-1943907E93B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36B5652-FB23-4599-A650-B4B70CDB17DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36B5652-FB23-4599-A650-B4B70CDB17DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36B5652-FB23-4599-A650-B4B70CDB17DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36B5652-FB23-4599-A650-B4B70CDB17DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{977FA707-957C-4957-B4B7-E689471546C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{977FA707-957C-4957-B4B7-E689471546C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{977FA707-957C-4957-B4B7-E689471546C0}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{977FA707-957C-4957-B4B7-E689471546C0}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

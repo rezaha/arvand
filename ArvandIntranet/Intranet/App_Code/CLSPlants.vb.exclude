@@ -1,0 +1,168 @@
+﻿Imports System.Collections.Generic
+Imports System.Data.SqlClient
+Imports System
+Imports System.Data
+
+Public Class CLSPlantsItem
+    Public Property Company As New CLSCompaniesItem
+    Public Property Plant_id As Integer
+    Public Property Name_persian As String
+    Public Property Name_latin As String
+    Public Property Plant_abbr As String
+    Public Property Plant_order As Integer
+    Public Property Active As Boolean
+End Class
+Public Class CLSPlants
+    Public Function GetPLANTS(Optional ByVal CoId As Integer = 0) As List(Of CLSPlantsItem)
+        Dim cn As New SqlConnection(SiteHelper.GetConnectionString)
+        Dim cmd As New SqlCommand("GET_PLANTS", cn) With {.CommandType = CommandType.StoredProcedure}
+        If CoId <> 0 Then
+            cmd.Parameters.AddWithValue("@CoId", CoId)
+        End If
+        Dim retlist As New List(Of CLSPlantsItem)()
+        Dim reader As SqlDataReader = Nothing
+        Try
+            cn.Open()
+            reader = cmd.ExecuteReader()
+            If reader.HasRows Then
+                Dim row As Integer = 1
+                Do While reader.Read()
+                    Dim item As New CLSPlantsItem()
+                    item.Company.Co_id = Integer.Parse(reader("CO_ID").ToString())
+                    item.Company.Name_persian = reader("NAME_PERSIAN").ToString()
+                    item.Company.Name_latin = reader("NAME_LATIN").ToString()
+                    item.Plant_id = Integer.Parse(reader("PLANT_ID").ToString())
+                    item.Name_persian = reader("PLANT_NAME").ToString()
+                    item.Name_latin = reader("PLANT_ENAME").ToString()
+                    item.Plant_abbr = reader("Plant_abbr").ToString()
+                    item.Plant_order = Integer.Parse(reader("Plant_order").ToString())
+                    item.Active = IIf(reader("Active").ToString() = "1", True, False)
+                    retlist.Add(item)
+                Loop
+            End If
+        Catch e1 As SqlException
+            Throw
+        Catch e2 As Exception
+            Throw
+        Finally
+            If reader IsNot Nothing Then
+                reader.Close()
+            End If
+            If cn.State <> ConnectionState.Closed Then
+                cn.Close()
+                cmd.Dispose()
+            End If
+        End Try
+        Return retlist
+    End Function
+
+    Public Function GetPLANT(ByVal plantId As Integer) As CLSPlantsItem
+        Dim cn As New SqlConnection(SiteHelper.GetConnectionString)
+        Dim cmd As New SqlCommand("GET_PLANTS", cn) With {.CommandType = CommandType.StoredProcedure}
+        cmd.Parameters.AddWithValue("@PlantId", plantId)
+        Dim retField As New CLSPlantsItem
+        Dim reader As SqlDataReader = Nothing
+        Try
+            cn.Open()
+            reader = cmd.ExecuteReader()
+            If reader.HasRows Then
+                Dim row As Integer = 1
+                reader.Read()
+                retField.Company.Co_id = Integer.Parse(reader("CO_ID").ToString())
+                retField.Company.Name_persian = reader("NAME_PERSIAN").ToString()
+                retField.Company.Name_latin = reader("NAME_LATIN").ToString()
+                retField.Plant_id = Integer.Parse(reader("PLANT_ID").ToString())
+                retField.Name_persian = reader("PLANT_NAME").ToString()
+                retField.Name_latin = reader("PLANT_ENAME").ToString()
+                retField.Plant_abbr = reader("Plant_abbr").ToString()
+                retField.Plant_order = Integer.Parse(reader("Plant_order").ToString())
+                retField.Active = IIf(reader("Active").ToString() = "1", True, False)
+            End If
+        Catch e1 As SqlException
+            Throw
+        Catch e2 As Exception
+            Throw
+        Finally
+            If reader IsNot Nothing Then
+                reader.Close()
+            End If
+            If cn.State <> ConnectionState.Closed Then
+                cn.Close()
+                cmd.Dispose()
+            End If
+        End Try
+        Return retField
+    End Function
+
+    Public Function InsertPLANTS(ByVal item As CLSPlantsItem) As Boolean
+        Dim cn As New SqlConnection(SiteHelper.GetConnectionString)
+        Dim cmd As New SqlCommand("INSERT_PLANTS", cn) With {.CommandType = CommandType.StoredProcedure}
+        cmd.Parameters.AddWithValue("@Co_id", item.Company.Co_id)
+        cmd.Parameters.AddWithValue("@Name_persian", item.Name_persian)
+        cmd.Parameters.AddWithValue("@Name_latin", item.Name_latin)
+        cmd.Parameters.AddWithValue("@Plant_abbr", item.Plant_abbr)
+        cmd.Parameters.AddWithValue("@Plant_order", item.Plant_order)
+        cmd.Parameters.AddWithValue("@Active", item.Active)
+        Dim rowEfect As Integer = 0
+        Try
+            cn.Open()
+            rowEfect = cmd.ExecuteNonQuery()
+        Catch e1 As SqlException
+            Throw
+        Catch e2 As Exception
+            Throw
+        Finally
+            If cn.State <> ConnectionState.Closed Then
+                cn.Close()
+                cmd.Dispose()
+            End If
+        End Try
+        Return rowEfect > 0
+    End Function
+    Public Function DeletePLANTS(ByVal item As Integer) As Boolean
+        Dim cn As New SqlConnection(SiteHelper.GetConnectionString)
+        Dim cmd As New SqlCommand("DELETE_PLANTS", cn) With {.CommandType = CommandType.StoredProcedure}
+        cmd.Parameters.AddWithValue("@PlantId", item)
+        Dim rowEfect As Integer = 0
+        Try
+            cn.Open()
+            rowEfect = cmd.ExecuteNonQuery()
+        Catch e1 As SqlException
+            Throw
+        Catch e2 As Exception
+            Throw
+        Finally
+            If cn.State <> ConnectionState.Closed Then
+                cn.Close()
+                cmd.Dispose()
+            End If
+        End Try
+        Return rowEfect > 0
+    End Function
+    Public Function UpdatePLANTS(ByVal item As CLSPlantsItem) As Boolean
+        Dim cn As New SqlConnection(SiteHelper.GetConnectionString)
+        Dim cmd As New SqlCommand("UPDATE_PLANTS", cn) With {.CommandType = CommandType.StoredProcedure}
+        cmd.Parameters.AddWithValue("@Co_id", item.Company.Co_id)
+        cmd.Parameters.AddWithValue("@Plant_id", item.Plant_id)
+        cmd.Parameters.AddWithValue("@Name_persian", item.Name_persian)
+        cmd.Parameters.AddWithValue("@Name_latin", item.Name_latin)
+        cmd.Parameters.AddWithValue("@Plant_abbr", item.Plant_abbr)
+        cmd.Parameters.AddWithValue("@Plant_order", item.Plant_order)
+        cmd.Parameters.AddWithValue("@Active", item.Active)
+        Dim rowEfect As Integer = 0
+        Try
+            cn.Open()
+            rowEfect = cmd.ExecuteNonQuery()
+        Catch e1 As SqlException
+            Throw
+        Catch e2 As Exception
+            Throw
+        Finally
+            If cn.State <> ConnectionState.Closed Then
+                cn.Close()
+                cmd.Dispose()
+            End If
+        End Try
+        Return rowEfect > 0
+    End Function
+End Class

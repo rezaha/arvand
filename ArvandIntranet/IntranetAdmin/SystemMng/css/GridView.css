@@ -1,0 +1,120 @@
+﻿.grid
+{
+    font-family: tahoma;
+    font-size: 9pt;
+    border: 1px solid #000000;
+    width: 100%;
+    color: #003300;
+}
+
+.grid th {
+    background: #f3f2f2;
+    height: 20px;
+    color: #666666;
+    font-family: Tahoma;
+    font-size: 11px;
+    font-style: normal;
+}
+
+.grid th:hover
+{
+    background: #ffefc3;
+}
+
+.grid th a
+{
+    color: #333333;
+    text-decoration: none;
+    display: block;
+    padding: 3px;
+}
+
+.grid th a:hover
+{
+    color: #333333;
+    text-decoration: none;
+    display: block;
+    padding: 3px;
+}
+
+.grid td
+{
+    color: #333333;
+    padding: 4px 10px 4px 10px;
+}
+
+.grid .altrow
+{
+    background-color: #bae8fc;
+}
+
+.grid .row
+{
+    background-color: #fff;
+}
+
+.grid .row:hover, .altrow:hover
+{
+    background: #ffefc3;
+}
+
+.grid .selectedrow
+{
+    background-color: #ffb882;
+    font-style: italic;
+    font-weight: bold;
+    border: 1px solid #006600;
+}
+
+.grid .rownum
+{
+    text-align: center;
+    font-weight: bold;
+    color: #333333;
+    width: 50px;
+    white-space: nowrap;
+}
+
+.grid .rownumth
+{
+    text-align: center;
+    white-space: nowrap;
+    padding-right: 8px;
+}
+
+.grid .rownumth:hover
+{
+    text-align: center;
+    white-space: nowrap;
+}
+
+.grid .pager
+{
+    background-image: url('../Images/grid/pager_bg.gif');
+    background-color: #C6C3C6;
+}
+
+.grid .pager td
+{
+    border-style: none;
+}
+
+.grid .pager a
+{
+    text-decoration: none;
+}
+
+.grid .footerrow
+{
+    background-color: #FF9900;
+}
+
+.noneGrid
+{
+    border-style: none;
+}
+
+.grid .ltrrow
+{
+    direction: ltr;
+}

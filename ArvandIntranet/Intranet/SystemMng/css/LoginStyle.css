@@ -1,0 +1,104 @@
+﻿body
+{
+    direction: rtl;
+    font: 11px tahoma;
+}
+.Login_bg
+{
+    margin: auto;
+    margin-right: 32%;
+    height: 463px;
+    width: 797px;
+    background-image: url('../Images/LoginImg/main_img.jpg');
+    background-repeat: no-repeat;
+    padding-top: 255px;
+}
+#notification
+{
+    font: 11px tahoma;
+    width: 170px;
+    height: 50px;
+    float: right;
+    padding-right: 20px;
+    color: #161616;
+    line-height: 20px;
+}
+.textbox
+{
+    margin-top: 3px;
+    border: 1px solid #d4d4d4;
+    width: 70%;
+    text-align:left;
+    direction:ltr;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.textbox:focus
+{
+    margin-top: 3px;
+    border: 1px solid #d4d4d4;
+    width: 70%;
+    -moz-box-shadow: 1px 1px 5px #ccc;
+    -webkit-box-shadow: 1px 1px 5px #ccc;
+    box-shadow: 1px 1px 10px #ccc;
+    background: #fff286;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+}
+.textbox:hover
+{
+    margin-top: 3px;
+    border: 1px solid #b1b1b1;
+    width: 70%;
+    -moz-box-shadow: 1px 1px 5px #ccc;
+    -webkit-box-shadow: 1px 1px 5px #ccc;
+    box-shadow: 1px 1px 10px #ccc;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+}
+.login_title
+{
+    color: #ff6648;
+    font-weight: bold;
+    text-align: right;
+}
+.login_btn
+{
+    padding-left: 42px;
+    text-align: left;
+}
+.login_table
+{
+    float: right;
+    margin-right: 57px;
+    font-family:Tahoma;
+
+}
+.login_title_ico
+{
+    text-align: left;
+}
+.userNote
+{
+    padding:5px 25px 5px 5px;
+    padding-right: 25px;
+    background: url('../Images/LoginImg/userNote.png') no-repeat right;
+    color: Red;
+}
+.Login_error
+{
+    background-image: url('../Images/LoginImg/error.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 17px;
+    padding-top: 4px;
+    color: red;
+    min-height:30px;
+}

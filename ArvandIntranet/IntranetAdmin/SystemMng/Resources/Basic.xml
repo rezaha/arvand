@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <tools name="MainToolbar">
+    <tool name="Crop" togglebutton="true" />
+    <tool separator="true"/>
+    <tool name="RotateRight" />
+    <tool name="RotateLeft" />
+    <tool name="FlipVertical" />
+    <tool name="FlipHorizontal" />
+    <tool name="ZoomIn" />
+    <tool name="ZoomOut" />
+    <tool separator="true"/>
+    <tool name="Reset" />
+  </tools>
+</root>
+
+

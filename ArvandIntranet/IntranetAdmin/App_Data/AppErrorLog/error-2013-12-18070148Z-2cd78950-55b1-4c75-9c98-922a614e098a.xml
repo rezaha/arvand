@@ -1,0 +1,218 @@
+﻿<error errorId="2cd78950-55b1-4c75-9c98-922a614e098a" application="/LM/W3SVC/4/ROOT" host="DAN3-PC" type="System.Data.SqlClient.SqlException" message="The DELETE statement conflicted with the REFERENCE constraint &quot;FK_PAGES_WEBPARTS_WEBPARTS&quot;. The conflict occurred in database &quot;ArvandPC&quot;, table &quot;dbo.PAGES_WEBPARTS&quot;, column 'WEBPART_ID'.&#xD;&#xA;The statement has been terminated." source=".Net SqlClient Data Provider" detail="System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---&gt; System.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint &quot;FK_PAGES_WEBPARTS_WEBPARTS&quot;. The conflict occurred in database &quot;ArvandPC&quot;, table &quot;dbo.PAGES_WEBPARTS&quot;, column 'WEBPART_ID'.&#xD;&#xA;The statement has been terminated.&#xD;&#xA;   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)&#xD;&#xA;   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)&#xD;&#xA;   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)&#xD;&#xA;   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)&#xD;&#xA;   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)&#xD;&#xA;   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, SqlDataReader ds)&#xD;&#xA;   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean asyncWrite)&#xD;&#xA;   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)&#xD;&#xA;   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()&#xD;&#xA;   at CLSWebparts.DeleteWEBPARTS(Int32 item) in F:\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\App_Code\CLSWebparts.vb:line 227&#xD;&#xA;   at SystemMng_Define_SiteDefine_UserWebPart.GridView1_RowCommand(Object sender, GridViewCommandEventArgs e) in F:\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\SystemMng\Define\SiteDefine\UserWebPart.aspx.vb:line 82&#xD;&#xA;   at System.Web.UI.WebControls.GridView.OnRowCommand(GridViewCommandEventArgs e)&#xD;&#xA;   at System.Web.UI.WebControls.GridView.HandleEvent(EventArgs e, Boolean causesValidation, String validationGroup)&#xD;&#xA;   at System.Web.UI.WebControls.GridView.OnBubbleEvent(Object source, EventArgs e)&#xD;&#xA;   at System.Web.UI.Control.RaiseBubbleEvent(Object source, EventArgs args)&#xD;&#xA;   at System.Web.UI.WebControls.GridViewRow.OnBubbleEvent(Object source, EventArgs e)&#xD;&#xA;   at System.Web.UI.Control.RaiseBubbleEvent(Object source, EventArgs args)&#xD;&#xA;   at System.Web.UI.WebControls.ImageButton.OnCommand(CommandEventArgs e)&#xD;&#xA;   at System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)&#xD;&#xA;   at System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)&#xD;&#xA;   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)&#xD;&#xA;   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;ClientConnectionId:a289e58c-82a4-451e-aabb-6db217e8e6fc&#xD;&#xA;   at System.Web.UI.Page.HandleError(Exception e)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(HttpContext context)&#xD;&#xA;   at ASP.systemmng_define_sitedefine_userwebpart_aspx.ProcessRequest(HttpContext context)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2013-12-18T07:01:48.9105907Z" statusCode="500" webHostHtmlMessage="&lt;!DOCTYPE html&gt;&#xD;&#xA;&lt;html&gt;&#xD;&#xA;    &lt;head&gt;&#xD;&#xA;        &lt;title&gt;The DELETE statement conflicted with the REFERENCE constraint &amp;quot;FK_PAGES_WEBPARTS_WEBPARTS&amp;quot;. The conflict occurred in database &amp;quot;ArvandPC&amp;quot;, table &amp;quot;dbo.PAGES_WEBPARTS&amp;quot;, column 'WEBPART_ID'.&lt;br&gt;The statement has been terminated.&lt;/title&gt;&#xD;&#xA;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;&#xD;&#xA;        &lt;style&gt;&#xD;&#xA;         body {font-family:&quot;Verdana&quot;;font-weight:normal;font-size: .7em;color:black;} &#xD;&#xA;         p {font-family:&quot;Verdana&quot;;font-weight:normal;color:black;margin-top: -5px}&#xD;&#xA;         b {font-family:&quot;Verdana&quot;;font-weight:bold;color:black;margin-top: -5px}&#xD;&#xA;         H1 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:18pt;color:red }&#xD;&#xA;         H2 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:14pt;color:maroon }&#xD;&#xA;         pre {font-family:&quot;Consolas&quot;,&quot;Lucida Console&quot;,Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}&#xD;&#xA;         .marker {font-weight: bold; color: black;text-decoration: none;}&#xD;&#xA;         .version {color: gray;}&#xD;&#xA;         .error {margin-bottom: 10px;}&#xD;&#xA;         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }&#xD;&#xA;         @media screen and (max-width: 639px) {&#xD;&#xA;          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }&#xD;&#xA;         }&#xD;&#xA;         @media screen and (max-width: 479px) {&#xD;&#xA;          pre { width: 280px; }&#xD;&#xA;         }&#xD;&#xA;        &lt;/style&gt;&#xD;&#xA;    &lt;/head&gt;&#xD;&#xA;&#xD;&#xA;    &lt;body bgcolor=&quot;white&quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;span&gt;&lt;H1&gt;Server Error in '/' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h2&gt; &lt;i&gt;The DELETE statement conflicted with the REFERENCE constraint &amp;quot;FK_PAGES_WEBPARTS_WEBPARTS&amp;quot;. The conflict occurred in database &amp;quot;ArvandPC&amp;quot;, table &amp;quot;dbo.PAGES_WEBPARTS&amp;quot;, column 'WEBPART_ID'.&lt;br&gt;The statement has been terminated.&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;&#xD;&#xA;&#xD;&#xA;            &lt;font face=&quot;Arial, Helvetica, Geneva, SunSans-Regular, sans-serif &quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Description: &lt;/b&gt;An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Exception Details: &lt;/b&gt;System.Data.SqlClient.SqlException: The DELETE statement conflicted with the REFERENCE constraint &amp;quot;FK_PAGES_WEBPARTS_WEBPARTS&amp;quot;. The conflict occurred in database &amp;quot;ArvandPC&amp;quot;, table &amp;quot;dbo.PAGES_WEBPARTS&amp;quot;, column 'WEBPART_ID'.&lt;br&gt;The statement has been terminated.&lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Source Error:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;Line 225:            rowEfect = cmd.ExecuteNonQuery()&#xD;&#xA;Line 226:        Catch e1 As SqlException&#xD;&#xA;&lt;font color=red&gt;Line 227:            Throw&#xD;&#xA;&lt;/font&gt;Line 228:        Catch e2 As Exception&#xD;&#xA;Line 229:            Throw&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Source File: &lt;/b&gt; F:\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\App_Code\CLSWebparts.vb&lt;b&gt; &amp;nbsp;&amp;nbsp; Line: &lt;/b&gt; 227&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Stack Trace:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;[SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint &amp;quot;FK_PAGES_WEBPARTS_WEBPARTS&amp;quot;. The conflict occurred in database &amp;quot;ArvandPC&amp;quot;, table &amp;quot;dbo.PAGES_WEBPARTS&amp;quot;, column &amp;#39;WEBPART_ID&amp;#39;.&#xD;&#xA;The statement has been terminated.]&#xD;&#xA;   System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction) +1767866&#xD;&#xA;   System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction) +5352418&#xD;&#xA;   System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose) +244&#xD;&#xA;   System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp;amp; dataReady) +1691&#xD;&#xA;   System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString) +269&#xD;&#xA;   System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp;amp; task, Boolean asyncWrite, SqlDataReader ds) +1406&#xD;&#xA;   System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp;amp; task, Boolean asyncWrite) +177&#xD;&#xA;   System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite) +205&#xD;&#xA;   System.Data.SqlClient.SqlCommand.ExecuteNonQuery() +160&#xD;&#xA;   CLSWebparts.DeleteWEBPARTS(Int32 item) in F:\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\App_Code\CLSWebparts.vb:227&#xD;&#xA;   SystemMng_Define_SiteDefine_UserWebPart.GridView1_RowCommand(Object sender, GridViewCommandEventArgs e) in F:\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\SystemMng\Define\SiteDefine\UserWebPart.aspx.vb:82&#xD;&#xA;   System.Web.UI.WebControls.GridView.OnRowCommand(GridViewCommandEventArgs e) +111&#xD;&#xA;   System.Web.UI.WebControls.GridView.HandleEvent(EventArgs e, Boolean causesValidation, String validationGroup) +73&#xD;&#xA;   System.Web.UI.WebControls.GridView.OnBubbleEvent(Object source, EventArgs e) +89&#xD;&#xA;   System.Web.UI.Control.RaiseBubbleEvent(Object source, EventArgs args) +37&#xD;&#xA;   System.Web.UI.WebControls.GridViewRow.OnBubbleEvent(Object source, EventArgs e) +88&#xD;&#xA;   System.Web.UI.Control.RaiseBubbleEvent(Object source, EventArgs args) +37&#xD;&#xA;   System.Web.UI.WebControls.ImageButton.OnCommand(CommandEventArgs e) +121&#xD;&#xA;   System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument) +180&#xD;&#xA;   System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument) +10&#xD;&#xA;   System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument) +13&#xD;&#xA;   System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData) +35&#xD;&#xA;   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +1724&#xD;&#xA;&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;    &lt;/body&gt;&#xD;&#xA;&lt;/html&gt;&#xD;&#xA;">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_CONTENT_LENGTH:8093&#xD;&#xA;HTTP_CONTENT_TYPE:application/x-www-form-urlencoded&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.5&#xD;&#xA;HTTP_COOKIE:ASP.NET_SessionId=b31zazsgw3cxuzk5ixihjcs0; SavedUserName=arvand; LoginCook=E5C9783C6DB1AA03FD42DD6BCD3B80E617EE2D20D70072A9F690DFEA9DDB64017047C5E462E877B5D26C8A1FB0300D2130E599815F6564EBEDECA9CFB2CDA2EAFA61B9E830DD437A09F2B19694B1406BB6537BA5A1F21D3FD90B510D2F282862C24DE6DD4ABC4E47772AD0333EB63F30B99A38481521627971A6607E608D05ADAF079661&#xD;&#xA;HTTP_HOST:localhost:4140&#xD;&#xA;HTTP_REFERER:http://localhost:4140/SystemMng/Define/SiteDefine/UserWebPart&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:26.0) Gecko/20100101 Firefox/26.0&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Content-Length: 8093&#xD;&#xA;Content-Type: application/x-www-form-urlencoded&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate&#xD;&#xA;Accept-Language: en-US,en;q=0.5&#xD;&#xA;Cookie: ASP.NET_SessionId=b31zazsgw3cxuzk5ixihjcs0; SavedUserName=arvand; LoginCook=E5C9783C6DB1AA03FD42DD6BCD3B80E617EE2D20D70072A9F690DFEA9DDB64017047C5E462E877B5D26C8A1FB0300D2130E599815F6564EBEDECA9CFB2CDA2EAFA61B9E830DD437A09F2B19694B1406BB6537BA5A1F21D3FD90B510D2F282862C24DE6DD4ABC4E47772AD0333EB63F30B99A38481521627971A6607E608D05ADAF079661&#xD;&#xA;Host: localhost:4140&#xD;&#xA;Referer: http://localhost:4140/SystemMng/Define/SiteDefine/UserWebPart&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:26.0) Gecko/20100101 Firefox/26.0&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/4/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="F:\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="8093" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="4" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/4" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/SystemMng/Define/SiteDefine/UserWebPart" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="F:\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\SystemMng\Define\SiteDefine\UserWebPart" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="1801" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/SystemMng/Define/SiteDefine/UserWebPart" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="4140" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/8.0" />
+    </item>
+    <item name="URL">
+      <value string="/SystemMng/Define/SiteDefine/UserWebPart" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="8093" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.5" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="ASP.NET_SessionId=b31zazsgw3cxuzk5ixihjcs0; SavedUserName=arvand; LoginCook=E5C9783C6DB1AA03FD42DD6BCD3B80E617EE2D20D70072A9F690DFEA9DDB64017047C5E462E877B5D26C8A1FB0300D2130E599815F6564EBEDECA9CFB2CDA2EAFA61B9E830DD437A09F2B19694B1406BB6537BA5A1F21D3FD90B510D2F282862C24DE6DD4ABC4E47772AD0333EB63F30B99A38481521627971A6607E608D05ADAF079661" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:4140" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:4140/SystemMng/Define/SiteDefine/UserWebPart" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:26.0) Gecko/20100101 Firefox/26.0" />
+    </item>
+  </serverVariables>
+  <form>
+    <item name="RadScriptManager1_TSM">
+      <value string=";;System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35:en-US:fa6755fd-da1a-49d3-9eb4-1e473e780ecd:ea597d4b:b25378d2;Telerik.Web.UI, Version=2012.2.607.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4:en-US:08ccafd1-fc13-48c0-b85b-a439ce2f6884:16e4e7cd:1569bb5f:63b115ed:f7645509:24ee1bba:874f8ea2:dc7e0bd:1c565fc:8547b8b2:30f1f089:f46195d3:19620875:490a9d4e" />
+    </item>
+    <item name="__EVENTTARGET">
+      <value string="" />
+    </item>
+    <item name="__EVENTARGUMENT">
+      <value string="" />
+    </item>
+    <item name="__VIEWSTATE">
+      <value string="/wEPDwUKMTU0NTkwMzM2Ng9kFgJmD2QWBAIBD2QWAgIEDxUCGi4uLy4uLy4uL1NjcmlwdHMvanF1ZXJ5LmpzJy4uLy4uLy4uL1NjcmlwdHMvanF1ZXJ5LnBvc2h5dGlwLm1pbi5qc2QCAw9kFgQCBQ8WAh4JaW5uZXJodG1sBRPZhdiv2YrYsSDYs9mK2LPYqtmFZAIrD2QWBAIJDxQrABYPFgIeF0VuYWJsZUFqYXhTa2luUmVuZGVyaW5naGRkZBAWBWYCAQICAgMCBBYFFCsAAmQQFgNmAgECAhYDD2RkD2RkD2RkFgNmZmYUKwACZBAWDWYCAQICAgMCBAIFAgYCBwIIAgkCCgILAgwWDQ9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZA9kZBYNZmZmZmZmZmZmZmZmZhQrAAJkEBYCZgIBFgIPZGQPZGQWAmZmFCsAAmQQFgJmAgEWAg9kZA9kZBYCZmYUKwACZBAWB2YCAQICAgMCBAIFAgYWBw9kZA9kZA9kZA9kZA9kZA9kZA9kZBYHZmZmZmZmZg8WBWZmZmZmFgEFeVRlbGVyaWsuV2ViLlVJLkVkaXRvckNvbnRleHRNZW51LCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDEyLjIuNjA3LjQwLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTEyMWZhZTc4MTY1YmEzZDRkZBYIHglWaWV3UGF0aHMVARl+L1VwbG9hZEZpbGVzL0RpdmlzaW9uL0FSHgtVcGxvYWRQYXRocxUBGX4vVXBsb2FkRmlsZXMvRGl2aXNpb24vQVIeC0RlbGV0ZVBhdGhzFQEZfi9VcGxvYWRGaWxlcy9EaXZpc2lvbi9BUh4RTWF4VXBsb2FkRmlsZVNpemUCgICA9ANkZGQWCB8CFQEZfi9VcGxvYWRGaWxlcy9EaXZpc2lvbi9BUh8DFQEZfi9VcGxvYWRGaWxlcy9EaXZpc2lvbi9BUh8EFQEZfi9VcGxvYWRGaWxlcy9EaXZpc2lvbi9BUh8FAoCAgPQDEBYDZgIBAgIWAxQrAAJkEBYGZgIBAgICAwIEAgUWBhQrAAJkEBYBZhYBFCsAAmQQFgJmAgEWAhQrAAJkZBQrAAJkZA8WAmZmFgEFclRlbGVyaWsuV2ViLlVJLkVkaXRvckxpbmssIFRlbGVyaWsuV2ViLlVJLCBWZXJzaW9uPTIwMTIuMi42MDcuNDAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MTIxZmFlNzgxNjViYTNkNA8WAWYWAQVyVGVsZXJpay5XZWIuVUkuRWRpdG9yTGluaywgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4yLjYwNy40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0FCsAAmRkFCsAAmRkFCsAAmRkFCsAAmRkFCsAAmRkDxYGZmZmZmZmFgEFclRlbGVyaWsuV2ViLlVJLkVkaXRvckxpbmssIFRlbGVyaWsuV2ViLlVJLCBWZXJzaW9uPTIwMTIuMi42MDcuNDAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MTIxZmFlNzgxNjViYTNkNBQrAAJkEBYDZgIBAgIWAxQrAAJkZBQrAAJkZBQrAAJkZA8WA2ZmZhYBBXJUZWxlcmlrLldlYi5VSS5FZGl0b3JMaW5rLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDEyLjIuNjA3LjQwLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTEyMWZhZTc4MTY1YmEzZDQUKwACZBAWA2YCAQICFgMUKwACZGQUKwACZGQUKwACZGQPFgNmZmYWAQVyVGVsZXJpay5XZWIuVUkuRWRpdG9yTGluaywgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4yLjYwNy40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0DxYDZmZmFgEFclRlbGVyaWsuV2ViLlVJLkVkaXRvckxpbmssIFRlbGVyaWsuV2ViLlVJLCBWZXJzaW9uPTIwMTIuMi42MDcuNDAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MTIxZmFlNzgxNjViYTNkNGRkEBYEZgIBAgICAxYED2RkD2RkD2RkD2RkDxYEZmZmZhYBBXRUZWxlcmlrLldlYi5VSS5FZGl0b3JNb2R1bGUsIFRlbGVyaWsuV2ViLlVJLCBWZXJzaW9uPTIwMTIuMi42MDcuNDAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MTIxZmFlNzgxNjViYTNkNGRkEBYAFgAWAGRkEBYFZgIBAgICAwIEFgUUKwADZA8UKwAMDxYEHgRUeXBlCyl2VGVsZXJpay5XZWIuVUkuRWRpdG9yVG9vbFR5cGUsIFRlbGVyaWsuV2ViLlVJLCBWZXJzaW9uPTIwMTIuMi42MDcuNDAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MTIxZmFlNzgxNjViYTNkNAEeBE5hbWUFDFN0eWxlQnVpbGRlcmQPFgIfBgsrBAhkDxYEHwYLKwQBHwcFCkluc2VydExpbmtkDxYEHwYLKwQBHwcFEEluc2VydFRhYmxlTGlnaHRkDxYCHwYLKwQIZBQrAAIPFgIfBwURSW5zZXJ0Rm9ybUVsZW1lbnQWAh4Jc2l6ZXRvZml0BQR0cnVlDxQrAAsPFgIfBwUOSW5zZXJ0Rm9ybUZvcm1kDxYCHwcFEEluc2VydEZvcm1CdXR0b25kDxYCHwcFEkluc2VydEZvcm1DaGVja2JveGQPFgIfBwUQSW5zZXJ0Rm9ybUhpZGRlbmQPFgIfBwUSSW5zZXJ0Rm9ybVBhc3N3b3JkZA8WAh8HBQ9JbnNlcnRGb3JtUmFkaW9kDxYCHwcFD0luc2VydEZvcm1SZXNldGQPFgIfBwUQSW5zZXJ0Rm9ybVNlbGVjdGQPFgIfBwUQSW5zZXJ0Rm9ybVN1Ym1pdGQPFgIfBwUSSW5zZXJ0Rm9ybVRleHRhcmVhZA8WAh8HBQ5JbnNlcnRGb3JtVGV4dGQUKwELZmZmZmZmZmZmZmYPFgQfBgsrBAEfBwUOSW5zZXJ0Rm9ybUZvcm1kDxYCHwYLKwQIZA8WBh8GCysEAR8HBQxJbWFnZU1hbmFnZXIeCFNob3J0Q3V0BQZDVFJMK01kDxYEHwYLKwQBHwcFD0RvY3VtZW50TWFuYWdlcmQPFgQfBgsrBAEfBwUSU2V0SW1hZ2VQcm9wZXJ0aWVzZA8WBB8GCysEAR8HBQ5JbWFnZU1hcERpYWxvZ2QUKwEMZmZmZmYCAmZmZmZmZmQUKwADZA8UKwASFCsAAg8WAh8HBQtJbnNlcnRUYWJsZRYGHg5wb3B1cGNsYXNzbmFtZQUNcmVJbnNlcnRUYWJsZR4LaXRlbXNwZXJyb3cFATgfCAUEdHJ1ZQ8UKwANDxYCHwcFC1RhYmxlV2l6YXJkZA8WAh8HBQ5JbnNlcnRSb3dBYm92ZWQPFgIfBwUOSW5zZXJ0Um93QmVsb3dkDxYCHwcFCURlbGV0ZVJvd2QPFgIfBwUQSW5zZXJ0Q29sdW1uTGVmdGQPFgIfBwURSW5zZXJ0Q29sdW1uUmlnaHRkDxYCHwcFDERlbGV0ZUNvbHVtbmQPFgIfBwUMTWVyZ2VDb2x1bW5zZA8WAh8HBQlNZXJnZVJvd3NkDxYCHwcFE1NwbGl0Q2VsbEhvcml6b250YWxkDxYCHwcFCVNwbGl0Q2VsbGQPFgIfBwUKRGVsZXRlQ2VsbGQPFgIfBwUSU2V0VGFibGVQcm9wZXJ0aWVzZBQrAQ1mZmZmZmZmZmZmZmZmDxYEHwYLKwQBHwcFDkluc2VydFJvd0Fib3ZlZA8WBB8GCysEAR8HBQ5JbnNlcnRSb3dCZWxvd2QPFgQfBgsrBAEfBwUJRGVsZXRlUm93ZA8WBB8GCysEAR8HBRBJbnNlcnRDb2x1bW5MZWZ0ZA8WBB8GCysEAR8HBRFJbnNlcnRDb2x1bW5SaWdodGQPFgQfBgsrBAEfBwUMRGVsZXRlQ29sdW1uZA8WAh8GCysECGQPFgQfBgsrBAEfBwUMTWVyZ2VDb2x1bW5zZA8WBB8GCysEAR8HBQlNZXJnZVJvd3NkDxYCHwYLKwQIZA8WBB8GCysEAR8HBQlTcGxpdENlbGxkDxYEHwYLKwQBHwcFE1NwbGl0Q2VsbEhvcml6b250YWxkDxYEHwYLKwQBHwcFCkRlbGV0ZUNlbGxkDxYEHwYLKwQBHwcFEVNldENlbGxQcm9wZXJ0aWVzZA8WBB8GCysEAR8HBRJTZXRUYWJsZVByb3BlcnRpZXNkDxYCHwYLKwQIZA8WBB8GCysEBB8HBQxJbnNlcnRTeW1ib2wWBh8LBQE4HwgFBHRydWUfCgUOcmVJbnNlcnRTeW1ib2wUKwESAgJmZmZmZmZmZmZmZmZmZmZmZmQUKwADZBAWC2YCAQICAgMCBAIFAgYCBwIIAgkCChYLDxYCHwYLKwQEFgIfCgUKcmVVbmRvUmVkbw8WAh8GCysEBBYCHwoFCnJlVW5kb1JlZG8PZGQPZGQPZGQPZGQPZGQPZGQPZGQPZGQPZGQWC2ZmZmZmZmZmZmZmZBQrAANkEBYTZgIBAgICAwIEAgUCBgIHAggCCQIKAgsCDAINAg4CDwIQAhECEhYTD2RkD2RkD2RkD2RkDxYCHwYLKwQEFgYfCgUNcmVDb2xvclBpY2tlch8LBQIxMB8IBQR0cnVlDxYCHwYLKwQEFgYfCgUNcmVDb2xvclBpY2tlch8LBQIxMB8IBQR0cnVlD2RkD2RkD2RkD2RkD2RkD2RkD2RkD2RkD2RkD2RkD2RkD2RkD2RkFhNmZmZmZmZmZmZmZmZmZmZmZmZmZBQrAANkEBYGZgIBAgICAwIEAgUWBg8WAh8GCysEAmQPFgIfBgsrBAIWBB4KcG9wdXB3aWR0aAUENjBweB8IBQR0cnVlDxYCHwYLKwQCFgIfDAUENjBweA8WAh8GCysEAmQPFgIfBgsrBAJkDxYCHwYLKwQCFgIfDAUENjBweBYGZmZmZmZmZA8WBWZmZmZmFgEFd1RlbGVyaWsuV2ViLlVJLkVkaXRvclRvb2xHcm91cCwgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxMi4yLjYwNy40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0ZBYGZg8PFgIfAWdkZAIBDw8WAh8BZ2QWAmYPFCsAAw8WBh8BaB4VU2hvd0NvbnRlbnREdXJpbmdMb2FkaB4ORGVzdHJveU9uQ2xvc2VoZGRkZAICD2QWAmYPFCsAAmRkZAIXDzwrABEDAA8WBB4LXyFEYXRhQm91bmRnHgtfIUl0ZW1Db3VudAIDZAEQFgAWABYADBQrAAAWAmYPZBYIAgEPZBYIZg9kFgICAQ8PFgIeD0NvbW1hbmRBcmd1bWVudAUMT0RBTEp6a2hhbHM9ZGQCAQ9kFgICAQ8WAh4EVGV4dAUDZGZiZAICD2QWAgIBDxAPFgIeB0NoZWNrZWRnZGRkZAIDD2QWAgIBDw8WAh8RBQxPREFMSnpraGFscz1kZAICD2QWCGYPZBYCAgEPDxYCHxEFDEVKUXZvZmtiZEpRPWRkAgEPZBYCAgEPFgIfEgUG2KrYs9iqZAICD2QWAgIBDxAPFgIfE2dkZGRkAgMPZBYCAgEPDxYCHxEFDEVKUXZvZmtiZEpRPWRkAgMPZBYIZg9kFgICAQ8PFgIfEQUMZEdxdW9Ca2lmbDg9ZGQCAQ9kFgICAQ8WAh8SBRbZiNioINm+2KfYsdiqINiq2LPYqtmKZAICD2QWAgIBDxAPFgIfE2dkZGRkAgMPZBYCAgEPDxYCHxEFDGRHcXVvQmtpZmw4PWRkAgQPDxYCHgdWaXNpYmxlaGRkGAIFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYJBTFjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJHR4dEh0bWxfY29udGVudF9wZXJzaWFuBT5jdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJHR4dEh0bWxfY29udGVudF9wZXJzaWFuJGRpYWxvZ09wZW5lcgVFY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSR0eHRIdG1sX2NvbnRlbnRfcGVyc2lhbiRkaWFsb2dPcGVuZXIkV2luZG93BTRjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGdyaWR2aWV3MSRjdGwwMiRpbWdidG5FZGl0BTZjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGdyaWR2aWV3MSRjdGwwMiRpbWdidG5EZWxldGUFNGN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkZ3JpZHZpZXcxJGN0bDAzJGltZ2J0bkVkaXQFNmN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkZ3JpZHZpZXcxJGN0bDAzJGltZ2J0bkRlbGV0ZQU0Y3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRncmlkdmlldzEkY3RsMDQkaW1nYnRuRWRpdAU2Y3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRncmlkdmlldzEkY3RsMDQkaW1nYnRuRGVsZXRlBSNjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGdyaWR2aWV3MQ88KwAMAQgCAWQex46nb225l0ARKaqeSNdeawgweA==" />
+    </item>
+    <item name="ctl00$ContentPlaceHolder1$txtHeader_persian">
+      <value string="" />
+    </item>
+    <item name="ctl00_ContentPlaceHolder1_txtHtml_content_persian_dialogOpener_Window_ClientState">
+      <value string="" />
+    </item>
+    <item name="ctl00_ContentPlaceHolder1_txtHtml_content_persian_dialogOpener_ClientState">
+      <value string="" />
+    </item>
+    <item name="ctl00$ContentPlaceHolder1$txtHtml_content_persian">
+      <value string="" />
+    </item>
+    <item name="ctl00_ContentPlaceHolder1_txtHtml_content_persian_ClientState">
+      <value string="" />
+    </item>
+    <item name="ctl00$ContentPlaceHolder1$WebPartId">
+      <value string="" />
+    </item>
+    <item name="ctl00$ContentPlaceHolder1$gridview1$ctl04$imgbtnDelete.x">
+      <value string="3" />
+    </item>
+    <item name="ctl00$ContentPlaceHolder1$gridview1$ctl04$imgbtnDelete.y">
+      <value string="8" />
+    </item>
+    <item name="__SCROLLPOSITIONX">
+      <value string="0" />
+    </item>
+    <item name="__SCROLLPOSITIONY">
+      <value string="349" />
+    </item>
+  </form>
+  <cookies>
+    <item name="ASP.NET_SessionId">
+      <value string="b31zazsgw3cxuzk5ixihjcs0" />
+    </item>
+    <item name="SavedUserName">
+      <value string="arvand" />
+    </item>
+    <item name="LoginCook">
+      <value string="E5C9783C6DB1AA03FD42DD6BCD3B80E617EE2D20D70072A9F690DFEA9DDB64017047C5E462E877B5D26C8A1FB0300D2130E599815F6564EBEDECA9CFB2CDA2EAFA61B9E830DD437A09F2B19694B1406BB6537BA5A1F21D3FD90B510D2F282862C24DE6DD4ABC4E47772AD0333EB63F30B99A38481521627971A6607E608D05ADAF079661" />
+    </item>
+  </cookies>
+</error>

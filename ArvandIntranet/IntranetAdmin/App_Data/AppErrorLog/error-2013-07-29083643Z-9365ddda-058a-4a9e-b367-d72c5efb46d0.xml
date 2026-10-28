@@ -1,0 +1,177 @@
+﻿<error errorId="9365ddda-058a-4a9e-b367-d72c5efb46d0" application="/LM/W3SVC/8/ROOT" host="BEHROOZ-PC" type="System.Web.HttpException" message="Maximum request length exceeded." source="System.Web" detail="System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---&gt; System.Web.HttpException (0x80004005): Maximum request length exceeded.&#xD;&#xA;   at System.Web.HttpRequest.GetEntireRawContent()&#xD;&#xA;   at System.Web.HttpRequest.GetMultipartContent()&#xD;&#xA;   at System.Web.HttpRequest.FillInFormCollection()&#xD;&#xA;   at System.Web.HttpRequest.EnsureForm()&#xD;&#xA;   at System.Web.HttpRequest.get_Form()&#xD;&#xA;   at System.Web.HttpRequest.get_HasForm()&#xD;&#xA;   at System.Web.UI.Page.GetCollectionBasedOnMethod(Boolean dontReturnNull)&#xD;&#xA;   at System.Web.UI.Page.DeterminePostBackMode()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.HandleError(Exception e)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(HttpContext context)&#xD;&#xA;   at ASP.explorer_aspx.ProcessRequest(HttpContext context)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2013-07-29T08:36:43.2499565Z" statusCode="500" webHostHtmlMessage="&lt;!DOCTYPE html&gt;&#xD;&#xA;&lt;html&gt;&#xD;&#xA;    &lt;head&gt;&#xD;&#xA;        &lt;title&gt;Maximum request length exceeded.&lt;/title&gt;&#xD;&#xA;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;&#xD;&#xA;        &lt;style&gt;&#xD;&#xA;         body {font-family:&quot;Verdana&quot;;font-weight:normal;font-size: .7em;color:black;} &#xD;&#xA;         p {font-family:&quot;Verdana&quot;;font-weight:normal;color:black;margin-top: -5px}&#xD;&#xA;         b {font-family:&quot;Verdana&quot;;font-weight:bold;color:black;margin-top: -5px}&#xD;&#xA;         H1 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:18pt;color:red }&#xD;&#xA;         H2 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:14pt;color:maroon }&#xD;&#xA;         pre {font-family:&quot;Consolas&quot;,&quot;Lucida Console&quot;,Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}&#xD;&#xA;         .marker {font-weight: bold; color: black;text-decoration: none;}&#xD;&#xA;         .version {color: gray;}&#xD;&#xA;         .error {margin-bottom: 10px;}&#xD;&#xA;         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }&#xD;&#xA;         @media screen and (max-width: 639px) {&#xD;&#xA;          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }&#xD;&#xA;         }&#xD;&#xA;         @media screen and (max-width: 479px) {&#xD;&#xA;          pre { width: 280px; }&#xD;&#xA;         }&#xD;&#xA;        &lt;/style&gt;&#xD;&#xA;    &lt;/head&gt;&#xD;&#xA;&#xD;&#xA;    &lt;body bgcolor=&quot;white&quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;span&gt;&lt;H1&gt;Server Error in '/' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h2&gt; &lt;i&gt;Maximum request length exceeded.&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;&#xD;&#xA;&#xD;&#xA;            &lt;font face=&quot;Arial, Helvetica, Geneva, SunSans-Regular, sans-serif &quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Description: &lt;/b&gt;An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Exception Details: &lt;/b&gt;System.Web.HttpException: Maximum request length exceeded.&lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Source Error:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&#xD;&#xA;&#xD;&#xA;An unhandled exception was generated during the execution of the current web request. Information regarding the origin and location of the exception can be identified using the exception stack trace below.&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Stack Trace:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;[HttpException (0x80004005): Maximum request length exceeded.]&#xD;&#xA;   System.Web.HttpRequest.GetEntireRawContent() +9665289&#xD;&#xA;   System.Web.HttpRequest.GetMultipartContent() +63&#xD;&#xA;   System.Web.HttpRequest.FillInFormCollection() +165&#xD;&#xA;   System.Web.HttpRequest.EnsureForm() +75&#xD;&#xA;   System.Web.HttpRequest.get_Form() +12&#xD;&#xA;   System.Web.HttpRequest.get_HasForm() +9666735&#xD;&#xA;   System.Web.UI.Page.GetCollectionBasedOnMethod(Boolean dontReturnNull) +95&#xD;&#xA;   System.Web.UI.Page.DeterminePostBackMode() +69&#xD;&#xA;   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +130&#xD;&#xA;&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;    &lt;/body&gt;&#xD;&#xA;&lt;/html&gt;&#xD;&#xA;">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:no-cache&#xD;&#xA;HTTP_CONNECTION:Keep-Alive&#xD;&#xA;HTTP_CONTENT_LENGTH:7574206&#xD;&#xA;HTTP_CONTENT_TYPE:multipart/form-data; boundary=---------------------------7dd8e2b2a060e&#xD;&#xA;HTTP_ACCEPT:text/html, application/xhtml+xml, */*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:fa-IR&#xD;&#xA;HTTP_COOKIE:SavedUserName=administrative; ASP.NET_SessionId=m5e5iwnrlnlhj3os1vt5s5w2; LoginCook=B63F351FA04A5FBB5042391DE438E965A02D10C75A8DDA83656345A62F741F63D999E054F9B2524B80E789A1232FCDF1008A87FC7388FEA9BEB6B04FD5E6DDED0D59864F9D4AF4BABC195813B20B0A39F4146440FB29BA77B593AD5BE8034341E8D8F9757458EFE21037AD4751A107EECDED4BCC806F4090040A86D3800573A0D5CCB61039ADBD1A915D052C8B069B64850DF8E2&#xD;&#xA;HTTP_HOST:localhost:4140&#xD;&#xA;HTTP_REFERER:http://localhost:4140/fa-IR/AR/Explorer&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; yie9)&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: no-cache&#xD;&#xA;Connection: Keep-Alive&#xD;&#xA;Content-Length: 7574206&#xD;&#xA;Content-Type: multipart/form-data; boundary=---------------------------7dd8e2b2a060e&#xD;&#xA;Accept: text/html, application/xhtml+xml, */*&#xD;&#xA;Accept-Encoding: gzip, deflate&#xD;&#xA;Accept-Language: fa-IR&#xD;&#xA;Cookie: SavedUserName=administrative; ASP.NET_SessionId=m5e5iwnrlnlhj3os1vt5s5w2; LoginCook=B63F351FA04A5FBB5042391DE438E965A02D10C75A8DDA83656345A62F741F63D999E054F9B2524B80E789A1232FCDF1008A87FC7388FEA9BEB6B04FD5E6DDED0D59864F9D4AF4BABC195813B20B0A39F4146440FB29BA77B593AD5BE8034341E8D8F9757458EFE21037AD4751A107EECDED4BCC806F4090040A86D3800573A0D5CCB61039ADBD1A915D052C8B069B64850DF8E2&#xD;&#xA;Host: localhost:4140&#xD;&#xA;Referer: http://localhost:4140/fa-IR/AR/Explorer&#xD;&#xA;User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; yie9)&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/8/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\Behrooz\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="7574206" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="multipart/form-data; boundary=---------------------------7dd8e2b2a060e" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="8" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/8" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/fa-IR/AR/Explorer" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\Behrooz\Documents\Visual Studio 2012\Projects\ArvandIntranet\Intranet\fa-IR\AR\Explorer" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="2494" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/fa-IR/AR/Explorer" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="4140" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/8.0" />
+    </item>
+    <item name="URL">
+      <value string="/fa-IR/AR/Explorer" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="Keep-Alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="7574206" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="multipart/form-data; boundary=---------------------------7dd8e2b2a060e" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html, application/xhtml+xml, */*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="fa-IR" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="SavedUserName=administrative; ASP.NET_SessionId=m5e5iwnrlnlhj3os1vt5s5w2; LoginCook=B63F351FA04A5FBB5042391DE438E965A02D10C75A8DDA83656345A62F741F63D999E054F9B2524B80E789A1232FCDF1008A87FC7388FEA9BEB6B04FD5E6DDED0D59864F9D4AF4BABC195813B20B0A39F4146440FB29BA77B593AD5BE8034341E8D8F9757458EFE21037AD4751A107EECDED4BCC806F4090040A86D3800573A0D5CCB61039ADBD1A915D052C8B069B64850DF8E2" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:4140" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:4140/fa-IR/AR/Explorer" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; yie9)" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="SavedUserName">
+      <value string="administrative" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="m5e5iwnrlnlhj3os1vt5s5w2" />
+    </item>
+    <item name="LoginCook">
+      <value string="B63F351FA04A5FBB5042391DE438E965A02D10C75A8DDA83656345A62F741F63D999E054F9B2524B80E789A1232FCDF1008A87FC7388FEA9BEB6B04FD5E6DDED0D59864F9D4AF4BABC195813B20B0A39F4146440FB29BA77B593AD5BE8034341E8D8F9757458EFE21037AD4751A107EECDED4BCC806F4090040A86D3800573A0D5CCB61039ADBD1A915D052C8B069B64850DF8E2" />
+    </item>
+  </cookies>
+</error>

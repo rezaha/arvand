@@ -1,0 +1,98 @@
+﻿body
+{
+    direction: rtl;
+    font: 11px tahoma;
+}
+h2
+{
+    font:15px arial;
+    font-weight:bold;
+    color:Blue
+    }
+
+input[type="text"]
+{
+    width: 90%;
+    font: 11px tahoma;
+    color: #2c71ff;
+    border:1px solid #d0d0d0;
+    height:20px;
+     -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -border-radius: 3px;
+    
+}
+input[type="text"]:hover
+{
+    border:1px solid #4498ff;
+}
+input[type="text"]:focus
+{
+    border:1px solid #4498ff;
+    background:#e1eeff;
+    -moz-box-shadow: 0px 0px 6px #a0caff;
+		-webkit-box-shadow: 0px 0px 6px #a0caff;
+		-box-shadow: 0px 0px 6px #a0caff;
+}
+.wrap
+{
+    background: #ebebeb;
+    border: 1px solid #d5d2d2;
+    width: 100%;
+}
+.form_title
+{
+    height: 33px;
+    background: url('images/compliants_title_bg.png');
+    width: 100%;
+    border: 1px solid white;
+    color: White;
+    padding-right: 25px;
+}
+
+.compliants_tables tr td
+{
+    background: white;
+    border: 1px solid #cfcfcf;
+    height: 25px;
+    width: 340px;
+    padding-right: 5px;
+}
+.Compliants_description
+{
+    border: none;
+    border:1px solid #d0d0d0;
+    height: 50px;
+    width: 100%;
+}
+.Compliants_description:hover
+{
+      border:1px solid #4498ff;
+}
+.Compliants_description:focus
+{
+    border:1px solid #4498ff;
+    background:#e1eeff;
+    -moz-box-shadow: 0px 0px 6px #a0caff;
+		-webkit-box-shadow: 0px 0px 6px #a0caff;
+		-box-shadow: 0px 0px 6px #a0caff;
+}
+.submitbtn
+{
+    clear: both;
+}
+.single_textbox tr td
+{
+    border: none;
+}
+.textbox_des
+{
+    width: 200px;
+    background-color:Red;
+}
+.resume_btn
+{
+    height:50px;
+    border-top:1px dotted #cccccc;
+    }

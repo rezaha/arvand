@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/SystemMng/Default.aspx" title="مدیریت"  description="">
+        <siteMapNode url="~/SystemMng/Account/SecurityUser.aspx" title="مدیریت کاربران"  description="" />
+        <siteMapNode url="~/SystemMng/Define/Location/City.aspx" title="شهر"  description="" />
+      <siteMapNode url="~/SystemMng/Define/Location/Country.aspx" title="کشور"  description="" />
+      <siteMapNode url="~/SystemMng/Define/Location/Province.aspx" title="استان ها"  description="" />
+      <siteMapNode url="~/SystemMng/Define/News/NewsGroup.aspx" title="گروه های خبری" description=""/>
+      <siteMapNode url="~/SystemMng/Define/News/NewsKind.aspx" title="دسته خبر" description=""/>
+      <siteMapNode url="~/SystemMng/Define/News/NewsType.aspx" title="انواع خبر" description=""/>
+      
+      <siteMapNode url="~/SystemMng/Define/Organization/Company.aspx" title="شرکت" description=""/>
+      <siteMapNode url="~/SystemMng/Define/Organization/CoTypes.aspx" title="انواع شرکت" description=""/>
+      <siteMapNode url="~/SystemMng/Define/Organization/Plant.aspx" title="واحد" description=""/>
+      <siteMapNode url="~/SystemMng/Define/Organization/PlantDivision.aspx" title="قسمت" description=""/>
+      <siteMapNode url="~/SystemMng/Define/SiteDefine/MasterPage.aspx" title="مسترپیج" description=""/>
+      <siteMapNode url="~/SystemMng/Define/SiteDefine/Menu.aspx" title="منو" description=""/>
+      <siteMapNode url="~/SystemMng/Define/SiteDefine/Page.aspx" title="صفحه" description=""/>
+      <siteMapNode url="~/SystemMng/Define/SiteDefine/SystemWebPart.aspx" title="ماژول سیستمی" description=""/>
+      <siteMapNode url="~/SystemMng/Define/SiteDefine/UserWebPart.aspx" title="ماژول کاربر" description=""/>
+      <siteMapNode url="~/SystemMng/Home/DesignHomePage.aspx" title="طراحی صفحه اصلی" description=""/>
+      <siteMapNode url="~/SystemMng/PageAction/MasterPageWebPart.aspx" title="مستر پیج مازول" description=""/>
+      <siteMapNode url="~/SystemMng/PageAction/Newses.aspx" title="اخبار" description="">
+        <siteMapNode url="~/ShowNews.aspx" title="پیش نمایش" description=""/>
+      </siteMapNode>
+      <siteMapNode url="~/SystemMng/PageAction/PageWebPart.aspx" title="ماژول صفحات" description=""/>
+      <siteMapNode url="~/SystemMng/PageAction/Product.aspx" title="محصوالات" description=""/>
+      <siteMapNode url="~/SystemMng/PageAction/SiteLink.aspx" title="لینک ها" description=""/>
+      <siteMapNode url="~/SystemMng/PageAction/Weathers.aspx" title="آب و هوا" description=""/>
+      
+    </siteMapNode>
+</siteMap>

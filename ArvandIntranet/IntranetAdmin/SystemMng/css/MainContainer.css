@@ -1,0 +1,153 @@
+HTML
+{
+    margin: 0px;
+    height: 100%;
+}
+BODY
+{
+    margin: 0px;
+    height: 100%;
+}
+BODY
+{
+    font-family: Tahoma;
+    font-size: 9pt;
+}
+A
+{
+    font-family: Tahoma;
+    font-size: 9pt;
+}
+TD
+{
+    font-family: Tahoma;
+    font-size: 9pt;
+}
+DIV
+{
+    font-family: Tahoma;
+    font-size: 9pt;
+}
+SPAN
+{
+    font-family: Tahoma;
+    font-size: 9pt;
+}
+INPUT
+{
+    font-family: Tahoma;
+    font-size: 9pt;
+}
+A IMG
+{
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+}
+#MainContainer
+{
+    width: 100%;
+    direction: rtl;
+    height: 100%;
+}
+#Header
+{
+    background-image: url(../Images/Design/TopBar.gif);
+    padding-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+    font-weight: 600;
+    padding-top: 0px;
+}
+#SiteLogo
+{
+    margin-top: 2px;
+    float: right;
+}
+#SiteTitle
+{
+    margin-top: 15px;
+    float: right;
+    color: #ffffff;
+    margin-right: 10px;
+}
+#HeaderIcons
+{
+    text-align: right;
+    margin-top: 15px;
+    float: left;
+    color: #ffffff;
+}
+#HeaderIcons A
+{
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+#RightMenuContainer
+{
+    background-color: #416fa5;
+    width: 200px;
+    vertical-align: top;
+    cursor: default;
+}
+#RightMenuBottom
+{
+    background-image: url(../Images/Design/MenuBottom.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% bottom;
+    height: 100%;
+}
+#RightMenu
+{
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 20px;
+    height: 100%;
+    overflow: auto;
+    padding-top: 30px;
+}
+#RightMenu UL
+{
+    line-height: 30px;
+    list-style-type: none;
+    margin-top: 10px;
+    padding-right: 0px;
+    margin-bottom: 0px;
+    color: #ffffff;
+    margin-right: 15px;
+}
+#RightMenu .selected
+{
+    list-style-type: disc;
+}
+#RightMenu .disabled
+{
+    color: #cccccc;
+}
+#RightMenu A
+{
+    color: #ffffff;
+    text-decoration: none;
+}
+#RightMenu A:hover
+{
+    color: #ffffff;
+    text-decoration: underline;
+}
+#SliderBG
+{
+    background-image: url(../Images/Design/bar_bg.jpg);
+    background-repeat: repeat-y;
+}
+.MenuGroup
+{
+    border-bottom: #ffffff 3px double;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    color: #ffffff;
+    margin-left: 10px;
+    font-weight: 600;
+}

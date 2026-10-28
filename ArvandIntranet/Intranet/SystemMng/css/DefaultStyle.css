@@ -1,0 +1,161 @@
+﻿*
+{
+    font-family:Tahoma;
+}
+HTML
+{
+    margin: 0px;
+    height: 100%;
+}
+body
+{
+    margin: 0px;
+    height: 100%;
+    direction: rtl;
+}
+form
+{
+    height: 90%;
+    max-height: 100%;
+    min-height: 100%;
+}
+#MainContainer
+{
+    width: 100%;
+    direction: rtl;
+}
+#header
+{
+    margin-top: -8px;
+    margin-left: -8px;
+    height: 60px;
+    width: 100%;
+    background-image: url('../images/header_bg.png');
+    text-align: left;
+}
+#Rightmenu
+{
+    width: 200px;
+    float: right;
+    background: #e3f1fd url('../images/sidebar.jpg') no-repeat;
+    border-left: 1px solid #ffffff;
+}
+#tdRightmenu
+{
+    background-color: #e3f1fd;
+}
+
+#sidebar_title
+{
+    width: 180px;
+    height: 29px;
+    font: 11px tahoma;
+    color: white;
+    background: url('../images/sidebar_icon.png') no-repeat right;
+    padding: 20px 35px 0 0;
+    margin: 10px 32px;
+}
+.menu_item
+{
+    font: 11px tahoma;
+    color: #585757;
+    width: 160px;
+    height: 23px;
+    background-image: url('../images/menu_item_bg.png');
+    margin: auto;
+    margin-top: 5px;
+    padding: 7px 10px 0 0;
+    -moz-border-radius: 2px;
+    border-radius: 4px;
+    border: 1px solid white;
+}
+.sidebar_item_txt
+{
+    width: 140px;
+}
+#footer
+{
+    font: 11px tahoma;
+    color: grey;
+    height: 29px;
+    background-image: url('../images/footer_bg.png');
+    text-align: left;
+    border-bottom: 1px solid #d4d4d4;
+    border-left: 1px solid #d4d4d4;
+}
+/* Disable properties specified in the imported CSS file */
+.menu a
+{
+    border: none;
+    font-weight: normal;
+}
+/* Actual menu CSS starts here */
+.menu, .menu ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu
+{
+    width: 170px;
+    margin: auto;
+    border: solid 1px #ffffff;
+    border-radius: 5px;
+}
+.menu li
+{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.menu a
+{
+    height: 20px;
+    display: block;
+    margin-bottom: 1px;
+    padding: 3px 20px;
+    color: #737272;
+    background: url('../images/transparent.png') repeat;
+    text-decoration: none;
+}
+.menu a:hover, .menu a:focus, .menu a:active
+{
+    background-image: url('../images/transparent_hover.png');
+    color: #000000;
+}
+.menu ul li
+{
+    margin-bottom: -2px;
+}
+.menu ul a
+{
+    background: url('../images/transparent_li.png');
+    color: #ffffff;
+}
+
+.hidden
+{
+    display: none;
+}
+#toggle
+{
+    background-color: #bcdbe7;
+    padding: 1px;
+    height: 100%;
+    min-height: 100%;
+}
+.homeico
+{
+    padding-left: 10px;
+    text-decoration: none;
+    border: none;
+}
+.btn-act
+{
+    color: #003366;
+    font-family: Tahoma;
+    font-size: 12px;
+    background-color: #E5E5E5;
+    border: 1px solid #000000;
+}
