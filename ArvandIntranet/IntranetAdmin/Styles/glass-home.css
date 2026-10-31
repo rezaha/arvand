@@ -1,0 +1,58 @@
+/* Homepage only. Opaque surfaces are the default; blur is an enhancement. */
+@font-face{font-family:ArvandGlass;src:url('../fonts/DroidKufi-Regular.woff') format('woff');font-display:swap}
+.glass-ui{--glass-ink:#292722;--glass-muted:#5c5348;--glass-accent:#735331;--glass-line:#d9cdbd;--glass-surface:#fffdf9;--glass-radius:18px;direction:rtl;background:#f3eee6!important;color:var(--glass-ink);font-family:ArvandGlass,Tahoma,sans-serif;font-size:14px;line-height:1.8;margin:0}
+.glass-ui *{box-sizing:border-box}
+.glass-ui a{color:var(--glass-accent)}
+.glass-ui a:focus-visible,.glass-ui button:focus-visible,.glass-ui input:focus-visible,.glass-ui summary:focus-visible{outline:3px solid #174c80;outline-offset:3px}
+.glass-ui .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;width:calc(100% - 24px)!important;max-width:1600px;margin:20px auto;float:none}
+.glass-ui .topnav,.glass-ui .inner_nav{height:auto;min-height:60px;width:100%;float:none;background:var(--glass-surface);color:var(--glass-ink)}
+.glass-ui .inner_nav{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:12px 20px}
+.glass-ui .news_ticker,.glass-ui .ticker_list,.glass-ui #ticker_id{height:auto;float:none;width:auto;margin:0;padding:0;list-style:none}
+.glass-ui #ticker_id{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.glass-ui .ticker_name{color:var(--glass-ink);font-size:12px}
+.glass-ui .topnav #ticker_id a{color:var(--glass-accent)!important}
+.glass-ui .searchbox{float:none;margin:0;flex:1;min-width:240px;max-width:580px;background:transparent}
+.glass-ui .searchbox input[type=text]{width:100%;min-height:44px;border:1px solid var(--glass-line);border-radius:12px;padding:8px 12px;background:#fff;color:var(--glass-ink);font:inherit!important}
+.glass-ui .searchbox input[type=image]{min-width:44px;min-height:44px;object-fit:contain;padding:10px;background:#735331;border-radius:10px}
+.glass-ui .searchbox td:first-child{width:100%}
+.glass-ui .header{grid-column:1/-1;width:100%;height:auto;background:none;float:none}
+.glass-ui .logo{width:100%;height:auto;float:none}
+.glass-ui .logo img{display:block;max-width:100%;height:auto}
+.glass-ui .glass-menu-host,.glass-ui .sidebar,.glass-ui .main{width:auto;min-width:0;float:none;margin:0}
+.glass-ui .main{display:flex;flex-direction:column;gap:18px}
+.glass-ui .glass-navigation,.glass-ui .webpart,.glass-ui .annonce{border:1px solid var(--glass-line);border-radius:var(--glass-radius);background:var(--glass-surface);box-shadow:0 8px 30px #5941240d;padding:16px;width:100%;float:none;height:auto}
+.glass-ui .glass-navigation summary{min-height:44px;cursor:pointer;font-weight:bold;padding:8px}
+.glass-ui .glass-navigation nav{display:block}
+.glass-ui .top-menu{height:auto;border:0;background:none}
+.glass-ui .top-menu ul{padding:0;margin:0;list-style:none}
+.glass-ui .top-menu ul li,.glass-ui .top-menu ul ul li{float:none;height:auto;margin:0;background:none;font:inherit}
+.glass-ui .top-menu ul ul{position:static;visibility:visible;opacity:1;width:auto;height:auto;max-width:100%;border:0;border-inline-start:1px solid var(--glass-line);margin-inline-start:12px;background:none;transition:none}
+.glass-ui .top-menu ul li a,.glass-ui .top-menu ul li:hover>a{display:block;min-height:44px;padding:9px 12px;color:var(--glass-ink);font:inherit;overflow-wrap:anywhere;background:none}
+.glass-ui .top-menu ul li:hover{background:#f1e8dc}
+.glass-ui .sidebar .webpart{margin-block-end:16px}
+.glass-ui .main_title,.glass-ui .webpart_header{background:none;height:auto;min-height:40px;padding:4px;margin:0;list-style:none;border-bottom:1px solid var(--glass-line);color:var(--glass-ink)}
+.glass-ui .main_title_text,.glass-ui .webpart_title{color:var(--glass-ink);font:inherit;font-weight:bold}
+.glass-ui .main_title_corner,.glass-ui .webpart_header>li:has(>img){display:none}
+.glass-ui .annonce{order:-2;border-block-start:4px solid var(--glass-accent)}
+.glass-ui .thumb_link{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0;margin:16px 0;list-style:none;width:100%;height:auto}
+.glass-ui .thumb_link>li{width:auto;height:auto;float:none;margin:0;padding:0;background:none}
+.glass-ui .thumb_link a{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;min-height:112px;border:1px solid var(--glass-line);border-radius:12px;padding:12px;background:#fff;color:var(--glass-ink);text-decoration:none;text-align:center;overflow-wrap:anywhere}
+.glass-ui .glass-system-icon{width:28px;height:28px;color:var(--glass-accent)}
+.glass-ui .glass-all-link,.glass-ui .glass-slider button{display:inline-flex;min-height:44px;min-width:44px;align-items:center;justify-content:center;border:1px solid var(--glass-line);border-radius:10px;background:#fff;color:var(--glass-accent);padding:8px 14px;font:inherit;cursor:pointer}
+.glass-ui .pikachoose{order:-3;width:100%;height:auto;padding:0;min-width:0}
+.glass-ui #pikame{display:block;width:100%;height:auto;padding:0;margin:0;list-style:none}
+.glass-ui #pikame li{width:100%;height:auto;float:none;padding:0;margin:0}
+.glass-ui #pikame img{display:block;width:100%;max-width:100%;height:auto;border-radius:var(--glass-radius)}
+.glass-ui #pikame span{display:block;padding:8px;color:var(--glass-ink)}
+.glass-ui .glass-slider-controls{display:flex;align-items:center;gap:12px;padding-block:8px}
+.glass-ui [hidden]{display:none!important}
+.glass-ui .main img,.glass-ui .sidebar img{max-width:100%}
+.glass-ui .main table,.glass-ui .sidebar table{display:block;max-width:100%;overflow-x:auto}
+.glass-ui .footer{width:100%;height:auto;padding:20px;background:#302a24;color:#fff;float:none}
+.glass-ui .footer a{color:#fff}
+@media(min-width:900px){.glass-ui .wrap{grid-template-columns:240px minmax(0,1fr)}.glass-ui .glass-menu-host{grid-column:1;grid-row:2}.glass-ui .main{grid-column:2;grid-row:2/4}.glass-ui .sidebar{grid-column:1;grid-row:3}.glass-ui .thumb_link{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@supports ((backdrop-filter:blur(12px)) or (-webkit-backdrop-filter:blur(12px))){.glass-ui .glass-navigation,.glass-ui .topnav{background:rgba(255,253,249,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}}
+@supports not ((backdrop-filter:blur(12px)) or (-webkit-backdrop-filter:blur(12px))){.glass-ui .glass-navigation,.glass-ui .topnav{background:#fffdf9}}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.glass-ui .glass-navigation,.glass-ui .topnav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}.glass-ui{--glass-line:#735331;--glass-muted:#292722}}
+@media(prefers-reduced-motion:reduce){.glass-ui *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.glass-ui{background:Canvas!important;color:CanvasText}.glass-ui a,.glass-ui .top-menu ul li a{color:LinkText}.glass-ui .glass-navigation,.glass-ui .webpart,.glass-ui .annonce,.glass-ui .thumb_link a{background:Canvas;border:1px solid CanvasText;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}}

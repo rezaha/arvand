@@ -95,6 +95,7 @@
     <script type="text/javascript">
         $(document).ready(
             function () {
+                if (document.body.className.indexOf("glass-ui") !== -1) { return; }
                 $("#pikame").PikaChoose({
                     previous: "قبلی",
                     next: "بعدی",
@@ -154,7 +155,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body onload="updateClock(); setInterval('updateClock()', 1000 )">
+<body class="<%= If(String.Equals(Page.AppRelativeVirtualPath, "~/default.aspx", StringComparison.OrdinalIgnoreCase), "glass-ui", "") %>" onload="updateClock(); setInterval('updateClock()', 1000 )">
     <form id="form1" runat="server">
         <div class="topnav">
             <div class="inner_nav">
@@ -218,7 +219,9 @@
         <div class="wrap">
             <uc3:HeaderWUC runat="server" ID="HeaderWUC" />
             <!--end of div header !-->
-            <uc1:MenuWUC ID="MenuWUC1" runat="server" />
+            <div class="glass-menu-host">
+                <uc1:MenuWUC ID="MenuWUC1" runat="server" />
+            </div>
             <!--end of ul "menu" !-->
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
