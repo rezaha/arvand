@@ -284,7 +284,7 @@
 @media(forced-colors:active){.glass-ui{background:Canvas!important}.glass-ui .topnav{background:Canvas;color:CanvasText;-webkit-backdrop-filter:none;backdrop-filter:none;border-color:CanvasText;box-shadow:none}.glass-ui .topnav #ticker_id>li,.glass-ui .topnav .ticker_name{color:CanvasText}.glass-ui .topnav #ticker_id a{color:LinkText!important}.glass-ui .topnav .searchbox input[type=text]{background:Field;color:FieldText;border-color:FieldText}.glass-ui .topnav .searchbox input[type=text]::placeholder{color:FieldText}.glass-ui .topnav a:focus-visible,.glass-ui .topnav input:focus-visible{outline-color:Highlight}}
 
 /* Restore the light toolbar and let the original slide fill its natural width. */
-.glass-ui .topnav{background:#fffdf9;color:var(--glass-ink);box-shadow:none;border-bottom:1px solid var(--glass-line)}
+.glass-ui .topnav{background:#fffdf9;color:var(--glass-ink);box-shadow:none;border-bottom:2px solid #ff9000}
 .glass-ui .topnav #ticker_id>li,.glass-ui .topnav .ticker_name{color:var(--glass-ink)}
 .glass-ui .topnav #ticker_id a{color:var(--glass-accent)!important}
 .glass-ui .topnav .glass-brand{background:transparent;border:0;box-shadow:none}
@@ -296,7 +296,7 @@
 .glass-ui .glass-slider #pikame .glass-slide-caption{inset-inline:24px;inset-block-start:16px;inset-block-end:auto;width:auto;max-width:none;max-height:calc(100% - 80px);overflow:auto;background:#fffdf9ed;color:#292722;border:1px solid #ffffffa6;box-shadow:none;padding:16px 22px;gap:6px}
 .glass-ui .glass-slider #pikame .glass-slide-caption>.glass-slide-english{color:#514535}
 .glass-ui .glass-slider #pikame .glass-slide-caption>.glass-slide-persian{color:#292722}
-@supports ((backdrop-filter:blur(16px)) or (-webkit-backdrop-filter:blur(16px))){.glass-ui .topnav{background:#fffdf9ed;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}.glass-ui .glass-slider #pikame .glass-slide-caption{background:#fffdf9d9;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}}
+@supports ((backdrop-filter:blur(16px)) or (-webkit-backdrop-filter:blur(16px))){.glass-ui .topnav{background:#fffdf961;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}.glass-ui .glass-slider #pikame .glass-slide-caption{background:#fffdf9d9;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}}
 @media(hover:hover){.glass-ui .topnav #ticker_id>li:hover,.glass-ui .topnav #ticker_id a:hover{background:#7353310d;box-shadow:none}.glass-ui .topnav .searchbox input[type=text]:hover,.glass-ui .topnav .searchbox input[type=text]:focus{background:#fff;border-color:#af8756}.glass-ui .topnav .searchbox input[type=image]:hover{background:#5b4024}.glass-ui .topnav .glass-brand:hover{box-shadow:none;background:transparent}}
 @media(max-width:599px){.glass-ui .glass-slider #pikame .glass-slide-caption{position:relative;inset:auto;width:100%;max-height:none;padding:10px 14px;border-radius:0;overflow:visible}.glass-ui .glass-slider-controls{inset-block-start:8px;inset-block-end:auto}.glass-ui .glass-slider #pikame .glass-slide-english{font-size:10px}.glass-ui .glass-slider #pikame .glass-slide-persian{font-size:18px}}
 @media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.glass-ui .topnav,.glass-ui .glass-slider #pikame .glass-slide-caption{background:#fffdf9;-webkit-backdrop-filter:none;backdrop-filter:none}.glass-ui .topnav .searchbox input[type=text]{background:#fff}}
@@ -331,8 +331,8 @@
 @media(forced-colors:active){.glass-ui .glass-slider #pikame .glass-slide-caption,.glass-ui .glass-slider .glass-slider-arrow{background:Canvas;color:CanvasText;border-color:CanvasText;-webkit-backdrop-filter:none;backdrop-filter:none}.glass-ui .glass-slider #pikame .glass-slide-caption>span{color:CanvasText}.glass-ui .glass-slider .glass-slider-arrow svg{color:ButtonText}}
 
 /* Requested caption translucency and native hamburger menu enhancement. */
-.glass-ui .glass-slider #pikame .glass-slide-caption{width:fit-content;align-items:center;justify-content:center;text-align:center;background:rgba(30,27,24,.25)}
-.glass-ui .glass-slider #pikame .glass-slide-caption>span{text-align:center;background:rgba(30,27,24,.7);padding:3px 8px;border-radius:6px}
+.glass-ui .glass-slider #pikame .glass-slide-caption{width:min(420px,calc(100% - 32px));align-items:center;justify-content:center;text-align:center;background:rgba(30,27,24,.25)}
+.glass-ui .glass-slider #pikame .glass-slide-caption>span{width:100%;text-align:center;background:none;padding:3px 8px;border-radius:0;text-shadow:0 1px 3px #000,1px 0 2px #000,-1px 0 2px #000}
 .glass-ui .glass-navigation{border-color:#eae5dd;box-shadow:none}
 .glass-ui .glass-navigation>summary{display:flex;align-items:center;gap:12px;list-style:none}
 .glass-ui .glass-navigation>summary::-webkit-details-marker{display:none}
@@ -346,3 +346,11 @@
 
 /* Full-bleed slide photography: fill the frame without distorting its ratio. */
 .glass-ui .glass-slider #pikame li>a>img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:center}
+
+/* Larger glass controls; background opacity does not fade the white arrow. */
+.glass-ui .glass-slider .glass-slider-arrow{width:56px;height:56px;min-width:56px;min-height:56px;flex-basis:56px;padding:15px}
+.glass-ui .glass-slider .glass-slider-arrow svg{width:24px;height:24px}
+@supports ((backdrop-filter:blur(12px)) or (-webkit-backdrop-filter:blur(12px))){.glass-ui .glass-slider .glass-slider-arrow{background:rgba(30,27,24,.4)}}
+@media(hover:hover){.glass-ui .glass-slider .glass-slider-arrow:hover{background:rgba(30,27,24,.6)}}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.glass-ui .glass-slider .glass-slider-arrow{background:#28231f}}
+@media(forced-colors:active){.glass-ui .glass-slider .glass-slider-arrow{background:Canvas}.glass-ui .glass-slider #pikame .glass-slide-caption>span{text-shadow:none}}
