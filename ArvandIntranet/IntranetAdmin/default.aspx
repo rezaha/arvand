@@ -2,8 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="<%# ResolveClientUrl("~/Styles/glass-home.css?v=7") %>" />
-    <script defer="defer" src="<%# ResolveClientUrl("~/Scripts/glass-home.js?v=7") %>"></script>
+    <link rel="stylesheet" href="<%# ResolveClientUrl("~/Styles/glass-home.css?v=8") %>" />
+    <script defer="defer" src="<%# ResolveClientUrl("~/Scripts/glass-home.js?v=8") %>"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="sidebar">
