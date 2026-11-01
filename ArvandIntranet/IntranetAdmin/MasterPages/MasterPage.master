@@ -135,6 +135,7 @@
                 $('#s7').children().css({ "display": "none" });
             }
 
+            if (document.body.classList.contains('glass-ui')) { return; }
             var pageSize = <%#GetPageSize()%>;
             var imageAddress;
              

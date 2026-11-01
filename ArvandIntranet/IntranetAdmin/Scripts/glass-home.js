@@ -18,6 +18,23 @@
     }
     function init() {
         if (!document.body.classList.contains('glass-ui')) { return; }
+        var wrap = document.querySelector('.wrap');
+        if (wrap) { wrap.style.removeProperty('width'); }
+        var topnav = document.querySelector('.topnav');
+        if (topnav && !topnav.dataset.glassScrollReady) {
+            topnav.dataset.glassScrollReady = 'true';
+            var pending = false;
+            function syncTopnav() {
+                var y = window.scrollY || document.documentElement.scrollTop;
+                if (y > 80) { topnav.classList.add('glass-topnav-compact'); }
+                else if (y < 20) { topnav.classList.remove('glass-topnav-compact'); }
+                pending = false;
+            }
+            window.addEventListener('scroll', function () {
+                if (!pending) { pending = true; window.requestAnimationFrame(syncTopnav); }
+            }, { passive: true });
+            syncTopnav();
+        }
         var host = document.querySelector('.glass-menu-host');
         if (host && !host.querySelector('details')) {
             var details = document.createElement('details');
@@ -211,13 +228,6 @@
             gallery.parentNode.setAttribute('aria-label', 'گالری تصاویر سازمان');
             Array.prototype.forEach.call(slides, function (slide, index) {
                 var image = slide.querySelector('img');
-                if (image) {
-                    var backdrop = image.cloneNode(false);
-                    backdrop.removeAttribute('id'); backdrop.alt = '';
-                    backdrop.setAttribute('aria-hidden', 'true');
-                    backdrop.className = 'glass-slide-backdrop';
-                    slide.insertBefore(backdrop, slide.firstChild);
-                }
                 var caption = slide.querySelector('span');
                 var captionText = caption ? caption.textContent.trim() : '';
                 if (!caption) { caption = document.createElement('span'); slide.appendChild(caption); }

@@ -174,7 +174,7 @@
 .glass-ui .glass-slider #pikame li:not([hidden]){animation:glass-slide-reveal .38s ease-out both}
 .glass-ui .glass-slider #pikame li>a{position:relative;z-index:1}
 .glass-ui .glass-slider #pikame li>a>img{object-fit:contain;height:clamp(280px,25vw,360px);width:100%;border:0;background:transparent;transform:none}
-.glass-ui .glass-slider #pikame img.glass-slide-backdrop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(20px);opacity:.4;pointer-events:none;z-index:0}
+
 .glass-ui .glass-slider #pikame .glass-slide-caption{z-index:1;background:#29231de8;border:1px solid #ffffff60;box-shadow:inset 0 1px 0 #ffffff45,0 8px 24px #0002;border-radius:16px;max-width:min(560px,calc(100% - 32px));animation:glass-caption-reveal .45s ease-out both}
 .glass-ui .glass-slider #pikame .glass-slide-persian{font-family:ArvandGlass,Tahoma,sans-serif;font-size:clamp(18px,2vw,28px);color:#fff8ea;line-height:1.9}
 .glass-ui .glass-slider #pikame .glass-slide-english{color:#fff;font-size:11px;letter-spacing:.16em}
@@ -254,6 +254,31 @@
 @media(min-width:1100px){.glass-ui .glass-managers{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(hover:hover){.glass-ui .glass-notice-card:hover,.glass-ui .annonce_item:hover{translate:0 -3px}.glass-ui .glass-visitors .weather_list li:hover{background:#f5eee3!important}.glass-ui .glass-managers .excutive_item:hover,.glass-ui .dashboard li>a:hover{border-color:#af8756;box-shadow:0 8px 24px #59412418}.glass-ui .ann-readmore:hover::after,.glass-ui .about-min-more:hover::after,.glass-ui .excutive_more:hover::after{translate:-4px 0}.glass-ui .ann-readmore:hover,.glass-ui .about-min-more:hover,.glass-ui .excutive_more:hover{background:#ede2d3;border-color:#af8756}}
 @media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.glass-ui .glass-slider #pikame .glass-slide-caption,.glass-ui .glass-slider .glass-slider-arrow{background:#29231d;-webkit-backdrop-filter:none;backdrop-filter:none}}
-@media(prefers-reduced-motion:reduce){.glass-ui *{animation:none!important;transition:none!important;translate:none!important}.glass-ui .glass-slide-backdrop{filter:none;opacity:.15}}
-@media(forced-colors:active){.glass-ui .glass-slider #pikame .glass-slide-caption,.glass-ui .glass-slider .glass-slider-arrow,.glass-ui .glass-managers .excutive_item,.glass-ui .glass-urgent,.glass-ui .dashboard li>a,.glass-ui .glass-visitors .visitor{background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none}.glass-ui .glass-slide-backdrop{display:none}.glass-ui .glass-slider .glass-slider-arrow svg{color:ButtonText}.glass-ui .ann-readmore,.glass-ui .about-min-more,.glass-ui .excutive_more{background:ButtonFace;color:ButtonText;border-color:ButtonText}}
+@media(prefers-reduced-motion:reduce){.glass-ui *{animation:none!important;transition:none!important;translate:none!important}}
+@media(forced-colors:active){.glass-ui .glass-slider #pikame .glass-slide-caption,.glass-ui .glass-slider .glass-slider-arrow,.glass-ui .glass-managers .excutive_item,.glass-ui .glass-urgent,.glass-ui .dashboard li>a,.glass-ui .glass-visitors .visitor{background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none}.glass-ui .glass-slider .glass-slider-arrow svg{color:ButtonText}.glass-ui .ann-readmore,.glass-ui .about-min-more,.glass-ui .excutive_more{background:ButtonFace;color:ButtonText;border-color:ButtonText}}
 @media(forced-colors:active){.glass-ui .glass-slider #pikame .glass-slide-caption,.glass-ui .glass-slider .glass-slider-arrow{-webkit-backdrop-filter:none;backdrop-filter:none}}
+
+/* White fluid page; no fixed-width sizing or blurred duplicate slide image. */
+.glass-ui{background:#fff!important;width:auto;max-width:none;min-width:0}
+.glass-ui .wrap{width:auto!important;max-width:none;margin:20px 12px}
+.glass-ui .glass-slider #pikame li{background:transparent}
+.glass-ui .glass-slider #pikame li>a>img{filter:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+/* The toolbar remains in document flow and becomes slightly more compact. */
+.glass-ui .topnav{position:sticky;inset-block-start:0;inset-inline:auto;z-index:100;background:#272421;color:#fff;border-bottom:1px solid #ffffff35;box-shadow:0 4px 20px #0002;padding-block:12px;transition:padding .2s ease}
+.glass-ui .topnav.glass-topnav-compact{padding-block:6px}
+.glass-ui .topnav .inner_nav{background:transparent}
+.glass-ui .topnav #ticker_id>li,.glass-ui .topnav .ticker_name{color:#f8f5f0}
+.glass-ui .topnav #ticker_id a{color:#fff!important}
+.glass-ui .topnav #ticker_id>li{border-radius:6px;transition:background-color .18s,box-shadow .18s}
+.glass-ui .topnav #ticker_id a{display:inline-flex;align-items:center;min-height:44px;border-radius:8px;padding-inline:6px}
+.glass-ui .topnav .glass-brand{padding:4px 8px;background:#fff;border:1px solid #ffffff80;border-radius:10px;min-height:44px}
+.glass-ui .topnav .glass-brand img{width:204px;transition:width .2s ease}
+.glass-ui .topnav.glass-topnav-compact .glass-brand img{width:188px}
+.glass-ui .topnav .searchbox input[type=text]{color:#fff;background:#ffffff12;border-color:#ffffff65;transition:background-color .18s,border-color .18s}
+.glass-ui .topnav .searchbox input[type=text]::placeholder{color:#e4ded6;opacity:1}
+.glass-ui .topnav .searchbox input[type=image]{background:#ffffff20;border:1px solid #ffffff65;border-radius:10px;transition:background-color .18s,box-shadow .18s}
+.glass-ui .topnav a:focus-visible,.glass-ui .topnav input:focus-visible{outline-color:#fff;outline-offset:3px}
+@supports ((backdrop-filter:blur(18px)) or (-webkit-backdrop-filter:blur(18px))){.glass-ui .topnav{background:#272421ed;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}}
+@media(hover:hover){.glass-ui .topnav #ticker_id>li:hover,.glass-ui .topnav #ticker_id a:hover{background:#ffffff16;box-shadow:inset 0 1px 0 #ffffff35}.glass-ui .topnav .searchbox input:hover,.glass-ui .topnav .searchbox input:focus{background:#ffffff24;border-color:#ffffffa0}.glass-ui .topnav .glass-brand:hover{box-shadow:0 0 0 3px #ffffff25}}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.glass-ui .topnav{background:#272421;-webkit-backdrop-filter:none;backdrop-filter:none}.glass-ui .topnav .searchbox input[type=text]{background:#39342e}}
+@media(forced-colors:active){.glass-ui{background:Canvas!important}.glass-ui .topnav{background:Canvas;color:CanvasText;-webkit-backdrop-filter:none;backdrop-filter:none;border-color:CanvasText;box-shadow:none}.glass-ui .topnav #ticker_id>li,.glass-ui .topnav .ticker_name{color:CanvasText}.glass-ui .topnav #ticker_id a{color:LinkText!important}.glass-ui .topnav .searchbox input[type=text]{background:Field;color:FieldText;border-color:FieldText}.glass-ui .topnav .searchbox input[type=text]::placeholder{color:FieldText}.glass-ui .topnav a:focus-visible,.glass-ui .topnav input:focus-visible{outline-color:Highlight}}
