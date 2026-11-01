@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="LinksWUC.ascx.vb" Inherits="UserControls_LinksWUC" %>
 
-<div class="webpart">
+<div class="webpart glass-links">
     <ul class="webpart_header">
         <li class="webpart_title">پیوندها
         </li>

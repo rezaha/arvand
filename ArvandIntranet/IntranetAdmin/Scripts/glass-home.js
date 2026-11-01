@@ -121,6 +121,7 @@
                     link.appendChild(icon);
                     var label = document.createElement('span');
                     label.textContent = title;
+                    label.className = 'glass-link-label';
                     link.appendChild(label);
                 }
                 if (index >= 12) { item.hidden = true; }
@@ -143,6 +144,64 @@
                 list.parentNode.insertBefore(button, list);
             }
         });
+        Array.prototype.forEach.call(document.querySelectorAll('.webpart_title, .main_title_text'), function (title) {
+            var text = title.textContent.trim().replace(/ي/g, 'ی').replace(/ك/g, 'ک');
+            if (text === 'نام وب پارت' || text === 'نام وب‌پارت') {
+                var label = title.querySelector('span') || title;
+                label.textContent = 'اطلاعات سازمان';
+            }
+            if (/^(تست|test)$/i.test(text)) {
+                var header = title.closest('.webpart_header, .main_title');
+                var box = title.closest('.webpart');
+                if (box) { box.hidden = true; }
+                else if (header) {
+                    header.hidden = true;
+                    var sibling = header.nextElementSibling;
+                    if (sibling && sibling.classList.contains('webpart')) { sibling.hidden = true; }
+                }
+            }
+        });
+        var currency = document.querySelector('.glass-currency');
+        if (currency && !currency.dataset.glassReady) {
+            currency.dataset.glassReady = 'true';
+            var pages = currency.querySelectorAll('#s7 > li');
+            var rateIndex = 0;
+            function showRates(next) {
+                if (!pages.length) { return; }
+                rateIndex = (next + pages.length) % pages.length;
+                Array.prototype.forEach.call(pages, function (page, index) { page.hidden = index !== rateIndex; });
+            }
+            ['prev', 'next'].forEach(function (id, index) {
+                var button = currency.querySelector('#' + id);
+                if (!button) { return; }
+                button.textContent = '';
+                button.setAttribute('aria-label', index ? 'نرخ‌های بعدی' : 'نرخ‌های قبلی');
+                button.appendChild(lineIcon(index ? 'M15 5l-7 7 7 7' : 'M9 5l7 7-7 7'));
+                button.addEventListener('click', function (event) { event.preventDefault(); showRates(rateIndex + (index ? 1 : -1)); });
+            });
+            var rates = currency.querySelector('#s7');
+            if (rates) { rates.setAttribute('aria-live', 'polite'); }
+            var note = document.createElement('p');
+            note.className = 'glass-currency-note';
+            note.textContent = 'مقادیر نمایشی؛ نرخ زنده نیست.';
+            currency.appendChild(note);
+            showRates(0);
+        }
+        Array.prototype.forEach.call(document.querySelectorAll('.dashboard li'), function (item) {
+            var link = item.querySelector('a');
+            var label = item.querySelector(':scope > span');
+            if (link && label) { link.appendChild(label); }
+            if (link && !link.querySelector('img, svg')) {
+                link.insertBefore(lineIcon('M4 4h6v6H4z M14 4h6v6h-6z M4 14h6v6H4z M14 14h6v6h-6z'), link.firstChild);
+            }
+        });
+        // Keep server-provided text; use explicit samples only for empty notice fields.
+        Array.prototype.forEach.call(document.querySelectorAll('.annonce_item'), function (card) {
+            var title = card.querySelector('h2 a');
+            var summary = card.querySelector('p');
+            if (title && !title.textContent.trim()) { title.textContent = 'نمونه: اطلاع‌رسانی سازمان'; }
+            if (summary && !summary.textContent.trim()) { summary.textContent = 'نمونه: معرفی خدمات و برنامه‌های سازمان؛ محتوای نهایی در این بخش قرار می‌گیرد.'; }
+        });
         var gallery = document.querySelector('#pikame');
         if (gallery && !gallery.getAttribute('data-glass-ready')) {
             gallery.setAttribute('data-glass-ready', 'true');
@@ -152,6 +211,13 @@
             gallery.parentNode.setAttribute('aria-label', 'گالری تصاویر سازمان');
             Array.prototype.forEach.call(slides, function (slide, index) {
                 var image = slide.querySelector('img');
+                if (image) {
+                    var backdrop = image.cloneNode(false);
+                    backdrop.removeAttribute('id'); backdrop.alt = '';
+                    backdrop.setAttribute('aria-hidden', 'true');
+                    backdrop.className = 'glass-slide-backdrop';
+                    slide.insertBefore(backdrop, slide.firstChild);
+                }
                 var caption = slide.querySelector('span');
                 var captionText = caption ? caption.textContent.trim() : '';
                 if (!caption) { caption = document.createElement('span'); slide.appendChild(caption); }
@@ -175,17 +241,11 @@
                 var status = document.createElement('span');
                 status.setAttribute('aria-live', 'polite');
                 status.className = 'glass-visually-hidden';
-                var dots = document.createElement('div');
-                dots.className = 'glass-slider-dots';
-                var dotButtons = [];
                 function show(next) {
                     current = (next + slides.length) % slides.length;
                     Array.prototype.forEach.call(slides, function (slide, index) { slide.hidden = index !== current; });
                     status.textContent = 'تصویر ' + (current + 1) + ' از ' + slides.length;
-                    dotButtons.forEach(function (dot, index) {
-                        if (index === current) { dot.setAttribute('aria-current', 'true'); }
-                        else { dot.removeAttribute('aria-current'); }
-                    });
+
                 }
                 ['تصویر قبلی', 'تصویر بعدی'].forEach(function (label, index) {
                     var button = document.createElement('button');
@@ -196,15 +256,6 @@
                     button.addEventListener('click', function () { show(current + (index === 0 ? -1 : 1)); });
                     controls.appendChild(button);
                 });
-                Array.prototype.forEach.call(slides, function (slide, index) {
-                    var dot = document.createElement('button');
-                    dot.type = 'button';
-                    dot.setAttribute('aria-label', 'نمایش تصویر ' + (index + 1));
-                    dot.addEventListener('click', function () { show(index); });
-                    dotButtons.push(dot);
-                    dots.appendChild(dot);
-                });
-                controls.appendChild(dots);
                 controls.appendChild(status);
                 gallery.parentNode.appendChild(controls);
                 gallery.parentNode.classList.add('glass-slider');

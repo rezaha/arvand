@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="VisitorsWUC.ascx.vb" Inherits="UserControls_VisitorsWUC" %>
-<div class="webpart">
+<div class="webpart glass-visitors">
     <ul class="webpart_header">
         <li class="webpart_title">آمار بازدیدکنندگان
         </li>

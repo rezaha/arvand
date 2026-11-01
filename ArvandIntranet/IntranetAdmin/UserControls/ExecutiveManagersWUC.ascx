@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="ExecutiveManagersWUC.ascx.vb" Inherits="UserControls_ExecutiveManagersWUC" %>
 
-<div>
+<div class="glass-managers">
     <ul class="main_title">
         <li class="main_title_text">مدیران اجرائی
         </li>

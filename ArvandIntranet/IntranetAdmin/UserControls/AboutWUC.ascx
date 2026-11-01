@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="AboutWUC.ascx.vb" Inherits="UserControls_AboutWUC" %>
-<div class="software_list">
+<div class="software_list glass-urgent">
     <ul class="main_title">
         <li class="main_title_text">پیغام فوری
         </li>

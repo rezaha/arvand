@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="UCExRates.ascx.vb" Inherits="UserControl_ExRates_UCExRates" %>
-<div class="webpart">
+<div class="webpart glass-currency">
     <ul class="webpart_header">
         <li class="webpart_title">نرخ ارز
         </li>
