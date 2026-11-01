@@ -16,6 +16,28 @@
             details.appendChild(nav);
             host.appendChild(details);
         }
+        if (host) {
+            Array.prototype.forEach.call(host.querySelectorAll('.top-menu li > ul'), function (submenu) {
+                var group = document.createElement('details');
+                group.className = 'glass-submenu';
+                var toggle = document.createElement('summary');
+                var parentLink = submenu.parentNode.querySelector('a');
+                toggle.textContent = 'زیرمجموعهٔ ' + (parentLink ? parentLink.textContent.trim() : 'منو');
+                submenu.parentNode.insertBefore(group, submenu);
+                group.appendChild(toggle);
+                group.appendChild(submenu);
+            });
+            Array.prototype.forEach.call(host.querySelectorAll('a[href]'), function (link) {
+                if (link.getAttribute('href') !== '#' && link.pathname === window.location.pathname && link.search === window.location.search) {
+                    link.setAttribute('aria-current', 'page');
+                    var ancestor = link.parentNode;
+                    while (ancestor && ancestor !== host) {
+                        if (ancestor.tagName === 'DETAILS') { ancestor.open = true; }
+                        ancestor = ancestor.parentNode;
+                    }
+                }
+            });
+        }
         var search = document.querySelector('.searchbox input[type=text]');
         if (search) {
             search.setAttribute('aria-label', 'جستجو در محتوای پرتال');
@@ -75,16 +97,31 @@
         if (gallery && !gallery.getAttribute('data-glass-ready')) {
             gallery.setAttribute('data-glass-ready', 'true');
             var slides = gallery.querySelectorAll('li');
+            gallery.parentNode.classList.add('glass-slider');
+            gallery.parentNode.setAttribute('role', 'region');
+            gallery.parentNode.setAttribute('aria-label', 'گالری تصاویر سازمان');
+            Array.prototype.forEach.call(slides, function (slide, index) {
+                var image = slide.querySelector('img');
+                var caption = slide.querySelector('span');
+                if (image && !image.alt) { image.alt = caption && caption.textContent.trim() ? caption.textContent.trim() : 'تصویر سازمان ' + (index + 1); }
+            });
             if (slides.length > 1) {
                 var current = 0;
                 var controls = document.createElement('div');
                 controls.className = 'glass-slider-controls';
                 var status = document.createElement('span');
                 status.setAttribute('aria-live', 'polite');
+                var dots = document.createElement('div');
+                dots.className = 'glass-slider-dots';
+                var dotButtons = [];
                 function show(next) {
                     current = (next + slides.length) % slides.length;
                     Array.prototype.forEach.call(slides, function (slide, index) { slide.hidden = index !== current; });
                     status.textContent = 'تصویر ' + (current + 1) + ' از ' + slides.length;
+                    dotButtons.forEach(function (dot, index) {
+                        if (index === current) { dot.setAttribute('aria-current', 'true'); }
+                        else { dot.removeAttribute('aria-current'); }
+                    });
                 }
                 ['تصویر قبلی', 'تصویر بعدی'].forEach(function (label, index) {
                     var button = document.createElement('button');
@@ -93,6 +130,15 @@
                     button.addEventListener('click', function () { show(current + (index === 0 ? -1 : 1)); });
                     controls.appendChild(button);
                 });
+                Array.prototype.forEach.call(slides, function (slide, index) {
+                    var dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.setAttribute('aria-label', 'نمایش تصویر ' + (index + 1));
+                    dot.addEventListener('click', function () { show(index); });
+                    dotButtons.push(dot);
+                    dots.appendChild(dot);
+                });
+                controls.appendChild(dots);
                 controls.appendChild(status);
                 gallery.parentNode.appendChild(controls);
                 gallery.parentNode.classList.add('glass-slider');
