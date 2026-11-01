@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="DivisionWUC.ascx.vb" Inherits="UserControls_DivisionWUC" %>
-<div class="webpart">
+<div class="webpart glass-departments">
     <ul class="webpart_header">
         <li class="webpart_title">امور
         </li>

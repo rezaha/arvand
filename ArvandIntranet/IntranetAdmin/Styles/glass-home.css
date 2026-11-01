@@ -125,3 +125,45 @@
 @supports ((backdrop-filter:blur(12px)) or (-webkit-backdrop-filter:blur(12px))){.glass-ui .glass-navigation{background:linear-gradient(145deg,#fffdf9f5,#f2e9dde8)}}
 @media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.glass-ui .glass-navigation,.glass-ui .glass-slider-controls,.glass-ui .glass-notice-card{background:#fff}.glass-ui .glass-navigation .top-menu a:hover{background:#f2e9dd}}
 @media(forced-colors:active){.glass-ui .glass-navigation,.glass-ui .glass-slider,.glass-ui .glass-slider-controls,.glass-ui .glass-notice-card,.glass-ui .annonce_item{background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none}.glass-ui .glass-slider #pikame span{background:Canvas;color:CanvasText}.glass-ui .glass-navigation .top-menu a[aria-current=page]{background:Highlight;color:HighlightText}}
+
+/* Slim carousel and unified, flat navigation. */
+.glass-ui .glass-navigation{background:#fffdf9;border-color:#e0d6c8;box-shadow:0 4px 18px #5941240a;padding:10px}
+.glass-ui .glass-navigation .top-menu>ul>li{border:0;padding-block:1px}
+.glass-ui .glass-navigation .top-menu a,.glass-ui .glass-navigation .top-menu ul li:hover>a{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:normal;color:#655b4f;padding:9px 10px;line-height:1.9}
+.glass-ui .glass-navigation .top-menu>ul>li>a::before{content:none}
+.glass-ui .glass-menu-icon{flex:0 0 20px;width:20px;height:20px;color:#84613a}
+.glass-ui .glass-navigation .links_ico{display:none}
+.glass-ui .glass-navigation .links_text{float:none;width:auto;height:auto;margin:0;padding:0;font:inherit;line-height:inherit;background:none}
+.glass-ui .glass-navigation .top-menu a[aria-current=page],.glass-ui .glass-navigation .top-menu li:hover>a[aria-current=page]{background:#ede5d9;color:#493c2b;border-color:#d9cbb8}
+.glass-ui .glass-navigation .top-menu a[aria-current=page] .glass-menu-icon{color:inherit}
+.glass-ui .glass-navigation>summary{font-size:12px;font-weight:normal;color:#655b4f}
+.glass-ui .glass-submenu>summary{font-size:11px;color:#655b4f}
+.glass-ui .glass-slider{position:relative;border-radius:16px;box-shadow:0 5px 20px #302a2414}
+.glass-ui .glass-slider #pikame li{position:relative;min-width:0}
+.glass-ui .glass-slider #pikame img{height:clamp(260px,24vw,340px);width:100%;object-fit:cover;object-position:center}
+.glass-ui .glass-slider #pikame .glass-slide-caption{position:absolute;inset-inline-start:clamp(16px,3vw,40px);inset-inline-end:clamp(16px,3vw,40px);inset-block-end:76px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:14px 18px;background:#211e1bf2;border:1px solid #ffffff38;border-radius:12px;pointer-events:none;width:fit-content;max-width:calc(100% - 32px);color:#fff}
+.glass-ui .glass-slider #pikame .glass-slide-caption>span{display:block;position:static;padding:0;margin:0;background:none;color:#fff;overflow-wrap:anywhere}
+.glass-ui .glass-slider #pikame .glass-slide-english{font-family:Arial,Helvetica,sans-serif;font-size:clamp(11px,1vw,14px);letter-spacing:.12em;line-height:1.6}
+.glass-ui .glass-slider #pikame .glass-slide-persian{font-size:clamp(20px,2.1vw,30px);font-weight:normal;line-height:1.8}
+.glass-ui .glass-slider-controls{position:absolute;inset-inline:16px;inset-block-end:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:none;border:0;margin:0;padding:0;z-index:2;pointer-events:none}
+.glass-ui .glass-slider-controls button{pointer-events:auto}
+.glass-ui .glass-slider .glass-slider-arrow{width:44px;height:44px;padding:10px;border-radius:50%;border:1px solid #fff9;background:#322a22e8;color:#fff;box-shadow:inset 0 1px 0 #fff3}
+.glass-ui .glass-slider-arrow .glass-menu-icon{color:inherit}
+.glass-ui .glass-slider-dots{margin-inline-start:auto;gap:0;background:#322a22e8;border-radius:24px;padding-inline:4px;pointer-events:auto}
+.glass-ui .glass-slider-dots button::after{border-color:#fff;background:transparent}
+.glass-ui .glass-slider-dots button[aria-current=true]::after{background:#fff}
+.glass-ui .glass-slider .glass-slider-controls .glass-visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.glass-ui .annonce{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+.glass-ui .annonce>.main_title{grid-column:1/-1;width:auto;margin:0}
+.glass-ui .annonce>.annonce_item{min-width:0;width:auto;margin:0}
+@media(min-width:700px){.glass-ui .annonce{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1200px){.glass-ui .annonce{grid-template-columns:repeat(3,minmax(0,1fr))}.glass-ui .glass-notice-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:900px){.glass-ui .glass-menu-host{align-self:start}.glass-ui .main{align-self:start}}
+@media(max-width:599px){.glass-ui .glass-slider #pikame .glass-slide-caption{padding:10px;inset-block-end:80px}.glass-ui .glass-slider-dots{max-width:45%;flex-wrap:nowrap;overflow-x:auto}.glass-ui .glass-slider-dots button{flex-shrink:0}}
+@supports ((backdrop-filter:blur(12px)) or (-webkit-backdrop-filter:blur(12px))){.glass-ui .glass-navigation{background:#fffdf9f0}}
+@media(hover:hover){.glass-ui .glass-slider .glass-slider-arrow:hover{background:#514232;color:#fff}}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.glass-ui .glass-navigation{background:#fffdf9}.glass-ui .glass-slider .glass-slider-arrow,.glass-ui .glass-slider-dots,.glass-ui .glass-slider #pikame .glass-slide-caption{background:#211e1b}}
+@media(forced-colors:active){.glass-ui .glass-navigation,.glass-ui .glass-slider .glass-slider-arrow,.glass-ui .glass-slider-dots,.glass-ui .glass-slider #pikame .glass-slide-caption{background:Canvas;color:CanvasText;border:1px solid CanvasText}.glass-ui .glass-slider #pikame .glass-slide-caption>span{color:CanvasText}.glass-ui .glass-slider-dots button::after{border-color:ButtonText}.glass-ui .glass-slider-dots button[aria-current=true]::after{background:ButtonText}.glass-ui .glass-navigation .top-menu a{color:LinkText}}
+@supports ((backdrop-filter:blur(8px)) or (-webkit-backdrop-filter:blur(8px))){.glass-ui .glass-slider-arrow,.glass-ui .glass-slider-dots{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}}
+.glass-ui .glass-slider-controls button:focus-visible{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 5px #211e1b}
+@media(prefers-reduced-transparency:reduce),(forced-colors:active){.glass-ui .glass-slider-arrow,.glass-ui .glass-slider-dots{-webkit-backdrop-filter:none;backdrop-filter:none}}
