@@ -57,22 +57,23 @@
 @media(prefers-reduced-motion:reduce){.glass-ui *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(forced-colors:active){.glass-ui{background:Canvas!important;color:CanvasText}.glass-ui a,.glass-ui .top-menu ul li a{color:LinkText}.glass-ui .glass-navigation,.glass-ui .webpart,.glass-ui .annonce,.glass-ui .thumb_link a{background:Canvas;border:1px solid CanvasText;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}}
 
-/* Header correction: isolate legacy floats and fixed dimensions. */
-.glass-ui .topnav{display:grid;grid-template-columns:minmax(0,1fr);position:relative;inset:auto;height:auto;padding:12px clamp(12px,2vw,32px);gap:16px;border-bottom:1px solid var(--glass-line)}
-.glass-ui .topnav>.header{grid-column:auto;width:100%;max-width:300px;justify-self:center;margin:0;padding:0}
-.glass-ui .topnav .logo{margin:0;padding:0;width:100%;height:auto}
-.glass-ui .topnav .logo a{display:block;min-height:44px}
-.glass-ui .topnav .logo img{display:block;width:100%!important;height:auto!important;max-height:120px;object-fit:contain}
-.glass-ui .topnav .inner_nav{display:flex;flex-direction:column;align-items:stretch;justify-content:center;min-width:0;max-width:none;width:100%;padding:0;margin:0;gap:14px;background:transparent}
-.glass-ui .topnav .news_ticker,.glass-ui .topnav .ticker_list{display:block;width:100%;max-width:100%;height:auto;min-height:0;overflow:visible;padding:0;margin:0;float:none;background:none}
-.glass-ui .topnav #ticker_id{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:6px 10px;position:static;width:100%;height:auto;overflow:visible;padding:0;margin:0}
-.glass-ui .topnav #ticker_id>li{position:static;float:none;width:auto;height:auto;max-width:100%;padding:0;margin:0;list-style:none;line-height:1.9;color:var(--glass-ink);font:inherit}
-.glass-ui .topnav #ticker_id img{width:20px;height:20px;object-fit:contain;vertical-align:middle}
+/* Compact top toolbar; the legacy intranet banner is not a brand logo. */
+.glass-ui .wrap>.header{display:none}
+.glass-ui .topnav{display:flex;flex-wrap:wrap;align-items:center;direction:rtl;position:relative;inset:auto;height:auto;gap:12px;padding:12px 20px;border-bottom:1px solid var(--glass-line)}
+.glass-ui .glass-brand{display:flex;align-items:center;justify-content:flex-start;flex:0 0 auto;min-height:44px;max-width:100%}
+.glass-ui .glass-brand img{display:block;width:220px;max-width:100%;height:auto;object-fit:contain}
+.glass-ui .topnav .inner_nav{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;flex:1 1 600px;min-width:0;width:auto;max-width:none;padding:0;margin:0;gap:12px;background:transparent}
+.glass-ui .topnav .news_ticker,.glass-ui .topnav .ticker_list{display:block;width:auto;max-width:100%;height:auto;min-height:0;overflow:visible;padding:0;margin:0;float:none;background:none}
+.glass-ui .topnav .news_ticker{flex:1 1 450px}
+.glass-ui .topnav #ticker_id{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:4px 8px;position:static;width:auto;height:auto;overflow:visible;padding:0;margin:0}
+.glass-ui .topnav #ticker_id>li{position:static;float:none;width:auto;height:auto;max-width:100%;padding:0;margin:0;list-style:none;line-height:1.9;color:var(--glass-ink);font:inherit;font-size:12px}
+.glass-ui .topnav #ticker_id img{width:18px;height:18px;object-fit:contain;vertical-align:middle}
 .glass-ui .topnav .ticker_name{font:inherit;color:var(--glass-ink);overflow-wrap:anywhere}
-.glass-ui .topnav .searchbox{display:table;table-layout:fixed;border-collapse:separate;border-spacing:0;direction:rtl;width:100%;max-width:none;min-width:0;height:auto;padding:0;margin:0;float:none;flex:none;background:none}
+.glass-ui .topnav .searchbox{display:table;table-layout:fixed;border-collapse:separate;border-spacing:0;direction:rtl;width:280px;max-width:100%;min-width:0;height:auto;padding:0;margin:0;float:none;flex:0 1 280px;background:none}
 .glass-ui .topnav .searchbox td{padding:0;vertical-align:middle}
 .glass-ui .topnav .searchbox td:first-child{width:auto}
 .glass-ui .topnav .searchbox td:last-child{width:52px;padding-inline-start:8px}
-.glass-ui .topnav .searchbox input[type=text]{display:block;min-width:0;width:100%;height:48px;font:inherit!important}
+.glass-ui .topnav .searchbox input[type=text]{display:block;min-width:0;width:100%;height:44px;font-family:inherit!important;font-size:12px!important;padding:8px}
 .glass-ui .topnav .searchbox input[type=image]{display:block;width:44px;height:44px;margin:0;box-sizing:border-box}
-@media(min-width:1000px){.glass-ui .topnav{grid-template-columns:280px minmax(0,1fr);align-items:center}.glass-ui .topnav>.header{justify-self:start}.glass-ui .topnav .inner_nav{max-width:1100px;justify-self:center}}
+@media(min-width:1280px){.glass-ui .topnav{flex-wrap:nowrap}.glass-ui .topnav .inner_nav{flex-wrap:nowrap}.glass-ui .topnav .news_ticker{flex:1 1 auto}}
+@media(max-width:599px){.glass-ui .topnav{padding:12px}.glass-ui .topnav .inner_nav{flex-basis:100%}.glass-ui .topnav .searchbox{width:100%;flex-basis:100%}}

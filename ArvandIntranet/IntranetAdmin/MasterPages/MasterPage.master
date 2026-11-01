@@ -158,6 +158,11 @@
 <body class="<%= If(String.Equals(Page.AppRelativeVirtualPath, "~/default.aspx", StringComparison.OrdinalIgnoreCase), "glass-ui", "") %>" onload="updateClock(); setInterval('updateClock()', 1000 )">
     <form id="form1" runat="server">
         <div class="topnav">
+            <% If String.Equals(Page.AppRelativeVirtualPath, "~/default.aspx", StringComparison.OrdinalIgnoreCase) Then %>
+            <a class="glass-brand" href="<%= ResolveUrl("~/Default.aspx") %>" aria-label="صفحه نخست پتروشیمی اروند">
+                <img src="<%= ResolveUrl("~/Images/pet_logo.png") %>" alt="شرکت پتروشیمی اروند" width="259" height="42" />
+            </a>
+            <% End If %>
             <div class="inner_nav">
                 <ul class="news_ticker">
                     <li class="ticker_list">

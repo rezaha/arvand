@@ -2,10 +2,6 @@
     'use strict';
     function init() {
         if (!document.body.classList.contains('glass-ui')) { return; }
-        // Move only rendered homepage branding, inside the same server form.
-        var topbar = document.querySelector('.topnav');
-        var branding = document.querySelector('.wrap > .header');
-        if (topbar && branding) { topbar.insertBefore(branding, topbar.firstChild); }
         var host = document.querySelector('.glass-menu-host');
         if (host && !host.querySelector('details')) {
             var details = document.createElement('details');
