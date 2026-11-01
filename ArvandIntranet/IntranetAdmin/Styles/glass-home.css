@@ -343,3 +343,6 @@
 .glass-ui .glass-navigation[open] .glass-hamburger>span:last-child{translate:0 -5.5px;rotate:-45deg}
 @media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.glass-ui .glass-slider #pikame .glass-slide-caption{background:#28231f}}
 @media(forced-colors:active){.glass-ui .glass-navigation{border-color:CanvasText}.glass-ui .glass-slider #pikame .glass-slide-caption,.glass-ui .glass-slider #pikame .glass-slide-caption>span{background:Canvas;color:CanvasText}}
+
+/* Full-bleed slide photography: fill the frame without distorting its ratio. */
+.glass-ui .glass-slider #pikame li>a>img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:center}
