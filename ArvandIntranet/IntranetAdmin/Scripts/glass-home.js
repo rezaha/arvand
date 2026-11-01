@@ -42,12 +42,41 @@
             details.open = true;
             var summary = document.createElement('summary');
             summary.textContent = 'امور و مدیریت‌ها';
+            var hamburger = document.createElement('span');
+            hamburger.className = 'glass-hamburger';
+            hamburger.setAttribute('aria-hidden', 'true');
+            for (var bar = 0; bar < 3; bar++) { hamburger.appendChild(document.createElement('span')); }
+            summary.insertBefore(hamburger, summary.firstChild);
             details.appendChild(summary);
             var nav = document.createElement('nav');
             nav.setAttribute('aria-label', 'امور و مدیریت‌ها');
             while (host.firstChild) { nav.appendChild(host.firstChild); }
             details.appendChild(nav);
             host.appendChild(details);
+            var menuAnimation;
+            var menuTarget = details.open;
+            summary.addEventListener('click', function (event) {
+                event.preventDefault();
+                menuTarget = !menuTarget;
+                var height = details.open ? nav.getBoundingClientRect().height : 0;
+                if (menuAnimation) { menuAnimation.cancel(); }
+                if (!nav.animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    details.open = menuTarget;
+                    nav.style.removeProperty('overflow');
+                    return;
+                }
+                details.open = true;
+                nav.style.overflow = 'hidden';
+                menuAnimation = nav.animate([
+                    { height: height + 'px', opacity: height ? 1 : 0 },
+                    { height: (menuTarget ? nav.scrollHeight : 0) + 'px', opacity: menuTarget ? 1 : 0 }
+                ], { duration: 220, easing: 'ease-in-out' });
+                menuAnimation.onfinish = function () {
+                    details.open = menuTarget;
+                    nav.style.removeProperty('overflow');
+                    menuAnimation = null;
+                };
+            });
         }
         if (host) {
             Array.prototype.forEach.call(host.querySelectorAll('.top-menu li > ul'), function (submenu) {
@@ -257,13 +286,13 @@
                     status.textContent = 'تصویر ' + (current + 1) + ' از ' + slides.length;
 
                 }
-                ['تصویر قبلی', 'تصویر بعدی'].forEach(function (label, index) {
+                ['تصویر بعدی', 'تصویر قبلی'].forEach(function (label, index) {
                     var button = document.createElement('button');
                     button.type = 'button';
                     button.setAttribute('aria-label', label);
                     button.className = 'glass-slider-arrow';
-                    button.appendChild(lineIcon(index === 0 ? 'M9 5l7 7-7 7' : 'M15 5l-7 7 7 7'));
-                    button.addEventListener('click', function () { show(current + (index === 0 ? -1 : 1)); });
+                    button.appendChild(lineIcon(index === 0 ? 'M15 5l-7 7 7 7' : 'M9 5l7 7-7 7'));
+                    button.addEventListener('click', function () { show(current + (index === 0 ? 1 : -1)); });
                     controls.appendChild(button);
                 });
                 controls.appendChild(status);
