@@ -34,6 +34,7 @@ git pull --ff-only origin main
 
 - شش اسمبلی موردنیاز سایت اصلی که فقط در `IntranetAdmin/Bin` بودند، با همان بایت‌های موجود پروژه در `Intranet/Bin` نیز قرار گرفتند: `Telerik.Web.UI`، `Telerik.Web.UI.Skins`، `AjaxControlToolkit`، `NetNicCapchaPro`، `PersianToolsPack` و `System.Web.Http.WebHost`. اشاره‌گرهای قدیمی `.refresh` این شش فایل حذف شدند؛ اکنون فایل DLL واقعی داخل مخزن است.
 - بخش Entity Framework سایت اصلی، binding redirect و SQL Server provider با اسمبلی موجود EF 6 هماهنگ شدند.
+- اسمبلی `Microsoft.Web.Infrastructure` از بستهٔ موجود نسخهٔ `2.0.0` در `Intranet/Bin` قرار گرفت و در `packages.config` ثبت شد. binding redirect درخواست‌های نسخهٔ `1.0.0.0` از طرف `System.Web.Http.WebHost` را به اسمبلی `2.0.0.0` موجود هدایت می‌کند. بعد از دریافت این اصلاح، سایت IIS Express را متوقف و دوباره اجرا کنید تا شکست بارگذاری قبلی از حافظه پاک شود.
 - تمام مقادیر اتصال موجود بدون تغییر حفظ شدند.
 
 ## نتیجهٔ بررسی و محدودیت‌ها
