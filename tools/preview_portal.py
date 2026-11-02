@@ -26,7 +26,7 @@ def render(output):
     marker.touch()
     for directory in ('CSS', 'Scripts', 'Images/portal', 'fonts', 'UploadFiles/slider/01'):
         (output / directory).mkdir(parents=True, exist_ok=True)
-    for name in ('CSS/portal.css', 'Scripts/portal.js', 'Images/portal/icons.svg', 'Images/header.png', 'fonts/BYekan.woff'):
+    for name in ('CSS/portal.css', 'Scripts/portal.js', 'Images/portal/icons.svg', 'Images/portal/arvand-header.png', 'fonts/BYekan.woff'):
         shutil.copyfile(SITE / name, output / name)
     for image in (SITE / 'UploadFiles/slider/01').glob('*.jpg'):
         shutil.copyfile(image, output / 'UploadFiles/slider/01' / image.name)
@@ -47,6 +47,8 @@ def render(output):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--site', choices=['Intranet', 'IntranetAdmin'], default='Intranet')
     parser.add_argument('--output', type=Path, default=Path('/tmp/arvand-portal-preview'))
     args = parser.parse_args()
+    SITE = REPOSITORY / 'ArvandIntranet' / args.site
     render(args.output.resolve())

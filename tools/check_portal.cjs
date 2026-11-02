@@ -22,7 +22,7 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
             await page.evaluate(() => Promise.all([...document.images].map(img => img.decode().catch(() => {}))));
         }
         await load();
-        assert.equal(await page.locator('.portal-brand-image').evaluate(img => img.complete && img.naturalWidth === 960 && new URL(img.src).pathname === '/Images/header.png'), true);
+        assert.equal(await page.locator('.portal-brand-image').evaluate(img => img.complete && img.naturalWidth === 960 && new URL(img.src).pathname === '/Images/portal/arvand-header.png'), true);
         assert.equal(await page.locator('.portal-wordmark,.portal-holding').count(), 0);
         assert.equal(await page.locator('[data-systems] .portal-system-card').count(), 18);
         assert.equal(await page.locator('.portal-nav-item').count(), 20);
@@ -83,6 +83,39 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
         await page.keyboard.press('Escape');
         assert.equal(await page.locator('.portal-sidebar').isVisible(), false);
         await page.screenshot({ path: path.join(screenshots, 'portal-mobile.png'), fullPage: true });
+        // The working 8135 site has no separate public detail/search pages.
+        const noPublicPages = async route => {
+            const response = await route.fetch();
+            const html = (await response.text()).replace(/(<script type="application\/json" data-portal-data>)([\s\S]*?)(<\/script>)/, (_, before, json, after) => {
+                const data = JSON.parse(json);
+                for (const key of ['news', 'about', 'contact', 'search']) data.pages[key] = '';
+                for (const item of [...data.news, ...data.announcements]) item.url = '';
+                data.news[0].content = 'متن خبر از همان داده‌های سایت سالم';
+                return before + JSON.stringify(data).replace(/</g, '\\u003c') + after;
+            });
+            await route.fulfill({ response, body: html });
+        };
+        await page.route(base + '/', noPublicPages);
+        await load();
+        await page.locator('[data-news] button').first().click();
+        assert.match(await page.locator('dialog[open]').innerText(), /متن خبر از همان داده‌های سایت سالم/);
+        await page.keyboard.press('Escape');
+        await page.locator('[data-page="news"]').click();
+        assert.equal(await page.locator('dialog[open] .portal-news-row').count(), 4);
+        await page.locator('dialog[open] .portal-news-row').first().click();
+        assert.match(await page.locator('dialog[open]').innerText(), /متن خبر از همان داده‌های سایت سالم/);
+        await page.keyboard.press('Escape');
+        assert.equal(await page.locator('[data-page="news"]').evaluate(node => node === document.activeElement), true);
+        await page.locator('[data-page="about"]').first().focus();
+        await page.keyboard.press('Enter');
+        assert.equal(await page.locator('dialog[open]').count(), 1);
+        await page.keyboard.press('Escape');
+        await page.locator('#portal-search').fill('فناوری اطلاعات');
+        await page.locator('#portal-search').press('Enter');
+        assert.match(await page.locator('dialog[open]').innerText(), /اطلاعیه فناوری اطلاعات/);
+        await page.keyboard.press('Escape');
+        await page.unroute(base + '/', noPublicPages);
+
         // Exercise empty live datasets and untrusted strings with the same rendering code.
         await page.route(base + '/', async route => {
             const response = await route.fetch();

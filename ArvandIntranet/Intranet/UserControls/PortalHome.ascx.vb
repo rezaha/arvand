@@ -30,12 +30,12 @@ Partial Class UserControls_PortalHome
             }).ToList()
         Dim news = NewsService.GetTopPersianNews(0, 20, "NewsDate DESC", divisionId).
             Select(Function(item) New With {
-                .title = item.TitlePersian, .summary = item.SummaryPersian,
+                .title = item.TitlePersian, .summary = item.SummaryPersian, .content = PlainText(item.HtmlContentPersian),
                 .url = PageUrl("ShowNews", item.NewsId), .image = AssetUrl(item.SmallPictureLink)
             }).ToList()
         Dim announcements = AnnouncementService.GetTopAnnouncements(0, 20, "NewsDate DESC", divisionId).
             Select(Function(item) New With {
-                .title = item.TitlePersian, .summary = item.SummaryPersian,
+                .title = item.TitlePersian, .summary = item.SummaryPersian, .content = PlainText(item.HtmlContentPersian),
                 .url = PageUrl("ShowAnnouncements", item.NewsId)
             }).ToList()
         'Match the existing document permissions; never send private document
@@ -58,7 +58,7 @@ Partial Class UserControls_PortalHome
             }).ToList()
 
         Dim payload = New With {
-            .user = userName, .systems = softwares, .menus = menus,
+            .user = userName, .organization = PlantDivisions.NamePersian, .systems = softwares, .menus = menus,
             .news = news, .announcements = announcements, .files = documents, .divisions = divisions,
             .pages = New With {
                 .home = PageUrl("default"), .about = PageUrl("About"),
@@ -79,7 +79,15 @@ Partial Class UserControls_PortalHome
     End Sub
 
     Private Function PageUrl(pageName As String, Optional id As Integer? = Nothing) As String
+        'The working 8135 site has no standalone news/search/about pages.
+        'Use in-page views there instead of creating routes to missing files.
+        If Not IO.File.Exists(Server.MapPath("~/" & pageName & ".aspx")) Then Return String.Empty
         Return GetRouteUrl("default-rout", New With {.pageName = pageName, .id = id})
+    End Function
+
+    Private Function PlainText(value As String) As String
+        If String.IsNullOrWhiteSpace(value) Then Return String.Empty
+        Return HttpUtility.HtmlDecode(System.Text.RegularExpressions.Regex.Replace(value, "<[^>]*>", " "))
     End Function
 
     Private Function MenuUrl(value As String) As String

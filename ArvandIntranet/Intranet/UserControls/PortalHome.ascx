@@ -3,7 +3,7 @@
     <a class="portal-skip" href="#portal-main">رفتن به محتوای اصلی</a>
     <header class="portal-header">
         <a class="portal-brand" data-page="home" aria-label="پتروشیمی اروند؛ صفحه نخست">
-            <span class="portal-brand-crop"><img class="portal-brand-image" src="<%= ResolveUrl("~/Images/header.png") %>" alt="شرکت پتروشیمی اروند — Arvand Petrochemical Company" width="960" height="100" /></span>
+            <span class="portal-brand-crop"><img class="portal-brand-image" src="<%= ResolveUrl("~/Images/portal/arvand-header.png") %>" alt="شرکت پتروشیمی اروند — Arvand Petrochemical Company" width="960" height="100" /></span>
         </a>
         <div class="portal-welcome">به اینترانت شرکت پتروشیمی اروند خوش آمدید.</div>
         <div class="portal-toolbar">

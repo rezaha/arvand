@@ -11,7 +11,7 @@
     <Content Include="../../ArvandIntranet/Intranet/CSS/portal.css" Link="wwwroot/CSS/portal.css" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="../../ArvandIntranet/Intranet/Scripts/portal.js" Link="wwwroot/Scripts/portal.js" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="../../ArvandIntranet/Intranet/Images/portal/icons.svg" Link="wwwroot/Images/portal/icons.svg" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
-    <Content Include="../../ArvandIntranet/Intranet/Images/header.png" Link="wwwroot/Images/header.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/Images/portal/arvand-header.png" Link="wwwroot/Images/portal/arvand-header.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="../../ArvandIntranet/Intranet/fonts/BYekan.woff" Link="wwwroot/fonts/BYekan.woff" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="../../ArvandIntranet/Intranet/favicon.ico" Link="wwwroot/favicon.ico" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="../../ArvandIntranet/Intranet/UploadFiles/slider/01/*.jpg" Link="wwwroot/UploadFiles/slider/01/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />

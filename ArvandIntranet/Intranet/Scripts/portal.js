@@ -108,7 +108,7 @@
     }
     function renderNotices(container, items) {
         items.forEach(function (item) {
-            var row = action('portal-notice', item.title, item.url);
+            var row = action('portal-notice', item.title, item.url, function () { showArticle(item); });
             row.appendChild(icon('alert'));
             var copy = element('span');
             copy.appendChild(element('strong', '', item.title));
@@ -120,7 +120,7 @@
     }
     function renderNews(container, items) {
         items.forEach(function (item) {
-            var row = action('portal-news-row', item.title, item.url);
+            var row = action('portal-news-row', item.title, item.url, function () { showArticle(item); });
             row.appendChild(icon('chevron-left'));
             row.appendChild(element('span', '', item.title));
             if (safeUrl(item.image)) {
@@ -135,6 +135,11 @@
             container.appendChild(row);
         });
         if (!items.length) empty(container, 'خبری برای نمایش وجود ندارد.');
+    }
+    function showArticle(item) {
+        openDialog(item.title, function (body) {
+            body.appendChild(element('p', 'portal-article-text', item.content || item.summary || 'متن بیشتری ثبت نشده است.'));
+        });
     }
     function renderDirectory(container, items) {
         items.forEach(function (item) {
@@ -160,6 +165,7 @@
         });
         if (kind === 'files') openDialog('فایل‌های مورد نیاز', function (body) { renderFiles(body, data.files); });
         if (kind === 'announcements') openDialog('اطلاعیه‌های مهم', function (body) { renderNotices(body, data.announcements); });
+        if (kind === 'news') openDialog('اخبار سازمانی', function (body) { renderNews(body, data.news); });
     }
 
     systems.forEach(function (entry) {
@@ -185,8 +191,26 @@
     renderNews(root.querySelector('[data-news]'), data.news.slice(0, 4));
     root.querySelector('[data-username]').textContent = data.user;
     root.querySelectorAll('[data-page]').forEach(function (link) {
-        var href = safeUrl(data.pages[link.getAttribute('data-page')]);
+        var kind = link.getAttribute('data-page');
+        var href = safeUrl(data.pages[kind]);
         if (href) link.href = href;
+        else {
+            link.setAttribute('role', 'button');
+            link.tabIndex = 0;
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                if (kind === 'news') showCollection('news');
+                else if (kind === 'about') openDialog('درباره پتروشیمی اروند', function (body) {
+                    body.appendChild(element('p', '', data.organization || 'اینترانت شرکت پتروشیمی اروند'));
+                });
+                else if (kind === 'contact') openDialog('تماس با ما', function (body) {
+                    renderDirectory(body, data.menus.filter(function (item) { return /تماس|تلفن|شماره/.test(item.title); }));
+                });
+            });
+            link.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); link.click(); }
+            });
+        }
     });
     root.querySelectorAll('[data-open]').forEach(function (button) {
         button.addEventListener('click', function () { showCollection(button.getAttribute('data-open')); });
@@ -219,7 +243,26 @@
     function search() {
         var query = root.querySelector('#portal-search').value.trim();
         var url = safeUrl(data.pages.search);
-        if (!query || !url) return;
+        if (!query) return;
+        if (!url) {
+            var needle = normalized(query);
+            openDialog('نتایج جستجو', function (body) {
+                body.appendChild(element('p', '', 'جستجو در اطلاعات بارگذاری‌شدهٔ همین صفحه'));
+                var count = 0;
+                [data.systems, data.menus, data.news, data.announcements, data.files].forEach(function (items, index) {
+                    items.forEach(function (item) {
+                        if (normalized(item.title + ' ' + (item.summary || '')).indexOf(needle) < 0) return;
+                        count++;
+                        var row = action('portal-directory-link', item.title, item.url,
+                            index === 2 || index === 3 ? function () { showArticle(item); } : undefined);
+                        row.textContent = item.title;
+                        body.appendChild(row);
+                    });
+                });
+                if (!count) empty(body, 'نتیجه‌ای یافت نشد.');
+            });
+            return;
+        }
         var destination = new URL(url);
         destination.searchParams.set('q', query);
         location.assign(destination.href);

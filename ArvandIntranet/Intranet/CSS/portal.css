@@ -116,6 +116,8 @@ body.portal-page{margin:0;background:#fff;color:var(--portal-ink);font:15px Port
 .portal-dialog-heading h2{margin:0;font-size:21px}
 .portal-dialog-heading button{display:flex;border:0;background:none;padding:5px}
 .portal-dialog-body{padding:16px 22px}
+.portal-article-text{white-space:pre-wrap;line-height:2;overflow-wrap:anywhere}
+.portal-notice,.portal-news-row{width:100%;text-align:right;background:transparent;border-top:0;border-right:0;border-left:0}
 .portal-dialog-body .portal-system-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .portal-dialog-body .portal-notice{height:auto;min-height:60px}
 .portal-dialog-body .portal-notice p{white-space:normal}
