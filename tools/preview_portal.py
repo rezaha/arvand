@@ -15,35 +15,7 @@ SITE = REPOSITORY / 'ArvandIntranet' / 'Intranet'
 
 
 def fixture():
-    titles = ['پارسه', 'سیستم جامع بازرگانی', 'سامانه کمیسیون معاملات', 'راهکاران',
-              'نظام پیشنهادات و بهره‌وری', 'سامانه جامع حراست', 'Help Desk',
-              'سیستم حقوق و دستمزد (رسمی)', 'سامانه آموزش', 'سیستم کتابخانه',
-              'نرم افزار استاندارد', 'AriaORMS', 'AriaLIMS', 'BSC',
-              'سامانه جامع برنامه‌ریزی', 'سامانه جامع حقوقی هلدینگ', 'آمانو ۶', 'سامانه جامع HSE']
-    menus = ['صفحه نخست', 'مدیریت دانش', 'شماره داخلی مدیران', 'امور', 'مدیریت',
-             'روابط عمومی', 'برنامه‌ریزی راهبردی', 'حراست', 'حسابرسی داخلی', 'HSE',
-             'امور حقوقی و پیمان‌ها', 'امور اداری', 'امور مالی', 'امور بازرگانی',
-             'پژوهش و فناوری', 'معماری فرایندها', 'بهره‌برداری', 'تعمیرات', 'خدمات فنی', 'امور بازرسی']
-    news_titles = ['بازدید مدیرعامل از واحد', 'راه‌اندازی واحد جدید', 'برگزاری دوره آموزشی HSE', 'نشست هم‌اندیشی کارکنان']
-    file_titles = ['دستورالعمل‌ها و فرم‌های اداری', 'مستندات HSE', 'فرم‌های منابع انسانی',
-                   'فرم‌های مالی و بازرگانی', 'استانداردها و رویه‌های اجرایی', 'راهنمای سامانه‌ها']
-    notices = [('اطلاعیه فناوری اطلاعات', 'محدودیت دسترسی برخی سامانه‌ها در تاریخ ...'),
-               ('اطلاعیه منابع انسانی', 'زمان‌بندی دریافت فیش حقوقی مهرماه'),
-               ('اطلاعیه HSE', 'برگزاری مانور ایمنی در واحدهای عملیاتی'),
-               ('اطلاعیه آموزش', 'ثبت‌نام دوره‌های تخصصی نیمه دوم سال')]
-    return {
-        'user': 'sajad aryaeimehr',
-        'divisions': [{'title': 'واحد نمونه', 'url': '/fixture/divisions/1'}],
-        'systems': [{'title': title, 'url': f'/fixture/systems/{i}'} for i, title in enumerate(titles)],
-        'menus': [{'id': i + 1, 'parent': 0, 'title': title, 'url': f'/fixture/menus/{i}'} for i, title in enumerate(menus)],
-        'news': [{'title': title, 'summary': '', 'url': f'/fixture/news/{i}',
-                  'image': f'/UploadFiles/slider/01/0{[1, 2, 4, 3][i]}.jpg'} for i, title in enumerate(news_titles)],
-        'announcements': [{'title': title, 'summary': summary, 'url': f'/fixture/announcements/{i}'} for i, (title, summary) in enumerate(notices)],
-        'files': [{'title': title, 'url': f'/fixture/files/{i}'} for i, title in enumerate(file_titles)],
-        'pages': {name: '/fixture/' + name for name in ('home', 'about', 'contact', 'news', 'search')},
-        'slides': [{'image': f'/UploadFiles/slider/01/{name}.jpg', 'alt': alt} for name, alt in
-                   [('01', 'نمای مجتمع پتروشیمی اروند در غروب'), ('03', 'نمای شب مجتمع پتروشیمی اروند'), ('04', 'واحدهای تولید پتروشیمی اروند')]],
-    }
+    return json.loads((REPOSITORY / 'tools/portal-fixture.json').read_text(encoding='utf-8'))
 
 
 def render(output):

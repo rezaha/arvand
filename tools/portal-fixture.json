@@ -1,0 +1,300 @@
+{
+  "user": "sajad aryaeimehr",
+  "divisions": [
+    {
+      "title": "واحد نمونه",
+      "url": "/fixture/divisions/1"
+    }
+  ],
+  "systems": [
+    {
+      "title": "پارسه",
+      "url": "/fixture/systems/0"
+    },
+    {
+      "title": "سیستم جامع بازرگانی",
+      "url": "/fixture/systems/1"
+    },
+    {
+      "title": "سامانه کمیسیون معاملات",
+      "url": "/fixture/systems/2"
+    },
+    {
+      "title": "راهکاران",
+      "url": "/fixture/systems/3"
+    },
+    {
+      "title": "نظام پیشنهادات و بهره‌وری",
+      "url": "/fixture/systems/4"
+    },
+    {
+      "title": "سامانه جامع حراست",
+      "url": "/fixture/systems/5"
+    },
+    {
+      "title": "Help Desk",
+      "url": "/fixture/systems/6"
+    },
+    {
+      "title": "سیستم حقوق و دستمزد (رسمی)",
+      "url": "/fixture/systems/7"
+    },
+    {
+      "title": "سامانه آموزش",
+      "url": "/fixture/systems/8"
+    },
+    {
+      "title": "سیستم کتابخانه",
+      "url": "/fixture/systems/9"
+    },
+    {
+      "title": "نرم افزار استاندارد",
+      "url": "/fixture/systems/10"
+    },
+    {
+      "title": "AriaORMS",
+      "url": "/fixture/systems/11"
+    },
+    {
+      "title": "AriaLIMS",
+      "url": "/fixture/systems/12"
+    },
+    {
+      "title": "BSC",
+      "url": "/fixture/systems/13"
+    },
+    {
+      "title": "سامانه جامع برنامه‌ریزی",
+      "url": "/fixture/systems/14"
+    },
+    {
+      "title": "سامانه جامع حقوقی هلدینگ",
+      "url": "/fixture/systems/15"
+    },
+    {
+      "title": "آمانو ۶",
+      "url": "/fixture/systems/16"
+    },
+    {
+      "title": "سامانه جامع HSE",
+      "url": "/fixture/systems/17"
+    }
+  ],
+  "menus": [
+    {
+      "id": 1,
+      "parent": 0,
+      "title": "صفحه نخست",
+      "url": "/fixture/menus/0"
+    },
+    {
+      "id": 2,
+      "parent": 0,
+      "title": "مدیریت دانش",
+      "url": "/fixture/menus/1"
+    },
+    {
+      "id": 3,
+      "parent": 0,
+      "title": "شماره داخلی مدیران",
+      "url": "/fixture/menus/2"
+    },
+    {
+      "id": 4,
+      "parent": 0,
+      "title": "امور",
+      "url": "/fixture/menus/3"
+    },
+    {
+      "id": 5,
+      "parent": 0,
+      "title": "مدیریت",
+      "url": "/fixture/menus/4"
+    },
+    {
+      "id": 6,
+      "parent": 0,
+      "title": "روابط عمومی",
+      "url": "/fixture/menus/5"
+    },
+    {
+      "id": 7,
+      "parent": 0,
+      "title": "برنامه‌ریزی راهبردی",
+      "url": "/fixture/menus/6"
+    },
+    {
+      "id": 8,
+      "parent": 0,
+      "title": "حراست",
+      "url": "/fixture/menus/7"
+    },
+    {
+      "id": 9,
+      "parent": 0,
+      "title": "حسابرسی داخلی",
+      "url": "/fixture/menus/8"
+    },
+    {
+      "id": 10,
+      "parent": 0,
+      "title": "HSE",
+      "url": "/fixture/menus/9"
+    },
+    {
+      "id": 11,
+      "parent": 0,
+      "title": "امور حقوقی و پیمان‌ها",
+      "url": "/fixture/menus/10"
+    },
+    {
+      "id": 12,
+      "parent": 0,
+      "title": "امور اداری",
+      "url": "/fixture/menus/11"
+    },
+    {
+      "id": 13,
+      "parent": 0,
+      "title": "امور مالی",
+      "url": "/fixture/menus/12"
+    },
+    {
+      "id": 14,
+      "parent": 0,
+      "title": "امور بازرگانی",
+      "url": "/fixture/menus/13"
+    },
+    {
+      "id": 15,
+      "parent": 0,
+      "title": "پژوهش و فناوری",
+      "url": "/fixture/menus/14"
+    },
+    {
+      "id": 16,
+      "parent": 0,
+      "title": "معماری فرایندها",
+      "url": "/fixture/menus/15"
+    },
+    {
+      "id": 17,
+      "parent": 0,
+      "title": "بهره‌برداری",
+      "url": "/fixture/menus/16"
+    },
+    {
+      "id": 18,
+      "parent": 0,
+      "title": "تعمیرات",
+      "url": "/fixture/menus/17"
+    },
+    {
+      "id": 19,
+      "parent": 0,
+      "title": "خدمات فنی",
+      "url": "/fixture/menus/18"
+    },
+    {
+      "id": 20,
+      "parent": 0,
+      "title": "امور بازرسی",
+      "url": "/fixture/menus/19"
+    }
+  ],
+  "news": [
+    {
+      "title": "بازدید مدیرعامل از واحد",
+      "summary": "",
+      "url": "/fixture/news/0",
+      "image": "/UploadFiles/slider/01/01.jpg"
+    },
+    {
+      "title": "راه‌اندازی واحد جدید",
+      "summary": "",
+      "url": "/fixture/news/1",
+      "image": "/UploadFiles/slider/01/02.jpg"
+    },
+    {
+      "title": "برگزاری دوره آموزشی HSE",
+      "summary": "",
+      "url": "/fixture/news/2",
+      "image": "/UploadFiles/slider/01/04.jpg"
+    },
+    {
+      "title": "نشست هم‌اندیشی کارکنان",
+      "summary": "",
+      "url": "/fixture/news/3",
+      "image": "/UploadFiles/slider/01/03.jpg"
+    }
+  ],
+  "announcements": [
+    {
+      "title": "اطلاعیه فناوری اطلاعات",
+      "summary": "محدودیت دسترسی برخی سامانه‌ها در تاریخ ...",
+      "url": "/fixture/announcements/0"
+    },
+    {
+      "title": "اطلاعیه منابع انسانی",
+      "summary": "زمان‌بندی دریافت فیش حقوقی مهرماه",
+      "url": "/fixture/announcements/1"
+    },
+    {
+      "title": "اطلاعیه HSE",
+      "summary": "برگزاری مانور ایمنی در واحدهای عملیاتی",
+      "url": "/fixture/announcements/2"
+    },
+    {
+      "title": "اطلاعیه آموزش",
+      "summary": "ثبت‌نام دوره‌های تخصصی نیمه دوم سال",
+      "url": "/fixture/announcements/3"
+    }
+  ],
+  "files": [
+    {
+      "title": "دستورالعمل‌ها و فرم‌های اداری",
+      "url": "/fixture/files/0"
+    },
+    {
+      "title": "مستندات HSE",
+      "url": "/fixture/files/1"
+    },
+    {
+      "title": "فرم‌های منابع انسانی",
+      "url": "/fixture/files/2"
+    },
+    {
+      "title": "فرم‌های مالی و بازرگانی",
+      "url": "/fixture/files/3"
+    },
+    {
+      "title": "استانداردها و رویه‌های اجرایی",
+      "url": "/fixture/files/4"
+    },
+    {
+      "title": "راهنمای سامانه‌ها",
+      "url": "/fixture/files/5"
+    }
+  ],
+  "pages": {
+    "home": "/fixture/home",
+    "about": "/fixture/about",
+    "contact": "/fixture/contact",
+    "news": "/fixture/news",
+    "search": "/fixture/search"
+  },
+  "slides": [
+    {
+      "image": "/UploadFiles/slider/01/01.jpg",
+      "alt": "نمای مجتمع پتروشیمی اروند در غروب"
+    },
+    {
+      "image": "/UploadFiles/slider/01/03.jpg",
+      "alt": "نمای شب مجتمع پتروشیمی اروند"
+    },
+    {
+      "image": "/UploadFiles/slider/01/04.jpg",
+      "alt": "واحدهای تولید پتروشیمی اروند"
+    }
+  ]
+}
