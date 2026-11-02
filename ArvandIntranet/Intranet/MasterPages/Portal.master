@@ -1,0 +1,18 @@
+<%@ Master Language="VB" %>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>اینترانت پتروشیمی اروند</title>
+    <link rel="icon" href="~/favicon.ico" runat="server" />
+    <link rel="stylesheet" href="~/CSS/portal.css" runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+</head>
+<body class="portal-page">
+    <form id="form1" runat="server">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+    </form>
+    <script src="<%= ResolveUrl("~/Scripts/portal.js") %>" defer></script>
+</body>
+</html>

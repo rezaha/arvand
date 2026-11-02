@@ -1,0 +1,277 @@
+(function () {
+    'use strict';
+    var root = document.querySelector('[data-portal]');
+    if (!root) return;
+    var data = JSON.parse(root.querySelector('[data-portal-data]').textContent);
+    var sprite = root.getAttribute('data-assets') + 'icons.svg';
+    var dialog = root.querySelector('dialog');
+    var dialogBody = dialog.querySelector('.portal-dialog-body');
+    var dialogTitle = dialog.querySelector('h2');
+    var returnFocus;
+    var systems = [
+        ['پارسه', 'coins'], ['سیستم جامع\nبازرگانی', 'cart'], ['سامانه کمیسیون\nمعاملات', 'file'],
+        ['راهکاران', 'chart'], ['نظام پیشنهادات\nو بهره‌وری', 'bulb'], ['سامانه جامع\nحراست', 'shield-check'],
+        ['Help Desk', 'headphones'], ['سیستم حقوق و\nدستمزد (رسمی)', 'users'], ['سامانه آموزش', 'graduation'],
+        ['سیستم کتابخانه', 'books'], ['نرم افزار\nاستاندارد', 'book'], ['AriaORMS', 'form'],
+        ['AriaLIMS', 'flask'], ['BSC', 'bars'], ['سامانه جامع\nبرنامه‌ریزی', 'calendar'],
+        ['سامانه جامع\nحقوقی هلدینگ', 'gavel'], ['آمانو ۶', 'clock'], ['سامانه جامع\nHSE', 'leaf']
+    ];
+    var navigation = [
+        ['صفحه نخست', 'home', 'home'], ['مدیریت دانش', 'bulb'], ['شماره داخلی مدیران', 'phone'],
+        ['امور', 'grid'], ['مدیریت', 'users'], ['روابط عمومی', 'megaphone'], ['برنامه‌ریزی راهبردی', 'chart'],
+        ['حراست', 'shield-check'], ['حسابرسی داخلی', 'file-search'], ['HSE', 'leaf'],
+        ['امور حقوقی و پیمان‌ها', 'scale'], ['امور اداری', 'building'], ['امور مالی', 'wallet'],
+        ['امور بازرگانی', 'cart'], ['پژوهش و فناوری', 'flask'], ['معماری فرایندها', 'layers'],
+        ['بهره‌برداری', 'settings'], ['تعمیرات', 'wrench'], ['خدمات فنی', 'tools'], ['امور بازرسی', 'clipboard']
+    ];
+
+    function normalized(value) {
+        return (value || '').replace(/ي/g, 'ی').replace(/ك/g, 'ک').replace(/۶/g, '6').replace(/[\s‌ـ()]/g, '').toLowerCase();
+    }
+    function safeUrl(value) {
+        if (!value || /[\u0000-\u0020\\]/.test(value) || /^\/\//.test(value)) return '';
+        try {
+            var url = new URL(value, document.baseURI);
+            return /^(https?:)$/.test(url.protocol) ? url.href : '';
+        } catch (e) { return ''; }
+    }
+    function element(tag, className, text) {
+        var node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text !== undefined) node.textContent = text;
+        return node;
+    }
+    function icon(name) {
+        var holder = element('i');
+        holder.setAttribute('data-icon', name);
+        return holder;
+    }
+    function hydrateIcons(container) {
+        container.querySelectorAll('i[data-icon]:not([data-ready])').forEach(function (holder) {
+            var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            var use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+            svg.setAttribute('aria-hidden', 'true');
+            svg.setAttribute('viewBox', '0 0 24 24');
+            use.setAttribute('href', sprite + '#' + holder.getAttribute('data-icon'));
+            svg.appendChild(use);
+            holder.appendChild(svg);
+            holder.setAttribute('data-ready', 'true');
+        });
+    }
+    function find(items, title) {
+        return items.find(function (item) { return normalized(item.title) === normalized(title); });
+    }
+    function empty(container, message) { container.appendChild(element('p', 'portal-empty', message)); }
+    function openDialog(title, render) {
+        if (!dialog.open) returnFocus = document.activeElement;
+        dialogTitle.textContent = title;
+        dialogBody.replaceChildren();
+        render(dialogBody);
+        hydrateIcons(dialogBody);
+        dialog.showModal();
+    }
+    function unavailable(title) {
+        openDialog(title.replace(/\n/g, ' '), function (body) {
+            empty(body, 'پیوند این بخش هنوز در سامانه ثبت نشده است.');
+        });
+    }
+    function action(className, title, url, onMissing) {
+        var href = safeUrl(url);
+        var node = element(href ? 'a' : 'button', className);
+        if (href) {
+            node.href = href;
+            if (new URL(href).origin !== location.origin) {
+                node.target = '_blank';
+                node.rel = 'noopener noreferrer';
+            }
+        } else {
+            node.type = 'button';
+            node.addEventListener('click', onMissing || function () { unavailable(title); });
+        }
+        return node;
+    }
+    function systemCard(title, glyph, url) {
+        var node = action('portal-system-card', title, url);
+        node.appendChild(icon(glyph));
+        node.appendChild(element('span', '', title));
+        return node;
+    }
+    function renderFiles(container, items) {
+        items.forEach(function (item) {
+            var row = action('portal-file-row', item.title, item.url);
+            row.appendChild(icon('download'));
+            row.appendChild(element('span', 'portal-file-title', item.title));
+            row.appendChild(icon('file'));
+            container.appendChild(row);
+        });
+        if (!items.length) empty(container, 'فایلی برای نمایش در دسترس نیست.');
+    }
+    function renderNotices(container, items) {
+        items.forEach(function (item) {
+            var row = action('portal-notice', item.title, item.url);
+            row.appendChild(icon('alert'));
+            var copy = element('span');
+            copy.appendChild(element('strong', '', item.title));
+            copy.appendChild(element('p', '', item.summary));
+            row.appendChild(copy);
+            container.appendChild(row);
+        });
+        if (!items.length) empty(container, 'اطلاعیه‌ای برای نمایش وجود ندارد.');
+    }
+    function renderNews(container, items) {
+        items.forEach(function (item) {
+            var row = action('portal-news-row', item.title, item.url);
+            row.appendChild(icon('chevron-left'));
+            row.appendChild(element('span', '', item.title));
+            if (safeUrl(item.image)) {
+                var image = element('img');
+                image.src = safeUrl(item.image);
+                image.alt = '';
+                image.width = 84;
+                image.height = 45;
+                image.loading = 'lazy';
+                row.appendChild(image);
+            }
+            container.appendChild(row);
+        });
+        if (!items.length) empty(container, 'خبری برای نمایش وجود ندارد.');
+    }
+    function renderDirectory(container, items) {
+        items.forEach(function (item) {
+            var children = data.menus.filter(function (child) { return child.parent === item.id; });
+            var row = action('portal-directory-link', item.title, item.url, function () {
+                if (children.length) openDialog(item.title, function (body) { renderDirectory(body, children); });
+                else unavailable(item.title);
+            });
+            row.textContent = item.title;
+            container.appendChild(row);
+        });
+        if (!items.length) empty(container, 'پیوندی برای نمایش وجود ندارد.');
+    }
+    function showCollection(kind) {
+        if (kind === 'systems') openDialog('همه سامانه‌ها', function (body) {
+            var grid = element('div', 'portal-system-grid');
+            data.systems.forEach(function (item) {
+                var design = systems.find(function (entry) { return normalized(entry[0]) === normalized(item.title); });
+                grid.appendChild(systemCard(item.title, design ? design[1] : 'grid', item.url));
+            });
+            if (!data.systems.length) empty(body, 'سامانه‌ای ثبت نشده است.');
+            else body.appendChild(grid);
+        });
+        if (kind === 'files') openDialog('فایل‌های مورد نیاز', function (body) { renderFiles(body, data.files); });
+        if (kind === 'announcements') openDialog('اطلاعیه‌های مهم', function (body) { renderNotices(body, data.announcements); });
+    }
+
+    systems.forEach(function (entry) {
+        var configured = find(data.systems, entry[0]);
+        root.querySelector('[data-systems]').appendChild(systemCard(entry[0], entry[1], configured && configured.url));
+    });
+    navigation.forEach(function (entry, index) {
+        var configured = find(data.menus, entry[0]);
+        var children = configured ? data.menus.filter(function (item) { return item.parent === configured.id; }) : [];
+        var row = action('portal-nav-item' + (index === 0 ? ' is-active' : ''), entry[0],
+            entry[2] ? data.pages[entry[2]] : configured && configured.url, function () {
+                if (entry[0] === 'امور') openDialog('امور', function (body) { renderDirectory(body, data.menus.filter(function (item) { return !item.parent; })); });
+                else if (children.length) openDialog(entry[0], function (body) { renderDirectory(body, children); });
+                else unavailable(entry[0]);
+            });
+        if (index === 0) row.setAttribute('aria-current', 'page');
+        row.appendChild(icon(entry[1]));
+        row.appendChild(element('span', '', entry[0]));
+        root.querySelector('[data-navigation]').appendChild(row);
+    });
+    renderFiles(root.querySelector('[data-files]'), data.files.slice(0, 6));
+    renderNotices(root.querySelector('[data-announcements]'), data.announcements.slice(0, 4));
+    renderNews(root.querySelector('[data-news]'), data.news.slice(0, 4));
+    root.querySelector('[data-username]').textContent = data.user;
+    root.querySelectorAll('[data-page]').forEach(function (link) {
+        var href = safeUrl(data.pages[link.getAttribute('data-page')]);
+        if (href) link.href = href;
+    });
+    root.querySelectorAll('[data-open]').forEach(function (button) {
+        button.addEventListener('click', function () { showCollection(button.getAttribute('data-open')); });
+    });
+    root.querySelectorAll('[data-feature]').forEach(function (button) {
+        button.addEventListener('click', function () {
+            var title = button.getAttribute('data-feature');
+            var configured = find(data.systems, title) || find(data.systems, 'سامانه جامع ' + title) || find(data.menus, title);
+            var href = configured && safeUrl(configured.url);
+            if (href) location.assign(href);
+            else unavailable(title);
+        });
+    });
+    root.querySelector('[data-directory]').addEventListener('click', function () {
+        openDialog('نقشه سایت', function (body) {
+            renderDirectory(body, data.menus.filter(function (item) { return !item.parent; }));
+            if (data.divisions.length) {
+                body.appendChild(element('h3', '', 'واحدهای سازمانی'));
+                renderDirectory(body, data.divisions);
+            }
+        });
+    });
+    function showUser() {
+        openDialog('حساب کاربری', function (body) { body.appendChild(element('p', '', data.user)); });
+    }
+    root.querySelector('[data-user]').addEventListener('click', showUser);
+    root.querySelector('[data-settings]').addEventListener('click', function () {
+        openDialog('انتخاب واحد سازمانی', function (body) { renderDirectory(body, data.divisions); });
+    });
+    function search() {
+        var query = root.querySelector('#portal-search').value.trim();
+        var url = safeUrl(data.pages.search);
+        if (!query || !url) return;
+        var destination = new URL(url);
+        destination.searchParams.set('q', query);
+        location.assign(destination.href);
+    }
+    root.querySelector('[data-search]').addEventListener('click', search);
+    root.querySelector('#portal-search').addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') { event.preventDefault(); search(); }
+    });
+    root.querySelector('[data-toggle-menu]').addEventListener('click', function (event) {
+        var isOpen = root.querySelector('.portal-sidebar').classList.toggle('is-open');
+        event.currentTarget.setAttribute('aria-expanded', String(isOpen));
+    });
+    root.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            root.querySelector('.portal-sidebar').classList.remove('is-open');
+            root.querySelector('[data-toggle-menu]').setAttribute('aria-expanded', 'false');
+        }
+    });
+    root.querySelector('[data-close-dialog]').addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (event) { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', function () { if (returnFocus) returnFocus.focus(); });
+
+    var slideIndex = 0;
+    function changeSlide(index) {
+        if (!data.slides.length) return;
+        slideIndex = (index + data.slides.length) % data.slides.length;
+        var slide = data.slides[slideIndex];
+        var image = root.querySelector('.portal-hero-image');
+        if (safeUrl(slide.image)) image.src = safeUrl(slide.image);
+        image.alt = slide.alt;
+        root.querySelectorAll('[data-slide-index]').forEach(function (dot) {
+            var active = Number(dot.getAttribute('data-slide-index')) === slideIndex;
+            dot.classList.toggle('is-active', active);
+            dot.setAttribute('aria-pressed', String(active));
+        });
+    }
+    root.querySelectorAll('[data-slide]').forEach(function (button) {
+        button.addEventListener('click', function () { changeSlide(slideIndex + Number(button.getAttribute('data-slide'))); });
+    });
+    root.querySelectorAll('[data-slide-index]').forEach(function (dot) {
+        dot.addEventListener('click', function () { changeSlide(Number(dot.getAttribute('data-slide-index'))); });
+    });
+    function updateClock() {
+        var now = new Date();
+        var date = new Intl.DateTimeFormat('fa-IR-u-ca-persian', { timeZone: 'Asia/Tehran', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).format(now);
+        var time = new Intl.DateTimeFormat('fa-IR', { timeZone: 'Asia/Tehran', hour: '2-digit', minute: '2-digit', hour12: false }).format(now);
+        var clock = root.querySelector('[data-clock]');
+        clock.textContent = date + '، ساعت ' + time;
+        clock.dateTime = now.toISOString();
+    }
+    changeSlide(0);
+    updateClock();
+    window.setInterval(updateClock, 30000);
+    hydrateIcons(root);
+}());
