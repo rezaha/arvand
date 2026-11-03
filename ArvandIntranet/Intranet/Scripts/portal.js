@@ -144,14 +144,33 @@
     function renderDirectory(container, items) {
         items.forEach(function (item) {
             var children = data.menus.filter(function (child) { return child.parent === item.id; });
-            var row = action('portal-directory-link', item.title, item.url, function () {
-                if (children.length) openDialog(item.title, function (body) { renderDirectory(body, children); });
+            var row = action('portal-directory-link', item.title, children.length ? '' : item.url, function () {
+                if (children.length) openMenu(item, children);
                 else unavailable(item.title);
             });
             row.textContent = item.title;
             container.appendChild(row);
         });
         if (!items.length) empty(container, 'پیوندی برای نمایش وجود ندارد.');
+    }
+    function openMenu(item, children) {
+        openDialog(item.title, function (body) {
+            if (safeUrl(item.url)) {
+                var parentPage = action('portal-directory-link', item.title, item.url);
+                parentPage.textContent = 'صفحهٔ ' + item.title;
+                body.appendChild(parentPage);
+            }
+            renderDirectory(body, children);
+        });
+    }
+    function appendFeatures(body) {
+        [['widgets', 'بخش‌های سازمانی و وب‌پارت‌ها'], ['management', 'مدیریت سامانه']].forEach(function (entry) {
+            var href = safeUrl(data.pages[entry[0]]);
+            if (!href) return;
+            var link = action('portal-directory-link', entry[1], href);
+            link.textContent = entry[1];
+            body.appendChild(link);
+        });
     }
     function showCollection(kind) {
         if (kind === 'systems') openDialog('همه سامانه‌ها', function (body) {
@@ -176,9 +195,9 @@
         var configured = find(data.menus, entry[0]);
         var children = configured ? data.menus.filter(function (item) { return item.parent === configured.id; }) : [];
         var row = action('portal-nav-item' + (index === 0 ? ' is-active' : ''), entry[0],
-            entry[2] ? data.pages[entry[2]] : configured && configured.url, function () {
-                if (entry[0] === 'امور') openDialog('امور', function (body) { renderDirectory(body, data.menus.filter(function (item) { return !item.parent; })); });
-                else if (children.length) openDialog(entry[0], function (body) { renderDirectory(body, children); });
+            entry[2] ? data.pages[entry[2]] : (children.length || entry[0] === 'امور' ? '' : configured && configured.url), function () {
+                if (entry[0] === 'امور') openDialog('امور', function (body) { renderDirectory(body, data.menus.filter(function (item) { return !item.parent; })); appendFeatures(body); });
+                else if (children.length) openMenu(configured, children);
                 else unavailable(entry[0]);
             });
         if (index === 0) row.setAttribute('aria-current', 'page');
@@ -227,6 +246,7 @@
     root.querySelector('[data-directory]').addEventListener('click', function () {
         openDialog('نقشه سایت', function (body) {
             renderDirectory(body, data.menus.filter(function (item) { return !item.parent; }));
+            appendFeatures(body);
             if (data.divisions.length) {
                 body.appendChild(element('h3', '', 'واحدهای سازمانی'));
                 renderDirectory(body, data.divisions);
@@ -234,7 +254,7 @@
         });
     });
     function showUser() {
-        openDialog('حساب کاربری', function (body) { body.appendChild(element('p', '', data.user)); });
+        openDialog('حساب کاربری', function (body) { body.appendChild(element('p', '', data.user)); appendFeatures(body); });
     }
     root.querySelector('[data-user]').addEventListener('click', showUser);
     root.querySelector('[data-settings]').addEventListener('click', function () {

@@ -28,9 +28,13 @@ Partial Class Menu
 
             BindGrid(HFPArentId.Value)
 
-            Dim pages = PageSer.GetAllPagesByDivisionId(_securityUser.DivisionId, Danesh.ArvandIntranet.DomainClasses.Models.PageType.UserDefinePage)
+            Dim pages = PageSer.GetAllPagesByDivisionId(_securityUser.DivisionId).Where(Function(a) a.PageType = Danesh.ArvandIntranet.DomainClasses.Models.PageType.UserDefinePage Or a.PageFileName = "SelContact.aspx").OrderBy(Function(a) a.PageTitle).ToList()
             For Each a In pages
-                lbxPage.Items.Add(New ListItem(a.PageTitle, a.PageId))
+                If a.PageFileName = "SelContact.aspx" Then
+                    lbxPage.Items.Add(New ListItem(a.PageTitle.ToFriendlyUrl, a.PageLink))
+                Else
+                    lbxPage.Items.Add(New ListItem(a.PageTitle.ToFriendlyUrl, "ShowPage/" & a.PageId & "/" & a.PageTitle.ToFriendlyUrl))
+                End If
             Next
             AddSystemHistory("نمایش فرم منوها", 0)
         End If

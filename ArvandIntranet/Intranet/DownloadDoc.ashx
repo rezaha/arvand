@@ -19,11 +19,11 @@ Public Class DownloadDoc : Implements IHttpHandler
                 context.Response.Clear()
                 'context.Response.ContentType = file.FileType
                 If _showDoc.DocUrl.Substring(_showDoc.DocUrl.LastIndexOf(".")).ToLower() = ".pdf" Then
-                    context.Response.AppendHeader("Content-Disposition", "inline; filename=""" + Path.GetFileName(fileName) + """")
+                    context.Response.AppendHeader("Content-Disposition", PortalDownloadHeaders.Build(Path.GetFileName(fileName), True))
                     context.Response.ContentType = "application/pdf"
                     context.Response.WriteFile(fileName)
                 Else
-                    context.Response.AppendHeader("Content-Disposition", "attachment; filename=""" + Path.GetFileName(fileName) + """")
+                    context.Response.AppendHeader("Content-Disposition", PortalDownloadHeaders.Build(Path.GetFileName(fileName), False))
                     context.Response.TransmitFile(fileName)
                 End If
                 context.Response.End()
@@ -36,11 +36,11 @@ Public Class DownloadDoc : Implements IHttpHandler
                             context.Response.Clear()
                             'context.Response.ContentType = file.FileType
                             If _showDoc.DocUrl.Substring(_showDoc.DocUrl.LastIndexOf(".")).ToLower() = ".pdf" Then
-                                context.Response.AppendHeader("Content-Disposition", "inline; filename=""" + Path.GetFileName(fileName) + """")
+                                context.Response.AppendHeader("Content-Disposition", PortalDownloadHeaders.Build(Path.GetFileName(fileName), True))
                                 context.Response.ContentType = "application/pdf"
                                 context.Response.WriteFile(fileName)
                             Else
-                                context.Response.AppendHeader("Content-Disposition", "attachment; filename=""" + Path.GetFileName(fileName) + """")
+                                context.Response.AppendHeader("Content-Disposition", PortalDownloadHeaders.Build(Path.GetFileName(fileName), False))
                                 context.Response.TransmitFile(fileName)
                             End If
                        

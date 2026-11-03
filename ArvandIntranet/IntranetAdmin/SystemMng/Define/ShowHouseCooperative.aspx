@@ -5,6 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:Button ID="btnExportExcel" runat="server" Text="دریافت Excel" CausesValidation="false" OnClick="ExportExcel_Click" />
     <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel1" runat="server" Skin="Office2010Blue">
     </telerik:RadAjaxLoadingPanel>
     <telerik:RadAjaxPanel ID="RadAjaxPanel1" runat="server" HorizontalAlign="NotSet" LoadingPanelID="RadAjaxLoadingPanel1">
@@ -52,6 +53,7 @@
                     </telerik:GridTemplateColumn>
                     <telerik:GridBoundColumn DataField="WorkLocation" HeaderText="محل کار" SortExpression="NationalId"></telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="PersonNo" HeaderText="شماره پرسنلی" SortExpression="NationalId"></telerik:GridBoundColumn>
+                    <telerik:GridTemplateColumn HeaderText="محل تعاونی"><ItemTemplate><asp:Label ID="lblLocation" runat="server" Text='<%#GetCoopertiveTypeName(Eval("CooperativeLocation"))%>' /></ItemTemplate></telerik:GridTemplateColumn>
                     <telerik:GridBoundColumn DataField="Remark" HeaderText="توضیحات" SortExpression="NationalId"></telerik:GridBoundColumn>
                    
                 </Columns>

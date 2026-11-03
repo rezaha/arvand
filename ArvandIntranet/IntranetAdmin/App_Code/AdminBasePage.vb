@@ -22,6 +22,10 @@ Public Class AdminBasePage
     Public Sub New()
         ObjectFactory.BuildUp(Me)
         _securityUser = _securityUserService.GetOneSecurityUserByUserName(getUserName)
+        If _securityUser Is Nothing Then
+            Context.Response.Redirect(GetRouteUrl("managementlogin", New With {.pageName = "Login"}), True)
+            Exit Sub
+        End If
         _maxVolume = _maxVolumeService.GetMaxVolumeByDivisionId(_securityUser.DivisionId)
     End Sub
 
@@ -29,7 +33,9 @@ Public Class AdminBasePage
         'Dim UserDetail() As String = GetUserDetailsFromCookie()
 
         CurUrl = Request.AppRelativeCurrentExecutionFilePath
-        If _securityUser.UserAdmin = False Then
+        Dim ownPassword = String.Equals(CurUrl, "~/SystemMng/SecuritySystem/ChangePassword.aspx", StringComparison.OrdinalIgnoreCase) OrElse
+            String.Equals(CurUrl, "~/SystemMng/SecuritySystem/ChangePassword", StringComparison.OrdinalIgnoreCase)
+        If _securityUser.UserAdmin = False AndAlso Not ownPassword Then
             Dim FormUserGrant = _securityFormsGrantedService.GetOneSecurityFormsGrantedByFormName(_securityUser.UserId, CurUrl)
             If FormUserGrant Is Nothing Then
                 Response.RedirectToRoute("management", New With {.pageName = "SecurityPermission"})
@@ -69,6 +75,7 @@ Public Class AdminBasePage
         ' Dim UserDetail() As String = GetUserDetailsFromCookie()
         If _securityUser.UserAdmin = False Then
             Dim MyFormGrant As Danesh.ArvandIntranet.DomainClasses.Models.SecurityFormsGranted = _securityFormsGrantedService.GetOneSecurityFormsGrantedByFormName(_securityUser.UserId, CurUrl)
+            If MyFormGrant Is Nothing Then Return False
             If (ActionName = "Insert" And MyFormGrant.InsertRecord) Or (ActionName = "Update" And MyFormGrant.UpdateRecord) Or
                 (ActionName = "Delete" And MyFormGrant.DeleteRecord) Or (ActionName = "Search" And MyFormGrant.SearchRecord) Or
                 (ActionName = "Aprove" And MyFormGrant.ApproveAction) Or (ActionName = "Print" And MyFormGrant.PrintRecord) Or
@@ -112,11 +119,11 @@ Public Class AdminBasePage
     Protected Function getUserName() As String
         Dim coo As HttpCookie = Context.Request.Cookies("LoginCook")
         If coo Is Nothing Then
-            Context.Response.Redirect("~/defaul.aspx", True)
+            Context.Response.Redirect(GetRouteUrl("managementlogin", New With {.pageName = "Login"}), True)
             Exit Function
         End If
         If coo.Value.Trim = "" Then
-            Context.Response.Redirect("~/defaul.aspx", True)
+            Context.Response.Redirect(GetRouteUrl("managementlogin", New With {.pageName = "Login"}), True)
             Exit Function
         End If
         Return FormsAuthentication.Decrypt(coo.Value).UserData
@@ -144,7 +151,7 @@ Public Class AdminBasePage
         item.OsName = SystemTracking.UserOs
         item.OsUser = SystemTracking.UserMachineName
         item.Remark = ""
-        ' SystemHistoryService.AddSystemHistory(item, New Dictionary(Of String, String))
+        SystemHistoryService.AddSystemHistory(item, New Dictionary(Of String, String))
     End Sub
 
 End Class

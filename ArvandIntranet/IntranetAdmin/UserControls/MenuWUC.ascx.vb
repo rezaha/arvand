@@ -74,8 +74,8 @@ Partial Class UserControls_MenuWUC
         '        PageDescription = ""
         'End Select
         'Dim url As String = GetRouteUrl("default-rout", New With {.pageName = PageName, .id = PageId}) & "/" & Server.HtmlDecode(PageDescription)
-        Dim url As String = GetRouteUrl("default-rout", New With {.pageName = PageLink})
-        Return url
+        Return PortalMenuLinks.Resolve(Me, PageLink)
+
     End Function
 
 End Class

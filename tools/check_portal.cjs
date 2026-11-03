@@ -116,6 +116,33 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
         await page.keyboard.press('Escape');
         await page.unroute(base + '/', noPublicPages);
 
+        // A parent with its own URL must still expose nested CMS menus.
+        const fullFeatures = async route => {
+            const response = await route.fetch();
+            const html = (await response.text()).replace(/(<script type="application\/json" data-portal-data>)([\s\S]*?)(<\/script>)/, (_, before, json, after) => {
+                const data = JSON.parse(json);
+                data.pages.widgets = '/fixture/widgets';
+                data.pages.management = '/fixture/management';
+                data.menus.push({id: 101, parent: 2, title: 'زیرمنوی دانش', url: '/fixture/menus/101'});
+                data.menus.push({id: 102, parent: 101, title: 'صفحهٔ دانش', url: '/fixture/menus/102'});
+                return before + JSON.stringify(data).replace(/</g, '\\u003c') + after;
+            });
+            await route.fulfill({ response, body: html });
+        };
+        await page.route(base + '/', fullFeatures);
+        await page.setViewportSize({width: 1428, height: 1304});
+        await load();
+        await page.locator('[data-navigation]').getByRole('button', {name: 'مدیریت دانش', exact: true}).click({force: true});
+        assert.equal(await page.locator('dialog[open] a[href$="/fixture/menus/1"]').count(), 1);
+        await page.locator('dialog[open]').getByRole('button', {name: 'زیرمنوی دانش', exact: true}).click();
+        assert.equal(await page.locator('dialog[open] a[href$="/fixture/menus/102"]').count(), 1);
+        await page.keyboard.press('Escape');
+        await page.locator('[data-user]').click();
+        assert.equal(await page.locator('dialog[open] a[href$="/fixture/widgets"]').count(), 1);
+        assert.equal(await page.locator('dialog[open] a[href$="/fixture/management"]').count(), 1);
+        await page.keyboard.press('Escape');
+        await page.unroute(base + '/', fullFeatures);
+
         // Exercise empty live datasets and untrusted strings with the same rendering code.
         await page.route(base + '/', async route => {
             const response = await route.fetch();

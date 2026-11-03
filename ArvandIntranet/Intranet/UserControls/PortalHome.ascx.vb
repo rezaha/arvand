@@ -63,7 +63,8 @@ Partial Class UserControls_PortalHome
             .pages = New With {
                 .home = PageUrl("default"), .about = PageUrl("About"),
                 .contact = PageUrl("ContactUs"), .news = PageUrl("NewsArchive"),
-                .search = PageUrl("Search")
+                .search = PageUrl("Search"), .widgets = PageUrl("PortalWidgets"),
+                .management = GetRouteUrl("managementlogin", New With {.pageName = "Login"})
             },
             .slides = New Object() {
                 New With {.image = ResolveUrl("~/UploadFiles/slider/01/01.jpg"), .alt = "نمای مجتمع پتروشیمی اروند در غروب"},
@@ -91,12 +92,7 @@ Partial Class UserControls_PortalHome
     End Function
 
     Private Function MenuUrl(value As String) As String
-        If String.IsNullOrWhiteSpace(value) OrElse value = "#" Then Return String.Empty
-        Dim absolute As Uri = Nothing
-        If Uri.TryCreate(value, UriKind.Absolute, absolute) Then Return PortalUrl.SafeUrl(value)
-        If value.StartsWith("~/") OrElse value.StartsWith("/") Then Return PortalUrl.SafeUrl(ResolveUrl(value))
-        'Keep the existing menu's route semantics, including nested page links.
-        Return PortalUrl.SafeUrl(GetRouteUrl("default-rout", New With {.pageName = value}))
+        Return PortalMenuLinks.Resolve(Me, value)
     End Function
 
     Private Function AssetUrl(value As String) As String

@@ -10,5 +10,7 @@
   <ItemGroup>
     <Compile Include="../ArvandIntranet/Intranet/App_Code/PortalUrl.vb" />
     <Compile Include="check_portal_urls.vb" />
+    <Compile Include="../ArvandIntranet/IntranetAdmin/App_Code/PortalDownloadHeaders.vb" />
+    <Reference Include="Arvand.Common"><HintPath>../ArvandIntranet/IntranetAdmin/Bin/Arvand.Common.dll</HintPath></Reference>
   </ItemGroup>
 </Project>

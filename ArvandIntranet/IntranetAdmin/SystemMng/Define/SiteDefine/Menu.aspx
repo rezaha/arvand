@@ -23,9 +23,9 @@
 
         function btnSelectPage_onclick() {
             var pageId = $("#lbxPage").val();
-            var select = $("#lbxPage").find("option:selected").text();
+
             if (pageId != null) {
-                $("#<%=txtMenu_link_persian.ClientId%>").val("ShowPage/" + pageId + "/" + select);
+                $("#<%=txtMenu_link_persian.ClientId%>").val( pageId );
                 $('#Page_Div').slideUp('fast', 'swing');
             }
         }
@@ -149,7 +149,7 @@
                                         <asp:TextBox ID="txtMenu_link_persian" runat="server" CssClass="txtInfoLeft leftEn"
                                             Width="80%"></asp:TextBox>
                                         <img src="~/Images/icon/Currency.png" runat="server" id="ImgBtnSelectPersianPage" onclick="return ImgBtnSelectPersianPage_onclick()" />
-                                        <asp:RequiredFieldValidator ID="rfvMenu_link_persian" runat="server" ErrorMessage="لینک منو فارسیوارد نشده است "
+                                        <asp:RequiredFieldValidator ID="rfvMenu_link_persian" runat="server" ErrorMessage="لینک منو فارسی وارد نشده است "
                                             Display="None" ControlToValidate="txtMenu_link_persian" Text="*" ValidationGroup="p"></asp:RequiredFieldValidator>
                                         <div id="Page_Div" style="display: none; position: absolute; z-index: 200; left:20%; background-color: #fff;">
                                             <table class="select_item_menu">
