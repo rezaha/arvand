@@ -1,31 +1,4 @@
 <%@ Control Language="VB" AutoEventWireup="false" CodeFile="PortalHome.ascx.vb" Inherits="UserControls_PortalHome" %>
-<div class="portal" data-portal data-assets="<%= ResolveUrl("~/Images/portal/") %>">
-    <a class="portal-skip" href="#portal-main">رفتن به محتوای اصلی</a>
-    <header class="portal-header">
-        <a class="portal-brand" data-page="home" aria-label="پتروشیمی اروند؛ صفحه نخست">
-            <span class="portal-brand-crop"><img class="portal-brand-image" src="<%= ResolveUrl("~/Images/portal/arvand-header.png") %>" alt="شرکت پتروشیمی اروند — Arvand Petrochemical Company" width="960" height="100" /></span>
-        </a>
-        <div class="portal-welcome">به اینترانت شرکت پتروشیمی اروند خوش آمدید.</div>
-        <div class="portal-toolbar">
-            <div class="portal-date"><i data-icon="calendar"></i><time data-clock></time></div>
-            <div class="portal-search" role="search">
-                <label class="portal-sr" for="portal-search">جستجو در سامانه‌ها، بخش‌ها، اخبار و ...</label>
-                <input id="portal-search" type="search" placeholder="جستجو در سامانه‌ها، بخش‌ها، اخبار و ..." maxlength="200" />
-                <button type="button" data-search aria-label="جستجو"><i data-icon="search"></i></button>
-            </div>
-            <div class="portal-tools">
-                <button type="button" class="portal-tool" data-settings aria-label="تنظیمات"><i data-icon="settings"></i></button>
-                <button type="button" class="portal-tool" data-open="announcements" aria-label="اطلاعیه‌ها"><i data-icon="bell"></i></button>
-                <button type="button" class="portal-user" data-user aria-label="حساب کاربری"><i data-icon="user-circle"></i><span data-username></span><i data-icon="chevron-down"></i></button>
-            </div>
-            <button class="portal-mobile-menu portal-tool" type="button" data-toggle-menu aria-label="نمایش منو" aria-expanded="false" aria-controls="portal-navigation"><i data-icon="menu"></i></button>
-        </div>
-    </header>
-    <div class="portal-layout">
-        <aside class="portal-sidebar" id="portal-navigation" aria-label="منوی اصلی">
-            <nav class="portal-nav" data-navigation></nav>
-        </aside>
-        <main class="portal-main" id="portal-main">
             <section class="portal-hero" aria-label="معرفی پتروشیمی اروند" aria-roledescription="اسلایدر">
                 <img class="portal-hero-image" src="<%= ResolveUrl("~/UploadFiles/slider/01/01.jpg") %>" alt="نمای مجتمع پتروشیمی اروند در غروب" width="1160" height="324" fetchpriority="high" />
                 <div class="portal-hero-shade"></div>
@@ -60,14 +33,3 @@
                     <div class="portal-news-list" data-news></div>
                 </section>
             </div>
-        </main>
-    </div>
-    <section class="portal-banners" aria-label="پیوندهای ویژه">
-        <button type="button" class="portal-banner portal-banner-hse" data-feature="HSE"><i data-icon="shield-check"></i><span><strong>HSE</strong><small>ایمنی، اولویت همیشگی ما</small></span></button>
-        <button type="button" class="portal-banner portal-banner-learning" data-feature="سامانه آموزش"><i data-icon="graduation"></i><span><strong>پرتال آموزش</strong><small>با هم یاد می‌گیریم</small></span></button>
-        <button type="button" class="portal-banner portal-banner-culture" data-feature="فرهنگ سازمانی"><i data-icon="book"></i><span><strong>فرهنگ سازمانی</strong><small>ارزش‌ها و باورهای ما</small></span></button>
-    </section>
-    <footer class="portal-footer"><div class="portal-device-icons" aria-label="قابل استفاده در رایانه و تلفن همراه"><i data-icon="phone-device"></i><i data-icon="monitor"></i></div><nav aria-label="پیوندهای پابرگ"><a data-page="contact">تماس با ما</a><span aria-hidden="true">|</span><button type="button" data-directory>نقشه سایت</button><span aria-hidden="true">|</span><a data-page="about">درباره ما</a></nav></footer>
-    <dialog class="portal-dialog" aria-labelledby="portal-dialog-title"><div class="portal-dialog-heading"><h2 id="portal-dialog-title"></h2><button type="button" data-close-dialog aria-label="بستن"><i data-icon="close"></i></button></div><div class="portal-dialog-body"></div></dialog>
-    <script type="application/json" data-portal-data><asp:Literal ID="PortalData" runat="server" /></script>
-</div>

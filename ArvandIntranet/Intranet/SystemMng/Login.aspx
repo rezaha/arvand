@@ -1,13 +1,5 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Login.aspx.vb" Inherits="SystemMng_Login" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title></title>
-    <link href="css/LoginStyle.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    <form id="form1" runat="server">
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Login.aspx.vb" Inherits="SystemMng_Login"  MasterPageFile="~/MasterPages/Portal.master" %>
+<asp:Content ID="PageBody" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"><section class="portal-login"><p class="portal-kicker">پتروشیمی اروند</p><h1>ورود به مدیریت سامانه</h1>
     <div class="Login_bg">
         <div id="notification">
             <span class="userNote">پیام کاربری:</span>
@@ -16,7 +8,7 @@
         <table cellpadding="2" cellspacing="2" class="login_table">
             <tr>
                 <td class="login_title_ico">
-                    <img id="Img1" src="~/SystemMng/Images/LoginImg/user_login.png" runat="server" alt="" />
+
                 </td>
                 <td class="login_title">
                     ورود کاربران
@@ -47,8 +39,8 @@
             </tr>
             <tr>
                 <td colspan="2" class="login_btn">
-                    <asp:ImageButton ID="ImgBtnLogin" runat="server" ImageUrl="~/SystemMng/Images/LoginImg/login_btn.png"
-                        AlternateText="" />
+                    <asp:ImageButton ID="ImgBtnLogin" runat="server" ImageUrl="~/Images/portal/login.svg"
+                        AlternateText="ورود به سامانه" CssClass="portal-login-submit" />
                 </td>
             </tr>
             <tr>
@@ -58,6 +50,4 @@
             </tr>
         </table>
     </div>
-    </form>
-</body>
-</html>
+    </section></asp:Content>

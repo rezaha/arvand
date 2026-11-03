@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/SystemMng/MasterPage.master" AutoEventWireup="false"
+<%@ Page Title="" Language="VB" MasterPageFile="~/SystemMng/MasterPage.master" AutoEventWireup="false"
     CodeFile="Albums.aspx.vb" Inherits="SystemMng_Albums" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link href="../css/PopupBoxStyle.css" rel="stylesheet" type="text/css" />
-    <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
     <script src="../../Script/CallBackScript.js" type="text/javascript"></script>
     <script src="../js/FilaManagerScript.js" type="text/javascript"></script>
     <script type="text/javascript">

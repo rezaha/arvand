@@ -1,9 +1,7 @@
-﻿<%@ Page Title="مجوز دهی فرم ها" Language="VB" MasterPageFile="~/SystemMng/MasterPage.master"
+<%@ Page Title="مجوز دهی فرم ها" Language="VB" MasterPageFile="~/SystemMng/MasterPage.master"
     AutoEventWireup="false" CodeFile="SecurityFormsGranted.aspx.vb" Inherits="SecurityFormsGranted" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script type="text/javascript" src="../Script/JScript.js"></script>
-    <script src="../Script/jquery-1.7.2.min.js" type="text/javascript"></script>
     <style type="text/css">
         .tsInfoTemp
         {

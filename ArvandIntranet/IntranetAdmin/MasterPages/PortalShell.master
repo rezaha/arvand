@@ -1,0 +1,65 @@
+<%@ Master Language="VB" AutoEventWireup="false" CodeFile="PortalShell.master.vb" Inherits="MasterPages_PortalShell" %>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head runat="server">
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>اینترانت پتروشیمی اروند</title>
+    <link rel="icon" href="~/favicon.ico" runat="server" />
+    <link rel="stylesheet" href="~/CSS/portal.css?v=fd29ea0ca196" runat="server" />
+    <script src='<%# ResolveUrl("~/Scripts/jquery.js") %>'></script>
+    <script src='<%# ResolveUrl("~/Scripts/jquery.jcarousel.min.js") %>'></script>
+    <script src='<%# ResolveUrl("~/Scripts/jquery.pikachoose.js") %>'></script>
+    <script src='<%# ResolveUrl("~/Scripts/jquery.cycle.all.js") %>'></script>
+    <script src='<%# ResolveUrl("~/Scripts/jquery.easing.compatibility.js") %>'></script>
+    <script src='<%# ResolveUrl("~/Scripts/jquery.poshytip.min.js") %>'></script>
+    <script src='<%# ResolveUrl("~/Scripts/list_ticker.js") %>'></script>
+    <script src='<%# ResolveUrl("~/Scripts/portal-legacy.js?v=856cb016b81a") %>'></script>
+    <asp:ContentPlaceHolder ID="PortalHead" runat="server" />
+    <link rel="stylesheet" href="~/CSS/portal-content.css?v=b4f1207437d5" runat="server" />
+</head>
+<body class="portal-page"><form id="form1" runat="server">
+<div class="portal" data-portal data-home="<%= IsPortalHome.ToString().ToLowerInvariant() %>" data-assets="<%= ResolveUrl("~/Images/portal/") %>">
+    <a class="portal-skip" href="#portal-main">رفتن به محتوای اصلی</a>
+    <header class="portal-header">
+        <a class="portal-brand" data-page="home" aria-label="پتروشیمی اروند؛ صفحه نخست">
+            <span class="portal-brand-crop"><img class="portal-brand-image" src="<%= ResolveUrl("~/Images/portal/arvand-header.png") %>" alt="شرکت پتروشیمی اروند — Arvand Petrochemical Company" width="960" height="100" /></span>
+        </a>
+        <div class="portal-welcome">به اینترانت شرکت پتروشیمی اروند خوش آمدید.</div>
+        <div class="portal-toolbar">
+            <div class="portal-date"><i data-icon="calendar"></i><time data-clock></time></div>
+            <div class="portal-search" role="search">
+                <label class="portal-sr" for="portal-search">جستجو در سامانه‌ها، بخش‌ها، اخبار و ...</label>
+                <input id="portal-search" type="search" placeholder="جستجو در سامانه‌ها، بخش‌ها، اخبار و ..." maxlength="200" />
+                <button type="button" data-search aria-label="جستجو"><i data-icon="search"></i></button>
+            </div>
+            <div class="portal-tools">
+                <button type="button" class="portal-tool" data-settings aria-label="تنظیمات"><i data-icon="settings"></i></button>
+                <button type="button" class="portal-tool" data-open="announcements" aria-label="اطلاعیه‌ها"><i data-icon="bell"></i></button>
+                <button type="button" class="portal-user" data-user aria-label="حساب کاربری"><i data-icon="user-circle"></i><span data-username></span><i data-icon="chevron-down"></i></button>
+            </div>
+            <button class="portal-mobile-menu portal-tool" type="button" data-toggle-menu aria-label="نمایش منو" aria-expanded="false" aria-controls="portal-navigation"><i data-icon="menu"></i></button>
+        </div>
+    </header>
+    <div class="portal-layout">
+        <aside class="portal-sidebar" id="portal-navigation" aria-label="منوی اصلی">
+            <asp:ContentPlaceHolder ID="PortalNavigation" runat="server"><nav class="portal-nav" data-navigation></nav></asp:ContentPlaceHolder>
+            <section class="portal-currency" aria-labelledby="portal-currency-title" data-rates data-limit="4">
+                <header><h2 id="portal-currency-title">نرخ ارز</h2><button type="button" data-rates-refresh aria-label="تازه‌سازی نرخ ارز"><i data-icon="clock"></i></button></header>
+                <div data-rates-list></div><p data-rates-status role="status">در حال دریافت نرخ‌ها…</p>
+                <a data-page="currency">مشاهده همه نرخ‌ها <i data-icon="chevron-left"></i></a>
+            </section>
+        </aside>
+        <main class="portal-main" id="portal-main">
+            <asp:ContentPlaceHolder ID="PortalMain" runat="server" />
+        </main>
+    </div>
+    <section class="portal-banners" aria-label="پیوندهای ویژه">
+        <button type="button" class="portal-banner portal-banner-hse" data-feature="HSE"><i data-icon="shield-check"></i><span><strong>HSE</strong><small>ایمنی، اولویت همیشگی ما</small></span></button>
+        <button type="button" class="portal-banner portal-banner-learning" data-feature="سامانه آموزش"><i data-icon="graduation"></i><span><strong>پرتال آموزش</strong><small>با هم یاد می‌گیریم</small></span></button>
+        <button type="button" class="portal-banner portal-banner-culture" data-feature="فرهنگ سازمانی"><i data-icon="book"></i><span><strong>فرهنگ سازمانی</strong><small>ارزش‌ها و باورهای ما</small></span></button>
+    </section>
+    <footer class="portal-footer"><div class="portal-device-icons" aria-label="قابل استفاده در رایانه و تلفن همراه"><i data-icon="phone-device"></i><i data-icon="monitor"></i></div><nav aria-label="پیوندهای پابرگ"><a data-page="contact">تماس با ما</a><span aria-hidden="true">|</span><button type="button" data-directory>نقشه سایت</button><span aria-hidden="true">|</span><a data-page="about">درباره ما</a></nav></footer>
+    <dialog class="portal-dialog" aria-labelledby="portal-dialog-title"><div class="portal-dialog-heading"><h2 id="portal-dialog-title"></h2><button type="button" data-close-dialog aria-label="بستن"><i data-icon="close"></i></button></div><div class="portal-dialog-body"></div></dialog>
+    <script type="application/json" data-portal-data><asp:Literal ID="PortalData" runat="server" /></script>
+</div>
+</form><script src="<%= ResolveUrl("~/Scripts/portal.js?v=db71dfc1fe79") %>" defer></script></body></html>

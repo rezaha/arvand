@@ -1,4 +1,4 @@
-﻿Imports Microsoft.VisualBasic
+Imports Microsoft.VisualBasic
 Imports StructureMap
 Imports System.Threading
 Imports System.Globalization
@@ -65,20 +65,19 @@ Public Class BasePage
     End Property
 
     Private Sub Page_PreInit(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreInit
-        Dim path As String = Request.Url.AbsolutePath
-        path = path.Substring(path.LastIndexOf("/") + 1)
-        pageCls = PageObj.GetPageDetails(path & ".aspx")
-
-        If Not pageCls.Masterpage.Masterpage_link Is Nothing Then
-            Page.MasterPageFile = pageCls.Masterpage.Masterpage_link
+        'Use the executing page, not the final route segment (e.g. news ID 390).
+        pageCls = PageObj.GetPageDetails(IO.Path.GetFileName(AppRelativeVirtualPath))
+        If Not String.IsNullOrEmpty(MasterPageFile) Then
+            MasterPageFile = "~/MasterPages/Portal.master"
         End If
+        Theme = String.Empty
 
-        Dim PlantDivisionItem = _plantDivisionsService.GetOnePlantDivisions(0)
+    End Sub
 
-        If PlantDivisionItem.Theme IsNot Nothing Then
-            Page.Theme = PlantDivisions.Theme.THEME_FILE
-        End If
-     
+    Protected Overrides Sub Render(writer As HtmlTextWriter)
+        'Export handlers write their own response. Do not append a page shell.
+        If Response.ContentType = "application/pdf" OrElse Response.ContentType = "application/vnd.ms-word" Then Return
+        MyBase.Render(writer)
     End Sub
 
     Protected Overrides Sub InitializeCulture()

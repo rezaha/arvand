@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/SystemMng/MasterPage.master" AutoEventWireup="false"
+<%@ Page Title="" Language="VB" MasterPageFile="~/SystemMng/MasterPage.master" AutoEventWireup="false"
     CodeFile="MainGallery.aspx.vb" Inherits="SystemMng_Other_MainGallery" %>
 
 <%@ Register Src="~/SystemMng/UserControls/WindowWUC.ascx" TagPrefix="uc1" TagName="WindowWUC" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script src="../../../Scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 
     <script type="text/javascript">
 

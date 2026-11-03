@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Text.aspx.vb" Inherits="Text" MasterPageFile="~/MasterPages/MasterPage2.master" %>
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Text.aspx.vb" Inherits="Text" MasterPageFile="~/MasterPages/MasterPage2.master" %>
 
 <%@ Register Src="UserControls/WriteCommentWUC.ascx" TagName="WriteCommentWUC" TagPrefix="uc2" %>
 <%@ Register Src="UserControls/ShowCommentWUC.ascx" TagName="ShowCommentWUC" TagPrefix="uc1" %>
@@ -6,11 +6,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script src="<%# ResolveUrl("~/Scripts/ticker00.js") %>" type="text/javascript"></script>
     <script src="<%# ResolveUrl("~/Scripts/jquery.poshytip.min.js") %>" type="text/javascript"></script>
-    <script src="<%# ResolveUrl("~/Scripts/jquery.infieldlabel.min.js") %>" type="text/javascript"></script>
-    <script src="<%# ResolveUrl("~/Scripts/function.js") %>" type="text/javascript"></script>
-    <link href='<%=ResolveClientUrl("~/Css/tip-yellowsimple.css")%>' rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         $(document).ready(function () {
             $('#fade').list_ticker({

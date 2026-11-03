@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="../../ArvandIntranet/Intranet/MasterPages/Portal.master" Link="Templates/Portal.master" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/MasterPages/PortalShell.master" Link="Templates/PortalShell.master" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="../../ArvandIntranet/Intranet/UserControls/PortalHome.ascx" Link="Templates/PortalHome.ascx" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="../../tools/portal-fixture.json" Link="Templates/portal-fixture.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="../../ArvandIntranet/Intranet/CSS/portal.css" Link="wwwroot/CSS/portal.css" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
@@ -16,5 +16,17 @@
     <Content Include="../../ArvandIntranet/Intranet/favicon.ico" Link="wwwroot/favicon.ico" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="../../ArvandIntranet/Intranet/UploadFiles/slider/01/*.jpg" Link="wwwroot/UploadFiles/slider/01/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="../../ArvandIntranet/Intranet/fonts/portal/*" Link="wwwroot/fonts/portal/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/CSS/portal-content.css" Link="wwwroot/CSS/portal-content.css" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/ShowNews.aspx" Link="Templates/ShowNews.aspx" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/Currency.aspx" Link="Templates/Currency.aspx" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/Scripts/portal-legacy.js" Link="wwwroot/Scripts/portal-legacy.js" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/Scripts/jquery.js" Link="wwwroot/Scripts/jquery.js" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/Scripts/jquery.jcarousel.min.js" Link="wwwroot/Scripts/jquery.jcarousel.min.js" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/Scripts/jquery.pikachoose.js" Link="wwwroot/Scripts/jquery.pikachoose.js" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/Scripts/jquery.cycle.all.js" Link="wwwroot/Scripts/jquery.cycle.all.js" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/Scripts/jquery.easing.compatibility.js" Link="wwwroot/Scripts/jquery.easing.compatibility.js" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/Scripts/jquery.poshytip.min.js" Link="wwwroot/Scripts/jquery.poshytip.min.js" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/Scripts/list_ticker.js" Link="wwwroot/Scripts/list_ticker.js" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/Images/shownews/*" Link="wwwroot/Images/shownews/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

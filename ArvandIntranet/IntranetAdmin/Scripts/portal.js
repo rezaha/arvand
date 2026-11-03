@@ -97,8 +97,10 @@
         node.appendChild(element('span', '', title));
         return node;
     }
+    var featuredSystems = new Set();
     function renderPrioritySystems() {
         var container = root.querySelector('[data-priority-systems]');
+        if (!container) return;
         var priorities = [
             {title: 'اتوماسیون برید', icon: 'file', aliases: ['اتوماسیون برید', 'اتوماسیون اداری برید'], matches: function (title) { return /برید/.test(title); }},
             {title: 'سیستم مدیریت فناوری اطلاعات', icon: 'monitor', aliases: ['سیستم مدیریت فناوری اطلاعات', 'سامانه مدیریت فناوری اطلاعات', 'ITSM'], matches: function (title) { return /مدیریت.*فناوری.*اطلاعات/.test(title); }}
@@ -110,6 +112,7 @@
                 return !!configured;
             });
             if (!configured) configured = data.systems.find(function (item) { return priority.matches(normalized(item.title)); });
+            if (configured) featuredSystems.add(normalized(configured.title));
             var card = action('portal-priority-card', priority.title, configured && configured.url);
             card.appendChild(icon(priority.icon));
             var text = element('span');
@@ -121,6 +124,7 @@
         });
     }
     function renderFiles(container, items) {
+        if (!container) return;
         items.forEach(function (item) {
             var row = action('portal-file-row', item.title, item.url);
             row.appendChild(icon('download'));
@@ -131,6 +135,7 @@
         if (!items.length) empty(container, 'فایلی برای نمایش در دسترس نیست.');
     }
     function renderNotices(container, items) {
+        if (!container) return;
         items.forEach(function (item) {
             var row = action('portal-notice', item.title, item.url, function () { showArticle(item); });
             row.appendChild(icon('alert'));
@@ -143,6 +148,7 @@
         if (!items.length) empty(container, 'اطلاعیه‌ای برای نمایش وجود ندارد.');
     }
     function renderNews(container, items) {
+        if (!container) return;
         items.forEach(function (item) {
             var row = action('portal-news-row', item.title, item.url, function () { showArticle(item); });
             row.appendChild(icon('chevron-left'));
@@ -222,39 +228,56 @@
     }
 
     renderPrioritySystems();
-    var priorityUrls = new Set(Array.from(root.querySelectorAll('[data-priority-systems] a')).map(function (link) { return link.href; }));
     var grid = root.querySelector('[data-systems]');
-    data.systems.filter(function (item) { return safeUrl(item.url) && !priorityUrls.has(safeUrl(item.url)); }).forEach(function (item) {
-        var design = systems.find(function (entry) { return normalized(entry[0]) === normalized(item.title); });
-        grid.appendChild(systemCard(item.title, design ? design[1] : 'grid', item.url));
-    });
-    if (!grid.children.length) empty(grid, 'سامانهٔ دیگری برای نمایش ثبت نشده است.');
-
-    var home = action('portal-nav-item is-active', 'صفحه نخست', data.pages.home);
-    home.setAttribute('aria-current', 'page');
-    home.appendChild(icon('home'));
-    home.appendChild(element('span', '', 'صفحه نخست'));
-    root.querySelector('[data-navigation]').appendChild(home);
-    data.menus.filter(function (item) { return !item.parent && !['صفحه نخست', 'صفحه اصلی', 'خانه'].some(function (name) { return normalized(item.title) === normalized(name); }); }).forEach(function (item) {
-        var children = data.menus.filter(function (child) { return child.parent === item.id; });
-        var isDirectory = normalized(item.title) === normalized('امور');
-        if (!safeUrl(item.url) && !children.length && !isDirectory) return;
-        var design = navigation.find(function (entry) { return normalized(entry[0]) === normalized(item.title); });
-        var row = action('portal-nav-item', item.title, children.length || isDirectory ? '' : item.url, function () {
-            if (isDirectory) openDialog('امور', function (body) { renderDirectory(body, data.menus.filter(function (entry) { return !entry.parent; })); appendFeatures(body); });
-            else openMenu(item, children);
+    if (grid) {
+        systems.forEach(function (design) {
+            var configured = find(data.systems, design[0]);
+            grid.appendChild(systemCard(design[0], design[1], configured && configured.url));
         });
-        row.appendChild(icon(design ? design[1] : 'grid'));
-        row.appendChild(element('span', '', item.title));
-        root.querySelector('[data-navigation]').appendChild(row);
-    });
-    if (root.querySelector('[data-navigation]').children.length === 1) {
-        [['widgets', 'بخش‌های سازمانی', 'grid'], ['about', 'درباره ما', 'building'], ['contact', 'تماس با ما', 'phone']].forEach(function (entry) {
-            if (!safeUrl(data.pages[entry[0]])) return;
-            var row = action('portal-nav-item', entry[1], data.pages[entry[0]]);
-            row.appendChild(icon(entry[2]));
-            row.appendChild(element('span', '', entry[1]));
-            root.querySelector('[data-navigation]').appendChild(row);
+        data.systems.forEach(function (item) {
+            if (find(systems.map(function (entry) { return {title: entry[0]}; }), item.title) || featuredSystems.has(normalized(item.title))) return;
+            // Keep additional registered systems as well as the eighteen reference cards.
+            grid.appendChild(systemCard(item.title, 'grid', item.url));
+        });
+    }
+
+    var nav = root.querySelector('[data-navigation]');
+    if (nav) {
+        var rootMenus = data.menus.filter(function (item) { return !item.parent; });
+        var displayed = new Set();
+        function menuItem(title, glyph, configured, page) {
+            var children = configured ? data.menus.filter(function (child) { return child.parent === configured.id; }) : [];
+            var isDirectory = normalized(title) === normalized('امور');
+            var url = configured && configured.url || data.pages[page] || '';
+            var row = action('portal-nav-item', title, children.length || isDirectory ? '' : url, function () {
+                if (isDirectory) openDialog('امور', function (body) { renderDirectory(body, rootMenus); appendFeatures(body); });
+                else if (children.length) openMenu(configured, children);
+                else unavailable(title);
+            });
+            if (safeUrl(url) && new URL(safeUrl(url)).pathname.toLowerCase() === location.pathname.toLowerCase()) {
+                row.classList.add('is-active');
+                row.setAttribute('aria-current', 'page');
+            }
+            row.appendChild(icon(glyph));
+            row.appendChild(element('span', '', title));
+            if (children.length) { row.appendChild(icon('chevron-left')); row.setAttribute('aria-haspopup', 'dialog'); }
+            nav.appendChild(row);
+            displayed.add(normalized(title));
+        }
+        navigation.forEach(function (design) {
+            var configured = find(rootMenus, design[0]);
+            menuItem(design[0], design[1], configured, design[2] || (design[0] === 'شماره داخلی مدیران' ? 'managers' : ''));
+        });
+        rootMenus.forEach(function (item) {
+            if (displayed.has(normalized(item.title)) || ['صفحه اصلی', 'خانه'].some(function (title) { return normalized(title) === normalized(item.title); })) return;
+            menuItem(item.title, 'grid', item);
+        });
+        var extras = element('div', 'portal-nav-extra');
+        nav.appendChild(extras);
+        [['widgets', 'بخش‌های سازمانی', 'layers'], ['currency', 'نرخ ارز', 'coins'], ['housing', 'تعاونی مسکن', 'building'], ['news', 'آرشیو اخبار', 'file'], ['contact', 'ارتباط با ما', 'phone'], ['management', 'مدیریت سامانه', 'settings']].forEach(function (entry) {
+            if (!safeUrl(data.pages[entry[0]]) || displayed.has(normalized(entry[1]))) return;
+            menuItem(entry[1], entry[2], null, entry[0]);
+            extras.appendChild(nav.lastElementChild);
         });
     }
     renderFiles(root.querySelector('[data-files]'), data.files.slice(0, 6));
@@ -363,6 +386,7 @@
         slideIndex = (index + data.slides.length) % data.slides.length;
         var slide = data.slides[slideIndex];
         var image = root.querySelector('.portal-hero-image');
+        if (!image) return;
         if (safeUrl(slide.image)) image.src = safeUrl(slide.image);
         image.alt = slide.alt;
         root.querySelectorAll('[data-slide-index]').forEach(function (dot) {
@@ -385,6 +409,47 @@
         clock.textContent = date + '، ساعت ' + time;
         clock.dateTime = now.toISOString();
     }
+    var rateRequest;
+    function loadRates(force) {
+        var areas = Array.from(root.querySelectorAll('[data-rates]'));
+        if (!areas.length) return;
+        if (!rateRequest || force) {
+            var endpoint = safeUrl(data.pages.rates);
+            if (!endpoint || new URL(endpoint).origin !== location.origin) return;
+            var controller = new AbortController();
+            var timeout = window.setTimeout(function () { controller.abort(); }, 6500);
+            rateRequest = fetch(endpoint, {headers: {Accept: 'application/json'}, credentials: 'same-origin', signal: controller.signal})
+                .then(function (response) { if (!response.ok) throw new Error('rates'); return response.json(); })
+                .finally(function () { window.clearTimeout(timeout); });
+        }
+        areas.forEach(function (area) {
+            area.querySelector('[data-rates-refresh]').disabled = true;
+            area.querySelector('[data-rates-status]').textContent = 'در حال دریافت نرخ‌ها…';
+        });
+        rateRequest.then(function (result) {
+            var items = result.available && Array.isArray(result.items) ? result.items : [];
+            areas.forEach(function (area) {
+                var list = area.querySelector('[data-rates-list]');
+                list.replaceChildren();
+                var limit = Number(area.getAttribute('data-limit')) || items.length;
+                items.slice(0, limit).forEach(function (item) {
+                    var row = element('div', 'portal-rate-row');
+                    row.appendChild(element('span', '', item.title));
+                    var value = element('strong', '', item.value);
+                    value.dir = 'auto';
+                    row.appendChild(value);
+                    list.appendChild(row);
+                });
+                area.querySelector('[data-rates-status]').textContent = items.length ? 'آخرین اعلام منبع' + (items[0].date ? ' · ' + items[0].date : '') : 'نرخ ارز در منبع سامانه در دسترس نیست.';
+            });
+        }).catch(function () {
+            areas.forEach(function (area) { area.querySelector('[data-rates-list]').replaceChildren(); area.querySelector('[data-rates-status]').textContent = 'ارتباط با سرویس نرخ ارز برقرار نشد.'; });
+        }).finally(function () {
+            areas.forEach(function (area) { area.querySelector('[data-rates-refresh]').disabled = false; });
+        });
+    }
+    root.querySelectorAll('[data-rates-refresh]').forEach(function (button) { button.addEventListener('click', function () { loadRates(true); }); });
+    loadRates(false);
     changeSlide(0);
     updateClock();
     window.setInterval(updateClock, 30000);

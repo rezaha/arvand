@@ -1,11 +1,11 @@
-﻿<%@ Page Title="نظرسنجی" Language="VB" MasterPageFile="~/SystemMng/PopupMasterPage.master" AutoEventWireup="false" CodeFile="ShowResult.aspx.vb" Inherits="SystemMng_Define_SiteDefine_ShowResult" %>
+<%@ Page Title="نظرسنجی" Language="VB" MasterPageFile="~/SystemMng/PopupMasterPage.master" AutoEventWireup="false" CodeFile="ShowResult.aspx.vb" Inherits="SystemMng_Define_SiteDefine_ShowResult" %>
 
 
 <%@ Register Src="~/SystemMng/UserControls/Confirm.ascx" TagPrefix="uc1" TagName="Confirm" %>
 <%@ Register Src="~/SystemMng/UserControls/WindowWUC.ascx" TagName="WindowWUC" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script src="../../Scripts/Highcharts-3.0.1/js/highcharts.js"></script>
-    <script src="../../Scripts/Highcharts-3.0.1/js/modules/exporting.js"></script>
+    <script src='<%# ResolveUrl("~/SystemMng/Scripts/Highcharts-3.0.1/js/highcharts.js") %>'></script>
+    <script src='<%# ResolveUrl("~/SystemMng/Scripts/Highcharts-3.0.1/js/modules/exporting.js") %>'></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">

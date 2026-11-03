@@ -1,19 +1,5 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Explorer.aspx.vb" Inherits="Explorer" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>انتخاب فایل</title>
-    <style type="text/css">
-        html, body {
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Explorer.aspx.vb" Inherits="Explorer"  MasterPageFile="~/MasterPages/Portal.master" %>
+<asp:Content ID="PageBody" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
         </telerik:RadScriptManager>
         <script type="text/javascript">
@@ -66,11 +52,8 @@
                             DeletePaths="~/App_Data/ProtectDocs/ar"
                             MaxUploadFileSize="1024000" />--%>
                     </telerik:RadFileExplorer>
-                    <
                 </td>
             </tr>
         </table>
 
-    </form>
-</body>
-</html>
+    </asp:Content>

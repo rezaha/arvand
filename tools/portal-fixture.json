@@ -289,7 +289,13 @@
     "about": "/fixture/about",
     "contact": "/fixture/contact",
     "news": "/fixture/news",
-    "search": "/fixture/search"
+    "search": "/fixture/search",
+    "widgets": "/fixture/widgets",
+    "currency": "/currency.html",
+    "rates": "/api/Service/PortalRates/fa/0",
+    "housing": "/fixture/housing",
+    "managers": "/fixture/managers",
+    "management": "/fixture/management"
   },
   "slides": [
     {

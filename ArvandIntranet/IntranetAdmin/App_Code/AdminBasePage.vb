@@ -1,10 +1,21 @@
-﻿Imports Microsoft.VisualBasic
+Imports Microsoft.VisualBasic
 Imports StructureMap
 Imports System.Threading
 Imports System.Globalization
 
 Public Class AdminBasePage
     Inherits System.Web.UI.Page
+
+    Public ReadOnly Property CurrentDivisionId As Integer
+        Get
+            Return If(_securityUser Is Nothing, 0, _securityUser.DivisionId)
+        End Get
+    End Property
+
+    Protected Overrides Sub OnPreInit(e As EventArgs)
+        Theme = String.Empty
+        MyBase.OnPreInit(e)
+    End Sub
 
     Protected CurUrl As String
     Dim PageObj As New CLSPages

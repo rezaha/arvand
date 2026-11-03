@@ -1,16 +1,2 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="InvalidPage.aspx.vb" Inherits="InvalidPage" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>صفحه نامعتبر</title>
-</head>
-<body style="background-image: url('http://localhost:5157/Arvand_website/Images/404_bg.png')">
-    <form id="form1" runat="server">
-    <div style="text-align:center; padding-top:20px;">
-        <img alt="صفحه نامعتبر" src="~/Images/main.png" runat="server" />
-    </div>
-    </form>
-</body>
-</html>
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="InvalidPage.aspx.vb" Inherits="InvalidPage"  MasterPageFile="~/MasterPages/Portal.master" %>
+<asp:Content ID="PageBody" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"><section class="portal-status-page"><i data-icon="alert"></i><h1>صفحه پیدا نشد</h1><p>نشانی این صفحه معتبر نیست. از منوی اصلی بخش مورد نظر را انتخاب کنید.</p><a class="portal-gold-button" data-page="home">صفحهٔ نخست</a></section></asp:Content>

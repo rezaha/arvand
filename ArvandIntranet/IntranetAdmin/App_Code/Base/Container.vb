@@ -1,4 +1,4 @@
-﻿Imports System.Reflection
+Imports System.Reflection
 
 Public Class Container
     Inherits BasePage
@@ -26,7 +26,7 @@ Public Class Container
         Dim method As MethodInfo = ucType.GetMethod("SetValueVisitor")
 
         For Each item In list
-            Dim _contentPlaceHolder As ContentPlaceHolder = Form.FindControl("ContentPlaceHolder1")
+            Dim _contentPlaceHolder As ContentPlaceHolder = PortalControls.Find(Page.Master, "ContentPlaceHolder1")
             If item.Webpart.WebpartType = 1 Then
                 method = ucType.GetMethod("SetValueVisitor")
 
@@ -100,7 +100,7 @@ Public Class Container
 
     Public Sub LoadPlantSelector()
         Dim divisionSelector As UserControl = LoadControl("~/UserControls/DivisionSelector.ascx")
-        Dim contentPlaceHolder As ContentPlaceHolder = Form.FindControl("ContentPlaceHolder1")
+        Dim contentPlaceHolder As ContentPlaceHolder = PortalControls.Find(Page.Master, "ContentPlaceHolder1")
         Dim placeHolder As PlaceHolder = contentPlaceHolder.FindControl("PlaceHolder2")
         If PlaceHolder IsNot Nothing Then
             PlaceHolder.Controls.Add(divisionSelector)

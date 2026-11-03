@@ -1,15 +1,2 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="CError.aspx.vb" Inherits="CError" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>خطا در سیستم</title>
-</head>
-<body style="background-color: #f5f4f4;">
-    <form id="form1" runat="server">
-    <div style="text-align: center;">
-        <img runat="server" src="~/Images/error_page.png" alt="خطای سیستمی" title="خطای سیستمی" style="margin: auto;" />
-    </div>
-    </form>
-</body>
-</html>
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="CError.aspx.vb" Inherits="CError"  MasterPageFile="~/MasterPages/Portal.master" %>
+<asp:Content ID="PageBody" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"><section class="portal-status-page"><i data-icon="alert"></i><h1>خطا در اجرای درخواست</h1><p>درخواست شما تکمیل نشد. دوباره تلاش کنید یا با پشتیبانی سامانه تماس بگیرید.</p><a class="portal-gold-button" data-page="home">صفحهٔ نخست</a></section></asp:Content>

@@ -1,246 +1,158 @@
-﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title></title>
-    <link href="css/StyleSheet.css" rel="stylesheet" type="text/css" />
-    <link href="css/GridView.css" rel="stylesheet" type="text/css" />
-    <link href="css/tip-twitter.css" rel="stylesheet" type="text/css" />
-    <script src="<%# ResolveClientUrl("~/Scripts/jquery.js")%>" type="text/javascript"></script>
-    <script src="<%# ResolveClientUrl("~/Scripts/jquery.poshytip.min.js")%>" type="text/jscript"></script>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-    <script type="text/javascript">
-        $(function () {
-            $('.tooltip').poshytip({
-                className: 'tip-twitter',
-                showTimeout: 500,
-                alignTo: 'target',
-                alignX: 'center',
-                offsetY: 5,
-                allowTipHover: false,
-                fade: false,
-                slide: false
-            });
-        })
-    </script>
-    <style type="text/css">
-        .auto-style1 {
-            height: 29px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
-        </telerik:RadScriptManager>
-        <div class="toporange"></div>
-        <div class="wrap">
-            <div class="header-wrap">
-                <table class="profile">
-                    <tr>
-                        <td rowspan="2">
-                            <img class="tooltip" title="کاربری که به سیستم وارد شده است" runat="server" alt="پروفایل کاربری" src="~/SystemMng/Images/user_profile.png" />
-                        </td>
-                        <td class="auto-style1">کاربر گرامی 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span class="user_name" id="lblUserName" runat="server"></span>
-                            خوش آمدید.
-                        </td>
-                    </tr>
-                </table>
-                <div class="header">
-                    <div class="logo">
-                        <img runat="server" src="~/SystemMng/Images/logo.png" />
-                    </div>
-                    <span class="date"></span>
-                </div>
-            </div>
-            <table cellpadding="0" cellspacing="0" class="main_tb">
-                <tr>
-                    <td valign="top" class="right" rowspan="2">
-                        <table cellpadding="0" cellspacing="0" class="mainmenu">
-                            <tr>
-                                <td class="mainmenu_ico">
-                                    <img id="Img1" src="~/SystemMng/Images/main_menu.png" alt="منوی اصلی" runat="server" />
-
-                                </td>
-                                <td class="mainmenu_txt">منوی اصلی
-                                </td>
-                            </tr>
-                        </table>
-                        <ul class="rightmenu">
+<%@ Master Language="VB" MasterPageFile="~/MasterPages/PortalShell.master" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+<asp:Content ID="AdminHead" ContentPlaceHolderID="PortalHead" runat="server"><asp:ContentPlaceHolder ID="head" runat="server" /></asp:Content>
+<asp:Content ID="AdminNavigation" ContentPlaceHolderID="PortalNavigation" runat="server">
+    <div class="portal-admin-heading">مدیریت سامانه<span id="lblUserName" runat="server"></span></div>
+    <ul class="rightmenu">
                             <li id="DesignHomePage" runat="server">
                                 <a class="tooltip" title="این قسمت برای چیدمان صفحه اصلی سایت استفاده میشود." href="~/SystemMng/PageAction/DesignHomePage" runat="server">
-                                    <img runat="server" src="~/SystemMng/Images/rightmenu/home_ico.png" alt="طراحی صفحه نخست" />
+                                    <i data-icon="grid"></i>
                                     <span>طراحی صفحه اصلی
                                     </span>
                                 </a>
                             </li>
                             <li id="LogicalPage" runat="server">
                                 <a class="tooltip" title="این قسمت برای ایجاد و ویرایش صفحات به کار میرود." runat="server" href="~/SystemMng/PageAction/LogicalPage">
-                                    <img runat="server" src="~/SystemMng/Images/rightmenu/page_ico.png" alt="طراحی صفحه نخست" />
+                                    <i data-icon="grid"></i>
                                     <span>مدیریت صفحات وب
                                     </span>
                                 </a>
                             </li>
                             <li id="DefinePolls" runat="server">
                                 <a class="tooltip" title="این قسمت برای تعریف نظر سنجی ها به کار میرود." runat="server" href="~/SystemMng/Define/SiteDefine/DefinePolls">
-                                    <img runat="server" src="~/SystemMng/Images/rightmenu/page_ico.png" alt="طراحی صفحه نخست" />
+                                    <i data-icon="grid"></i>
                                     <span>نظر سنجی ها
                                     </span>
                                 </a>
                             </li>
                             <li id="PollsAnswers" runat="server">
                                 <a class="tooltip" title="این قسمت برای مشاهده نتایج نظر سنجی ها به کار میرود." runat="server" href="~/SystemMng/Define/SiteDefine/PollsAnswers">
-                                    <img runat="server" src="~/SystemMng/Images/rightmenu/page_ico.png" alt="طراحی صفحه نخست" />
+                                    <i data-icon="grid"></i>
                                     <span>مشاهده نتایج نظر سنجی
                                     </span>
                                 </a>
                             </li>
                             <li id="UserWebPart" runat="server">
                                 <a class="tooltip" runat="server" title="این قسمت برای ایجاد وب پارت ها و قرار دادن آنها بر روی صفحه اصلی به کار میرود." href="~/SystemMng/Define/SiteDefine/UserWebPart">
-                                    <img runat="server" src="~/SystemMng/Images/rightmenu/part_ico.png" alt="طراحی صفحه نخست" />
+                                    <i data-icon="grid"></i>
                                     <span>مدیریت وب پارت ها
                                     </span>
                                 </a>
                             </li>
                             <li id="Menu" runat="server">
                                 <a class="tooltip" title="این قسمت برای ایجاد منو ها و ایجاد لینک بین صفحات به کار میرود." runat="server" href="~/SystemMng/Define/SiteDefine/Menu">
-                                    <img id="Img5" runat="server" src="~/SystemMng/Images/rightmenu/part_ico.png" alt="طراحی صفحه نخست" />
+                                    <i data-icon="grid"></i>
                                     <span>مدیریت منو ها
                                     </span>
                                 </a>
                             </li>
                             <li id="PlantDivision" runat="server">
                                 <a class="tooltip" title="این قسمت برای ویرایش واحد ها به کار میرود." runat="server" href="~/SystemMng/Define/SiteDefine/PlantDivision">
-                                    <img id="Img4" runat="server" src="~/SystemMng/Images/rightmenu/part_ico.png" alt="واحد ها" />
+                                    <i data-icon="grid"></i>
                                     <span>واحد ها
                                     </span>
                                 </a>
                             </li>
                             <li id="MainGallery" runat="server">
                                 <a class="tooltip" title="این قسمت برای ویرایش تصاویر گالری تصاویر صفحه اصلی استفاده میشود.." runat="server" href="~/SystemMng/PageAction/Albums/MainGallery">
-                                    <img runat="server" src="~/SystemMng/Images/rightmenu/gallery_ico.png" alt="گالری تصاویر" />
+                                    <i data-icon="grid"></i>
                                     <span>گالری تصاویر
                                     </span>
                                 </a>
                             </li>
                             <li id="SiteLink" runat="server">
                                 <a class="tooltip" title="این قسمت برای ویرایش اطلاعات پیوند های سایت به کار میود. پیوند ها به صورت یک وب پارت بر روی صفحه اصلی به کار میرود." runat="server" href="~/SystemMng/Define/SiteDefine/SiteLink">
-                                    <img runat="server" src="~/SystemMng/Images/rightmenu/link_ico.png" alt="پیوندها" />
+                                    <i data-icon="grid"></i>
                                     <span>پیوندها
                                     </span>
                                 </a>
                             </li>
                             <li id="Softwares" runat="server">
                                 <a class="tooltip" title="این قسمت برای ویرایش اطلاعات لینک های پر کاربرد صفحه اصلی به کار میرود." runat="server" href="~/SystemMng/Define/SiteDefine/Softwares">
-                                    <img id="Img3" runat="server" src="~/SystemMng/Images/rightmenu/news_ico.png" alt="نرم افزارهای سازمانی" />
+                                    <i data-icon="grid"></i>
                                     <span>لینک های پر کاربرد
                                     </span>
                                 </a>
                             </li>
                             <li id="About" runat="server">
                                 <a class="tooltip" title="این قسمت برای ویرایش اطلاعیه فوری صفحه اصلی به کار میرود." runat="server" href="~/SystemMng/PageAction/About">
-                                    <img id="Img40" runat="server" src="~/SystemMng/Images/rightmenu/page_ico.png" alt="درباره ما" />
+                                    <i data-icon="grid"></i>
                                     <span>پیغام فوری
                                     </span>
                                 </a>
                             </li>
                             <li id="SiteSettings" runat="server">
                                 <a class="tooltip" title="این قسمت شامل تنظیمات کلی وب سایت میباشد." runat="server" href="~/SystemMng/SiteSettings">
-                                    <img id="Img2" runat="server" src="~/SystemMng/Images/rightmenu/gallery_ico.png" alt="file_ico" />
+                                    <i data-icon="grid"></i>
                                     <span>تنظیمات پرتال
                                     </span>
                                 </a>
                             </li>
                             <li id="PlantMaxVolume" runat="server">
                                 <a id="lnkMaxVolume" class="tooltip" title="این قسمت برای تایین حداکثر حجم آپلود هر واحد به کار میرود." runat="server" href="~/SystemMng/Define/SiteDefine/PlantMaxVolume">
-                                    <img id="Img9" runat="server" src="~/SystemMng/Images/rightmenu/gallery_ico.png" alt="file_ico" />
+                                    <i data-icon="grid"></i>
                                     <span>حداکثر حجم فایل واحد
                                     </span>
                                 </a>
                             </li>
                             <li id="DocWebpartList" runat="server">
                                 <a class="tooltip" title="این قسمت برای مدیریت اسناد به کار میرود. ایجاد فایل - اعمال دسترسی ها و ... در این قسمت انجام میشود.." runat="server" href="~/SystemMng/DocWebpart/DocWebpartList">
-                                    <img id="Img7" runat="server" src="~/SystemMng/Images/rightmenu/gallery_ico.png" alt="file_ico" />
+                                    <i data-icon="grid"></i>
                                     <span>مدیریت اسناد
                                     </span>
                                 </a>
                             </li>
                             <li id="SecurityUserLink" runat="server">
                                 <a id="lnkUserManagement" class="tooltip" title="این قسمت برای ایجاد و مدیریت کاربران سایت به کار میرود." runat="server" href="~/SystemMng/SecuritySystem/SecurityUser">
-                                    <img id="Img6" runat="server" src="~/SystemMng/Images/rightmenu/gallery_ico.png" alt="file_ico" />
+                                    <i data-icon="grid"></i>
                                     <span>مدیریت کاربران
                                     </span>
                                 </a>
                             </li>
                             <li id="SecurityFormsGranted" runat="server">
                                 <a id="lnkSecurityGrant" class="tooltip" title="این قسمت برای اعمال دسترسی کاربران به فرم ها به کار میرود." runat="server" href="~/SystemMng/SecuritySystem/SecurityFormsGranted">
-                                    <img id="Img8" runat="server" src="~/SystemMng/Images/rightmenu/gallery_ico.png" alt="file_ico" />
+                                    <i data-icon="grid"></i>
                                     <span>دسترسی کاربران
                                     </span>
                                 </a>
                             </li>
                             <li id="ShowHistory" runat="server">
                                 <a id="A2" class="tooltip" title="این قسمت برای نمایش تاریخچه به کار میرود." runat="server" href="~/SystemMng/SecuritySystem/ShowHistory">
-                                    <img id="Img11" runat="server" src="~/SystemMng/Images/rightmenu/gallery_ico.png" alt="file_ico" />
+                                    <i data-icon="grid"></i>
                                     <span>تاریخچه
                                     </span>
                                 </a>
                             </li>
                              <li id="ShowHouseCooperative" runat="server">
                                 <a id="A3" class="tooltip" title="این قسمت برای نمایش درخواست های تعاونی مسکن به کار میرود." runat="server" href="~/SystemMng/Define/ShowHouseCooperative">
-                                    <img id="Img12" runat="server" src="~/SystemMng/Images/rightmenu/gallery_ico.png" alt="file_ico" />
+                                    <i data-icon="grid"></i>
                                     <span>تعاونی مسکن
                                     </span>
                                 </a>
                             </li>
                             <li id="SelContact" runat="server">
                                 <a id="A4" class="tooltip" title="این قسمت برای نمایش ارتباط با واحد به کار میرود." runat="server" href="~/SystemMng/PageAction/SelContact">
-                                    <img id="Img13" runat="server" src="~/SystemMng/Images/rightmenu/gallery_ico.png" alt="file_ico" />
+                                    <i data-icon="grid"></i>
                                     <span>ارتباط با واحد
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a id="A1" class="tooltip" title="تغییر کلمه عبور کاربر." runat="server" href="~/SystemMng/SecuritySystem/ChangePassword">
-                                    <img id="Img10" runat="server" src="~/SystemMng/Images/rightmenu/gallery_ico.png" alt="file_ico" />
+                                    <i data-icon="grid"></i>
                                     <span>تغییر کلمه عبور
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a class="tooltip" title="خروج از سیستم پس از اتمام کار مدیر." runat="server" href="~/SystemMng/logout">
-                                    <img runat="server" src="~/SystemMng/Images/rightmenu/logoff_ico.png" alt="file_ico" />
+                                    <i data-icon="grid"></i>
                                     <span>خروج
                                     </span>
                                 </a>
                             </li>
                         </ul>
-                    </td>
-                    <td valign="top" class="content">
-                        <div id="bodyContent">
-                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                            </asp:ContentPlaceHolder>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="footer">
-                        <a title="http://www.kwsoft.ir" class="tooltip" href="http://www.kwsoft.ir" target="_blank">طراحی و تولید شرکت دانش افزار ماهان
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-    </form>
-</body>
-
-</html>
-
+</asp:Content>
+<asp:Content ID="AdminBody" ContentPlaceHolderID="PortalMain" runat="server">
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server" />
+    <div class="portal-content portal-admin-content"><asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" /></div>
+</asp:Content>

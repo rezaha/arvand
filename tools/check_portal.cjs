@@ -17,6 +17,7 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
         page.on('pageerror', error => failures.push(error.message));
         page.on('response', response => { if (response.status() >= 400) failures.push(`${response.status()} ${response.url()}`); });
         await page.clock.setFixedTime(new Date('2026-10-10T11:00:00Z'));
+        await page.route('**/api/Service/PortalRates/**', route => route.fulfill({contentType: 'application/json', body: JSON.stringify({available: false, items: []})}));
         await page.route('**/fixture/**', route => route.fulfill({ contentType: 'text/html', body: '<title>Fixture destination</title>Fixture navigation' }));
         async function load() {
             await page.goto(base);
@@ -30,7 +31,7 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
         assert.equal(await page.locator('[data-priority-systems] a').count(), 2);
         assert.match(await page.locator('[data-priority-systems] a').nth(0).getAttribute('href'), /\/fixture\/systems\/18$/);
         assert.match(await page.locator('[data-priority-systems] a').nth(1).getAttribute('href'), /\/fixture\/systems\/19$/);
-        assert.equal(await page.locator('.portal-nav-item').count(), 20);
+        assert.equal(await page.locator('.portal-nav-item').count(), 26);
         assert.equal(await page.locator('[data-files] a').count(), 6);
         assert.equal(await page.locator('[data-announcements] a').count(), 4);
         assert.equal(await page.locator('[data-news] a').count(), 4);
@@ -75,7 +76,7 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
         assert.equal(await page.locator('dialog[open] .portal-file-row').count(), 6);
         await page.locator('[data-close-dialog]').click();
         await page.locator('[data-directory]').click();
-        assert.equal(await page.locator('dialog[open] .portal-directory-link').count(), 21);
+        assert.equal(await page.locator('dialog[open] .portal-directory-link').count(), 23);
         await page.keyboard.press('Escape');
         await page.locator('[data-settings]').click();
         assert.equal(await page.locator('dialog[open] .portal-directory-link').innerText(), 'واحد نمونه');
@@ -153,7 +154,7 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
         assert.equal(await page.locator('[data-systems] a[href$="/fixture/custom-system"]').count(), 1);
         assert.equal(await page.locator('[data-systems] a[href$="/fixture/system%20with%20space"]').count(), 1);
         assert.equal(await page.locator('[data-navigation] a[href$="/fixture/custom-menu"]').count(), 1);
-        assert.equal(await page.locator('[data-navigation]').getByText('منوی بدون لینک', {exact: true}).count(), 0);
+        assert.equal(await page.locator('[data-navigation]').getByText('منوی بدون لینک', {exact: true}).count(), 1);
         await page.locator('[data-navigation]').getByRole('button', {name: 'مدیریت دانش', exact: true}).click();
         assert.equal(await page.locator('dialog[open] a[href$="/fixture/menus/1"]').count(), 1);
         await page.locator('dialog[open]').getByRole('button', {name: 'زیرمنوی دانش', exact: true}).click();
@@ -181,7 +182,7 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
             await route.fulfill({ response, body: html });
         });
         await load();
-        assert.equal(await page.locator('[data-systems] button').count(), 0);
+        assert.equal(await page.locator('[data-systems] button').count(), 1);
         assert.equal(await page.locator('[data-systems] a').count(), 17);
         assert.equal(await page.locator('[data-news] .portal-news-media').count(), 1);
         assert.equal(await page.locator('[data-news] img').count(), 0);

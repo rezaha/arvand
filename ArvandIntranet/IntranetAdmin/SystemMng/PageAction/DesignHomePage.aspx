@@ -1,13 +1,11 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/SystemMng/MasterPage.master"
+<%@ Page Title="" Language="VB" MasterPageFile="~/SystemMng/MasterPage.master"
     AutoEventWireup="false" CodeFile="DesignHomePage.aspx.vb" Inherits="SystemMng_Home_DesignHomePage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link href="../css/DesignStyle.css" rel="stylesheet" type="text/css" />
-
-    <script src="../Scripts/jquery_0.js" type="text/javascript"></script>
-    <script src="../Scripts/jquery_1.js" type="text/javascript"></script>
-    <script src="../Scripts/arvand-v1.js" type="text/javascript"></script>
-    <script src="../Scripts/PageDemoScript.js" type="text/javascript"></script>
+<script src='<%# ResolveUrl("~/SystemMng/Scripts/jquery_0.js") %>' type="text/javascript"></script>
+    <script src='<%# ResolveUrl("~/SystemMng/Scripts/jquery_1.js") %>' type="text/javascript"></script>
+    <script src='<%# ResolveUrl("~/SystemMng/Scripts/arvand-v1.js") %>' type="text/javascript"></script>
+    <script src='<%# ResolveUrl("~/SystemMng/Scripts/PageDemoScript.js") %>' type="text/javascript"></script>
     <style type="text/css">
         .btn-act {
             color: #003366;

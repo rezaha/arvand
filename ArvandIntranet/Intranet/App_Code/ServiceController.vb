@@ -1,4 +1,4 @@
-﻿Imports System.Net
+Imports System.Net
 Imports System.Web.Http
 Imports StructureMap
 Imports System.IO
@@ -51,6 +51,26 @@ Public Class ServiceController
         Return ""
     End Function
 
+
+    'JSON contract for the new shell; the original ExRate HTML action remains
+    'available to existing web parts. Never substitute fabricated prices.
+    <HttpGet>
+    Public Function PortalRates(ByVal lang As String) As Object
+        Dim rates As New List(Of Object)
+        Try
+            For Each item In New ExRates().GetExRatesFromBMI()
+                'Preserve the price position used by the original ExRate feed contract.
+                Dim parts = item.description.Split(" "c)
+                If parts.Length <= 8 Then Continue For
+                Dim price = HttpUtility.HtmlDecode(System.Text.RegularExpressions.Regex.Replace(parts(8), "<[^>]*>", "")).Trim()
+                If Not System.Text.RegularExpressions.Regex.IsMatch(price, "^[0-9۰-۹٠-٩,٬.٫]+$") Then Continue For
+                rates.Add(New With {.title = item.title, .value = price, .date = item.pubDate})
+            Next
+        Catch ex As Exception
+            Return New With {.available = False, .items = rates}
+        End Try
+        Return New With {.available = rates.Count > 0, .items = rates}
+    End Function
 
     Public Function ExRate(ByVal lang As String) As String
 
