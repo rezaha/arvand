@@ -28,6 +28,7 @@ def render(output):
         (output / directory).mkdir(parents=True, exist_ok=True)
     for name in ('CSS/portal.css', 'Scripts/portal.js', 'Images/portal/icons.svg', 'Images/portal/arvand-header.png', 'fonts/BYekan.woff'):
         shutil.copyfile(SITE / name, output / name)
+    shutil.copytree(SITE / 'fonts/portal', output / 'fonts/portal', dirs_exist_ok=True)
     for image in (SITE / 'UploadFiles/slider/01').glob('*.jpg'):
         shutil.copyfile(image, output / 'UploadFiles/slider/01' / image.name)
     shutil.copyfile(SITE / 'favicon.ico', output / 'favicon.ico')

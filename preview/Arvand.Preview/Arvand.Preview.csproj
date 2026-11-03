@@ -15,5 +15,6 @@
     <Content Include="../../ArvandIntranet/Intranet/fonts/BYekan.woff" Link="wwwroot/fonts/BYekan.woff" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="../../ArvandIntranet/Intranet/favicon.ico" Link="wwwroot/favicon.ico" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="../../ArvandIntranet/Intranet/UploadFiles/slider/01/*.jpg" Link="wwwroot/UploadFiles/slider/01/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../ArvandIntranet/Intranet/fonts/portal/*" Link="wwwroot/fonts/portal/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

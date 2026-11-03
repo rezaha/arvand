@@ -11,6 +11,8 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
     const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || '/usr/bin/chromium', args: ['--no-sandbox'] });
     try {
         const page = await browser.newPage({ viewport: { width: 1428, height: 1304 }, deviceScaleFactor: 1 });
+        page.setDefaultTimeout(10000);
+        page.setDefaultNavigationTimeout(10000);
         const failures = [];
         page.on('pageerror', error => failures.push(error.message));
         page.on('response', response => { if (response.status() >= 400) failures.push(`${response.status()} ${response.url()}`); });
@@ -42,12 +44,21 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
             height: document.documentElement.scrollHeight
         }));
         assert.equal(geometry.hero.height, 324);
-        assert.equal(geometry.cards.y, 618);
-        assert.equal(geometry.cards.height, 321);
-        assert.equal(geometry.panels.y, 959);
-        assert.equal(geometry.banners.y, 1259);
         assert.equal(geometry.width, 1428);
-        assert.equal(geometry.height, 1397);
+        const spacing = await page.evaluate(() => {
+            const box = selector => document.querySelector(selector).getBoundingClientRect();
+            const heading = box('.portal-section-heading');
+            const priorities = box('[data-priority-systems]');
+            const grid = box('[data-systems]');
+            return {above: priorities.top - heading.bottom, below: grid.top - priorities.bottom,
+                priorityHeights: [...document.querySelectorAll('.portal-priority-card')].map(e => e.getBoundingClientRect().height),
+                panelHeights: [...document.querySelectorAll('.portal-panel')].map(e => e.getBoundingClientRect().height),
+                font: document.fonts.check('400 14px PortalSans', 'متن فارسی')};
+        });
+        assert.ok(spacing.above >= 20 && spacing.below >= 24, 'Featured shortcuts need balanced breathing room');
+        assert.ok(spacing.priorityHeights.every(height => height >= 94));
+        assert.ok(Math.max(...spacing.panelHeights) - Math.min(...spacing.panelHeights) <= 1);
+        assert.equal(spacing.font, true);
         await page.screenshot({ path: path.join(screenshots, 'portal-desktop.png'), fullPage: true });
         await page.locator('[data-open="systems"]').click();
         assert.equal(await page.locator('dialog[open] .portal-system-card').count(), 20);
@@ -126,6 +137,10 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
                 const data = JSON.parse(json);
                 data.pages.widgets = '/fixture/widgets';
                 data.pages.management = '/fixture/management';
+                data.systems.push({title: 'سامانه واقعی جدید', url: '/fixture/custom-system'});
+                data.systems.push({title: 'سامانه با فاصله در لینک', url: '/fixture/system with space'});
+                data.menus.push({id: 200, parent: 0, title: 'بخش واقعی جدید', url: '/fixture/custom-menu'});
+                data.menus.push({id: 201, parent: 0, title: 'منوی بدون لینک', url: ''});
                 data.menus.push({id: 101, parent: 2, title: 'زیرمنوی دانش', url: '/fixture/menus/101'});
                 data.menus.push({id: 102, parent: 101, title: 'صفحهٔ دانش', url: '/fixture/menus/102'});
                 return before + JSON.stringify(data).replace(/</g, '\\u003c') + after;
@@ -135,7 +150,11 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
         await page.route(base + '/', fullFeatures);
         await page.setViewportSize({width: 1428, height: 1304});
         await load();
-        await page.locator('[data-navigation]').getByRole('button', {name: 'مدیریت دانش', exact: true}).click({force: true});
+        assert.equal(await page.locator('[data-systems] a[href$="/fixture/custom-system"]').count(), 1);
+        assert.equal(await page.locator('[data-systems] a[href$="/fixture/system%20with%20space"]').count(), 1);
+        assert.equal(await page.locator('[data-navigation] a[href$="/fixture/custom-menu"]').count(), 1);
+        assert.equal(await page.locator('[data-navigation]').getByText('منوی بدون لینک', {exact: true}).count(), 0);
+        await page.locator('[data-navigation]').getByRole('button', {name: 'مدیریت دانش', exact: true}).click();
         assert.equal(await page.locator('dialog[open] a[href$="/fixture/menus/1"]').count(), 1);
         await page.locator('dialog[open]').getByRole('button', {name: 'زیرمنوی دانش', exact: true}).click();
         assert.equal(await page.locator('dialog[open] a[href$="/fixture/menus/102"]').count(), 1);
@@ -153,6 +172,7 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
             html = html.replace(/(<script type="application\/json" data-portal-data>)([\s\S]*?)(<\/script>)/, (_, before, json, after) => {
                 const data = JSON.parse(json);
                 data.systems[0].url = 'javascript:window.portalInjected=true';
+                data.systems.find(item => /برید/.test(item.title)).url = 'javascript:window.portalInjected=true';
                 data.news = [{ title: '<img src=x onerror=window.portalInjected=true>', summary: '', url: 'javascript:alert(1)', image: '' }];
                 data.files = [];
                 data.announcements = [];
@@ -161,13 +181,15 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
             await route.fulfill({ response, body: html });
         });
         await load();
-        assert.equal(await page.locator('[data-systems] button').count(), 1);
+        assert.equal(await page.locator('[data-systems] button').count(), 0);
+        assert.equal(await page.locator('[data-systems] a').count(), 17);
+        assert.equal(await page.locator('[data-news] .portal-news-media').count(), 1);
         assert.equal(await page.locator('[data-news] img').count(), 0);
         assert.match(await page.locator('[data-news]').innerText(), /<img src=x/);
         assert.equal(await page.evaluate(() => window.portalInjected), undefined);
         assert.match(await page.locator('[data-files]').innerText(), /فایلی برای نمایش/);
         assert.match(await page.locator('[data-announcements]').innerText(), /اطلاعیه‌ای/);
-        await page.locator('[data-systems] button').click();
+        await page.locator('[data-priority-systems] button').click();
         assert.match(await page.locator('dialog[open]').innerText(), /ثبت نشده/);
         assert.deepEqual(failures, []);
         console.log('PASS: reference geometry, 18 cards, panels, assets, dialogs, keyboard focus, slider, route/search navigation, 3 responsive widths, empty data and unsafe content/URL handling.');

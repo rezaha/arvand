@@ -29,7 +29,8 @@
         return (value || '').replace(/ي/g, 'ی').replace(/ك/g, 'ک').replace(/۶/g, '6').replace(/[\s‌ـ()]/g, '').toLowerCase();
     }
     function safeUrl(value) {
-        if (!value || /[\u0000-\u0020\\]/.test(value) || /^\/\//.test(value)) return '';
+        value = (value || '').trim();
+        if (!value || /[\u0000-\u001f\u007f\\]/.test(value) || /^\/\//.test(value)) return '';
         try {
             var url = new URL(value, document.baseURI);
             return /^(https?:)$/.test(url.protocol) ? url.href : '';
@@ -146,6 +147,8 @@
             var row = action('portal-news-row', item.title, item.url, function () { showArticle(item); });
             row.appendChild(icon('chevron-left'));
             row.appendChild(element('span', '', item.title));
+            var media = element('span', 'portal-news-media');
+            media.setAttribute('aria-hidden', 'true');
             if (safeUrl(item.image)) {
                 var image = element('img');
                 image.src = safeUrl(item.image);
@@ -153,8 +156,16 @@
                 image.width = 84;
                 image.height = 45;
                 image.loading = 'lazy';
-                row.appendChild(image);
+                image.addEventListener('error', function () {
+                    image.remove();
+                    media.appendChild(icon('file'));
+                    hydrateIcons(media);
+                }, {once: true});
+                media.appendChild(image);
+            } else {
+                media.appendChild(icon('file'));
             }
+            row.appendChild(media);
             container.appendChild(row);
         });
         if (!items.length) empty(container, 'خبری برای نمایش وجود ندارد.');
@@ -211,24 +222,41 @@
     }
 
     renderPrioritySystems();
-    systems.forEach(function (entry) {
-        var configured = find(data.systems, entry[0]);
-        root.querySelector('[data-systems]').appendChild(systemCard(entry[0], entry[1], configured && configured.url));
+    var priorityUrls = new Set(Array.from(root.querySelectorAll('[data-priority-systems] a')).map(function (link) { return link.href; }));
+    var grid = root.querySelector('[data-systems]');
+    data.systems.filter(function (item) { return safeUrl(item.url) && !priorityUrls.has(safeUrl(item.url)); }).forEach(function (item) {
+        var design = systems.find(function (entry) { return normalized(entry[0]) === normalized(item.title); });
+        grid.appendChild(systemCard(item.title, design ? design[1] : 'grid', item.url));
     });
-    navigation.forEach(function (entry, index) {
-        var configured = find(data.menus, entry[0]);
-        var children = configured ? data.menus.filter(function (item) { return item.parent === configured.id; }) : [];
-        var row = action('portal-nav-item' + (index === 0 ? ' is-active' : ''), entry[0],
-            entry[2] ? data.pages[entry[2]] : (children.length || entry[0] === 'امور' ? '' : configured && configured.url), function () {
-                if (entry[0] === 'امور') openDialog('امور', function (body) { renderDirectory(body, data.menus.filter(function (item) { return !item.parent; })); appendFeatures(body); });
-                else if (children.length) openMenu(configured, children);
-                else unavailable(entry[0]);
-            });
-        if (index === 0) row.setAttribute('aria-current', 'page');
-        row.appendChild(icon(entry[1]));
-        row.appendChild(element('span', '', entry[0]));
+    if (!grid.children.length) empty(grid, 'سامانهٔ دیگری برای نمایش ثبت نشده است.');
+
+    var home = action('portal-nav-item is-active', 'صفحه نخست', data.pages.home);
+    home.setAttribute('aria-current', 'page');
+    home.appendChild(icon('home'));
+    home.appendChild(element('span', '', 'صفحه نخست'));
+    root.querySelector('[data-navigation]').appendChild(home);
+    data.menus.filter(function (item) { return !item.parent && !['صفحه نخست', 'صفحه اصلی', 'خانه'].some(function (name) { return normalized(item.title) === normalized(name); }); }).forEach(function (item) {
+        var children = data.menus.filter(function (child) { return child.parent === item.id; });
+        var isDirectory = normalized(item.title) === normalized('امور');
+        if (!safeUrl(item.url) && !children.length && !isDirectory) return;
+        var design = navigation.find(function (entry) { return normalized(entry[0]) === normalized(item.title); });
+        var row = action('portal-nav-item', item.title, children.length || isDirectory ? '' : item.url, function () {
+            if (isDirectory) openDialog('امور', function (body) { renderDirectory(body, data.menus.filter(function (entry) { return !entry.parent; })); appendFeatures(body); });
+            else openMenu(item, children);
+        });
+        row.appendChild(icon(design ? design[1] : 'grid'));
+        row.appendChild(element('span', '', item.title));
         root.querySelector('[data-navigation]').appendChild(row);
     });
+    if (root.querySelector('[data-navigation]').children.length === 1) {
+        [['widgets', 'بخش‌های سازمانی', 'grid'], ['about', 'درباره ما', 'building'], ['contact', 'تماس با ما', 'phone']].forEach(function (entry) {
+            if (!safeUrl(data.pages[entry[0]])) return;
+            var row = action('portal-nav-item', entry[1], data.pages[entry[0]]);
+            row.appendChild(icon(entry[2]));
+            row.appendChild(element('span', '', entry[1]));
+            root.querySelector('[data-navigation]').appendChild(row);
+        });
+    }
     renderFiles(root.querySelector('[data-files]'), data.files.slice(0, 6));
     renderNotices(root.querySelector('[data-announcements]'), data.announcements.slice(0, 4));
     renderNews(root.querySelector('[data-news]'), data.news.slice(0, 4));
