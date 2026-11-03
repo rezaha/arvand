@@ -61,6 +61,15 @@ body.portal-page{margin:0;background:#fff;color:var(--portal-ink);font:15px Port
 .portal-gold-button{display:flex;align-items:center;gap:13px;padding:0 19px;height:47px;border:1px solid #b39b75;border-radius:5px;background:linear-gradient(110deg,#b29569,#b99b71);color:#fff!important;font-size:14px!important;white-space:nowrap;margin-top:3px}
 .portal-gold-button i[data-icon]{color:#f6eee1;width:18px;height:18px}
 .portal-system-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px 15px}
+.portal-priority-systems{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-bottom:16px}
+.portal-priority-card{display:flex;align-items:center;gap:14px;min-height:76px;width:100%;padding:12px 18px;text-align:right;border:1px solid #d5bf99;border-radius:9px;background:linear-gradient(115deg,#fffdf9,#f4eddf);box-shadow:0 2px 6px #a5875010}
+.portal-priority-card>i[data-icon]:first-child{width:39px;height:39px;padding:7px;background:#eadeca;border-radius:9px;color:#987337}
+.portal-priority-card>span{flex:1;min-width:0}
+.portal-priority-card strong{display:block;font-size:17px;line-height:1.4}
+.portal-priority-card small{display:block;color:#8a795f;font-size:12px;line-height:1.5;margin-top:3px}
+.portal-priority-card>i[data-icon]:last-child{width:19px;height:19px}
+.portal-priority-card:hover{border-color:#ac874a;box-shadow:0 3px 10px #a5875020}
+@media(max-width:760px){.portal-priority-systems{grid-template-columns:minmax(0,1fr);gap:10px}.portal-priority-card{padding:12px 14px}.portal-priority-card strong{font-size:16px}}
 .portal-system-card{min-width:0;height:99px;padding:11px 5px 9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border:1px solid var(--portal-line);border-radius:9px;background:linear-gradient(125deg,#fff,#fcfcf9);box-shadow:0 0 0 2px #ece9e82b,inset 0 0 10px #ebe8dd15;font-size:16px!important;line-height:1.25;text-align:center;transition:border-color .15s,box-shadow .15s}
 .portal-system-card i[data-icon]{width:31px;height:31px;color:#aa803c;filter:drop-shadow(0 1px 1px #c4a46b25)}
 .portal-system-card:hover{border-color:var(--portal-gold-light);box-shadow:0 2px 8px #ab89571f}

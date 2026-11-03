@@ -43,6 +43,7 @@
                     <div><h2 id="portal-systems-heading">دسترسی سریع به سامانه‌های پرکاربرد</h2><p>سامانه‌های مهم و پرکاربرد سازمان در یک نگاه</p></div>
                     <button type="button" class="portal-gold-button" data-open="systems"><i data-icon="grid"></i>همه سامانه‌ها</button>
                 </div>
+                <div class="portal-priority-systems" data-priority-systems role="group" aria-label="دسترسی مستقیم به سامانه‌های اصلی"></div>
                 <div class="portal-system-grid" data-systems></div>
             </section>
             <div class="portal-information">

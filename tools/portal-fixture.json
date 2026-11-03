@@ -78,6 +78,14 @@
     {
       "title": "سامانه جامع HSE",
       "url": "/fixture/systems/17"
+    },
+    {
+      "title": "اتوماسیون اداری برید",
+      "url": "/fixture/systems/18"
+    },
+    {
+      "title": "سيستم مديريت فناوري اطلاعات",
+      "url": "/fixture/systems/19"
     }
   ],
   "menus": [

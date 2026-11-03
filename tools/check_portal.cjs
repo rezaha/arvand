@@ -25,6 +25,9 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
         assert.equal(await page.locator('.portal-brand-image').evaluate(img => img.complete && img.naturalWidth === 960 && new URL(img.src).pathname === '/Images/portal/arvand-header.png'), true);
         assert.equal(await page.locator('.portal-wordmark,.portal-holding').count(), 0);
         assert.equal(await page.locator('[data-systems] .portal-system-card').count(), 18);
+        assert.equal(await page.locator('[data-priority-systems] a').count(), 2);
+        assert.match(await page.locator('[data-priority-systems] a').nth(0).getAttribute('href'), /\/fixture\/systems\/18$/);
+        assert.match(await page.locator('[data-priority-systems] a').nth(1).getAttribute('href'), /\/fixture\/systems\/19$/);
         assert.equal(await page.locator('.portal-nav-item').count(), 20);
         assert.equal(await page.locator('[data-files] a').count(), 6);
         assert.equal(await page.locator('[data-announcements] a').count(), 4);
@@ -39,15 +42,15 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
             height: document.documentElement.scrollHeight
         }));
         assert.equal(geometry.hero.height, 324);
-        assert.equal(geometry.cards.y, 526);
+        assert.equal(geometry.cards.y, 618);
         assert.equal(geometry.cards.height, 321);
-        assert.equal(geometry.panels.y, 867);
-        assert.equal(geometry.banners.y, 1167);
+        assert.equal(geometry.panels.y, 959);
+        assert.equal(geometry.banners.y, 1259);
         assert.equal(geometry.width, 1428);
-        assert.equal(geometry.height, 1305);
+        assert.equal(geometry.height, 1397);
         await page.screenshot({ path: path.join(screenshots, 'portal-desktop.png'), fullPage: true });
         await page.locator('[data-open="systems"]').click();
-        assert.equal(await page.locator('dialog[open] .portal-system-card').count(), 18);
+        assert.equal(await page.locator('dialog[open] .portal-system-card').count(), 20);
         await page.keyboard.press('Escape');
         assert.equal(await page.locator('dialog[open]').count(), 0);
         assert.equal(await page.locator('[data-open="systems"]').evaluate(node => node === document.activeElement), true);

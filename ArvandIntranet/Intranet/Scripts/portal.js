@@ -96,6 +96,29 @@
         node.appendChild(element('span', '', title));
         return node;
     }
+    function renderPrioritySystems() {
+        var container = root.querySelector('[data-priority-systems]');
+        var priorities = [
+            {title: 'اتوماسیون برید', icon: 'file', aliases: ['اتوماسیون برید', 'اتوماسیون اداری برید'], matches: function (title) { return /برید/.test(title); }},
+            {title: 'سیستم مدیریت فناوری اطلاعات', icon: 'monitor', aliases: ['سیستم مدیریت فناوری اطلاعات', 'سامانه مدیریت فناوری اطلاعات', 'ITSM'], matches: function (title) { return /مدیریت.*فناوری.*اطلاعات/.test(title); }}
+        ];
+        priorities.forEach(function (priority) {
+            var configured;
+            priority.aliases.some(function (alias) {
+                configured = find(data.systems, alias);
+                return !!configured;
+            });
+            if (!configured) configured = data.systems.find(function (item) { return priority.matches(normalized(item.title)); });
+            var card = action('portal-priority-card', priority.title, configured && configured.url);
+            card.appendChild(icon(priority.icon));
+            var text = element('span');
+            text.appendChild(element('strong', '', priority.title));
+            text.appendChild(element('small', '', 'ورود به سامانه'));
+            card.appendChild(text);
+            card.appendChild(icon('arrow-left'));
+            container.appendChild(card);
+        });
+    }
     function renderFiles(container, items) {
         items.forEach(function (item) {
             var row = action('portal-file-row', item.title, item.url);
@@ -187,6 +210,7 @@
         if (kind === 'news') openDialog('اخبار سازمانی', function (body) { renderNews(body, data.news); });
     }
 
+    renderPrioritySystems();
     systems.forEach(function (entry) {
         var configured = find(data.systems, entry[0]);
         root.querySelector('[data-systems]').appendChild(systemCard(entry[0], entry[1], configured && configured.url));
