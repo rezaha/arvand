@@ -2,17 +2,17 @@
 .portal-content{margin:24px 28px 0;min-width:0;min-height:520px;padding:28px;border:1px solid var(--portal-line);border-radius:14px;background:#fff;box-shadow:0 5px 24px #49381905;line-height:2;overflow-x:auto}
 .portal[data-home="true"] .portal-auto-content{margin:0;padding:0;border:0;border-radius:0;box-shadow:none}
 .portal-content::after{content:"";display:block;clear:both}
-.portal-content h1{font-size:26px;line-height:1.8;margin:0 0 20px;color:#383a35}
-.portal-content h2{font-size:20px;line-height:1.9;margin:0 0 14px}
-.portal-content h3{font-size:17px;font-weight:500}
-.portal-content p{line-height:2.1}
-.portal-content img{max-width:100%;height:auto;border-radius:8px;object-fit:contain}
-.portal-content a:hover{color:#9b763b}
-.portal-content input,.portal-content textarea,.portal-content select,.portal-content button{font:inherit}
-.portal-content input[type=text],.portal-content input[type=password],.portal-content input[type=number],.portal-content textarea,.portal-content select{padding:9px 12px;max-width:100%;border:1px solid #ded8cd;border-radius:7px;background:#fff;color:var(--portal-ink);box-sizing:border-box;min-height:40px}
-.portal-content textarea{min-height:100px}
-.portal-content input[type=submit],.portal-content input[type=button],.portal-content button:not(.portal-tool):not([class^=re]){padding:9px 18px;border:1px solid #b99b6b;background:#ab8852;color:#fff;border-radius:8px;cursor:pointer}
-.portal-content input[type=checkbox],.portal-content input[type=radio]{accent-color:#a88650}
+:where(.portal[data-home="false"]) .portal-content h1{font-size:26px;line-height:1.8;margin:0 0 20px;color:#383a35}
+:where(.portal[data-home="false"]) .portal-content h2{font-size:20px;line-height:1.9;margin:0 0 14px}
+:where(.portal[data-home="false"]) .portal-content h3{font-size:17px;font-weight:500}
+:where(.portal[data-home="false"]) .portal-content p{line-height:2.1}
+:where(.portal[data-home="false"]) .portal-content img{max-width:100%;height:auto;border-radius:8px;object-fit:contain}
+:where(.portal[data-home="false"]) .portal-content a:hover{color:#9b763b}
+:where(.portal[data-home="false"]) .portal-content input,:where(.portal[data-home="false"]) .portal-content textarea,:where(.portal[data-home="false"]) .portal-content select,:where(.portal[data-home="false"]) .portal-content button{font:inherit}
+:where(.portal[data-home="false"]) .portal-content input[type=text],:where(.portal[data-home="false"]) .portal-content input[type=password],:where(.portal[data-home="false"]) .portal-content input[type=number],:where(.portal[data-home="false"]) .portal-content textarea,:where(.portal[data-home="false"]) .portal-content select{padding:9px 12px;max-width:100%;border:1px solid #ded8cd;border-radius:7px;background:#fff;color:var(--portal-ink);box-sizing:border-box;min-height:40px}
+:where(.portal[data-home="false"]) .portal-content textarea{min-height:100px}
+:where(.portal[data-home="false"]) .portal-content input[type=submit],:where(.portal[data-home="false"]) .portal-content input[type=button],:where(.portal[data-home="false"]) .portal-content button:not(.portal-tool):not([class^=re]){padding:9px 18px;border:1px solid #b99b6b;background:#ab8852;color:#fff;border-radius:8px;cursor:pointer}
+:where(.portal[data-home="false"]) .portal-content input[type=checkbox],:where(.portal[data-home="false"]) .portal-content input[type=radio]{accent-color:#a88650}
 .portal-content table{border-collapse:collapse;max-width:100%;font-size:13px}
 .portal-content td,.portal-content th{padding:8px;vertical-align:top}
 .portal-content table,.portal-content tr,.portal-content td,.portal-content th{font-family:inherit!important}
@@ -29,8 +29,6 @@
 .portal-nav-extra .portal-nav-item{gap:8px;padding:9px 6px;font-size:10px;min-height:42px}
 .portal-nav-extra .portal-nav-item i{width:16px;height:16px}
 .portal-nav-item>i:last-child:not(:first-child){width:14px;margin-right:auto}
-.portal-system-card:is(button){background:#fffdfa}
-.portal-system-card:hover{border-color:#cbb38b}
 .portal-currency{margin:18px 8px 6px;padding:16px 14px;background:#fffdf8;border:1px solid #e7ddca;border-radius:11px}
 .portal-currency header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:12px}
 .portal-currency h2{font-size:14px;font-weight:500;margin:0}
@@ -127,5 +125,5 @@ body.portal-page .RadWindow .rwTitlebar,body.portal-page .RadNotification .rnTit
 @media(min-width:761px){.portal-layout{align-items:stretch}.portal-sidebar{position:static;max-height:none;overflow:visible;align-self:stretch}.portal-main{min-width:0}}
 @media(min-width:761px){.portal[data-home="false"] .portal-sidebar{position:sticky;top:16px;max-height:min(920px,calc(100vh - 132px));overflow-y:auto;align-self:start}}
 @media(max-width:1100px){.portal-content{margin:20px 18px 0;padding:22px}.portal-content:has(>.shownews_wrap){grid-template-columns:minmax(0,1fr);gap:26px}.portal-content .shownews_wrap{grid-column:1;grid-row:1}.portal-content .shownews_sidebar{grid-column:1;grid-row:2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}.portal-content .shownews_title h2{font-size:23px}}
-@media(max-width:760px){.portal-content{margin:18px 16px 0;padding:18px;min-height:360px}.portal-content h1{font-size:22px}.portal-content-heading{flex-direction:column;align-items:stretch;gap:16px}.portal-content:has(>.sidebar){grid-template-columns:minmax(0,1fr)}.portal-content .shownews_sidebar{display:block}.portal-content .shownews_title h2{font-size:21px}.portal-content .news_summary{padding:16px}.portal-content .news_summary p,.news_complete{font-size:13px}.portal-rates-table{grid-template-columns:minmax(0,1fr)}.portal-sidebar{overflow:auto;overscroll-behavior:contain}.portal-login{margin:10px auto;padding:18px}.portal-content table{font-size:12px}.portal-content td{padding:6px}.portal-status-page{padding:24px 0}.portal-status-page h1{font-size:21px}}
+@media(max-width:760px){.portal-content{margin:18px 16px 0;padding:18px;min-height:360px}:where(.portal[data-home="false"]) .portal-content h1{font-size:22px}.portal-content-heading{flex-direction:column;align-items:stretch;gap:16px}.portal-content:has(>.sidebar){grid-template-columns:minmax(0,1fr)}.portal-content .shownews_sidebar{display:block}.portal-content .shownews_title h2{font-size:21px}.portal-content .news_summary{padding:16px}.portal-content .news_summary p,.news_complete{font-size:13px}.portal-rates-table{grid-template-columns:minmax(0,1fr)}.portal-sidebar{overflow:auto;overscroll-behavior:contain}.portal-login{margin:10px auto;padding:18px}.portal-content table{font-size:12px}.portal-content td{padding:6px}.portal-status-page{padding:24px 0}.portal-status-page h1{font-size:21px}}
 @media print{.portal-header,.portal-sidebar,.portal-banners,.portal-footer,.portal-dialog,.shownews_sidebar,.comments{display:none!important}.portal-layout{display:block}.portal-content{border:0;box-shadow:none;margin:0;padding:0}.portal-content .shownews_wrap{grid-column:1/-1}}

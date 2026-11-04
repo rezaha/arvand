@@ -9,7 +9,6 @@
                     <a class="portal-about" data-page="about">درباره پتروشیمی اروند <i data-icon="arrow-left"></i></a>
                 </div>
                 <div class="portal-slide-controls"><button type="button" data-slide="-1" aria-label="اسلاید قبلی"><i data-icon="chevron-left"></i></button><button type="button" data-slide="1" aria-label="اسلاید بعدی"><i data-icon="chevron-right"></i></button></div>
-                <div class="portal-slide-dots" role="group" aria-label="انتخاب اسلاید"><button type="button" data-slide-index="0" class="is-active" aria-label="اسلاید ۱" aria-pressed="true"></button><button type="button" data-slide-index="1" aria-label="اسلاید ۲" aria-pressed="false"></button><button type="button" data-slide-index="2" aria-label="اسلاید ۳" aria-pressed="false"></button></div>
             </section>
             <section class="portal-systems" aria-labelledby="portal-systems-heading">
                 <div class="portal-section-heading">

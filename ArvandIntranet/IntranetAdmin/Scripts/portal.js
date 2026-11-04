@@ -389,17 +389,9 @@
         if (!image) return;
         if (safeUrl(slide.image)) image.src = safeUrl(slide.image);
         image.alt = slide.alt;
-        root.querySelectorAll('[data-slide-index]').forEach(function (dot) {
-            var active = Number(dot.getAttribute('data-slide-index')) === slideIndex;
-            dot.classList.toggle('is-active', active);
-            dot.setAttribute('aria-pressed', String(active));
-        });
     }
     root.querySelectorAll('[data-slide]').forEach(function (button) {
         button.addEventListener('click', function () { changeSlide(slideIndex + Number(button.getAttribute('data-slide'))); });
-    });
-    root.querySelectorAll('[data-slide-index]').forEach(function (dot) {
-        dot.addEventListener('click', function () { changeSlide(Number(dot.getAttribute('data-slide-index'))); });
     });
     function updateClock() {
         var now = new Date();

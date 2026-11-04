@@ -69,8 +69,8 @@ const screenshots = process.env.PORTAL_SCREENSHOT_DIR || '/tmp/arvand-portal-che
         const first = await page.locator('.portal-hero-image').getAttribute('src');
         await page.locator('[data-slide="1"]').click();
         assert.notEqual(await page.locator('.portal-hero-image').getAttribute('src'), first);
-        assert.equal(await page.locator('[data-slide-index="1"]').getAttribute('aria-pressed'), 'true');
-        await page.locator('[data-slide-index="0"]').click();
+        assert.equal(await page.locator('.portal-slide-dots').count(), 0);
+        await page.locator('[data-slide="-1"]').click();
         assert.equal(await page.locator('.portal-hero-image').getAttribute('src'), first);
         await page.locator('[data-open="files"]').click();
         assert.equal(await page.locator('dialog[open] .portal-file-row').count(), 6);

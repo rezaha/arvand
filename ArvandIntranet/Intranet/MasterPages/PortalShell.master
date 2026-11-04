@@ -5,7 +5,7 @@
     <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>اینترانت پتروشیمی اروند</title>
     <link rel="icon" href="~/favicon.ico" runat="server" />
-    <link rel="stylesheet" href="~/CSS/portal.css?v=fd29ea0ca196" runat="server" />
+    <link rel="stylesheet" href="~/CSS/portal.css?v=da6bc5a31085" runat="server" />
     <script src='<%# ResolveUrl("~/Scripts/jquery.js") %>'></script>
     <script src='<%# ResolveUrl("~/Scripts/jquery.jcarousel.min.js") %>'></script>
     <script src='<%# ResolveUrl("~/Scripts/jquery.pikachoose.js") %>'></script>
@@ -15,7 +15,7 @@
     <script src='<%# ResolveUrl("~/Scripts/list_ticker.js") %>'></script>
     <script src='<%# ResolveUrl("~/Scripts/portal-legacy.js?v=856cb016b81a") %>'></script>
     <asp:ContentPlaceHolder ID="PortalHead" runat="server" />
-    <link rel="stylesheet" href="~/CSS/portal-content.css?v=b4f1207437d5" runat="server" />
+    <link rel="stylesheet" href="~/CSS/portal-content.css?v=34488cef97ba" runat="server" />
 </head>
 <body class="portal-page"><form id="form1" runat="server">
 <div class="portal" data-portal data-home="<%= IsPortalHome.ToString().ToLowerInvariant() %>" data-assets="<%= ResolveUrl("~/Images/portal/") %>">
@@ -62,4 +62,4 @@
     <dialog class="portal-dialog" aria-labelledby="portal-dialog-title"><div class="portal-dialog-heading"><h2 id="portal-dialog-title"></h2><button type="button" data-close-dialog aria-label="بستن"><i data-icon="close"></i></button></div><div class="portal-dialog-body"></div></dialog>
     <script type="application/json" data-portal-data><asp:Literal ID="PortalData" runat="server" /></script>
 </div>
-</form><script src="<%= ResolveUrl("~/Scripts/portal.js?v=db71dfc1fe79") %>" defer></script></body></html>
+</form><script src="<%= ResolveUrl("~/Scripts/portal.js?v=9c9c5ca8b4b2") %>" defer></script></body></html>
